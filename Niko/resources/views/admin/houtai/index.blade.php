@@ -5,13 +5,13 @@
         <title>AdminLTE | Dashboard</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <!-- bootstrap 3.0.2 -->
-        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="/yangshi/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <!-- font Awesome -->
-        <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <link href="/yangshi/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
         <!-- Ionicons -->
-        <link href="css/ionicons.min.css" rel="stylesheet" type="text/css" />
+        <link href="/yangshi/css/ionicons.min.css" rel="stylesheet" type="text/css" />
         <!-- Theme style -->
-        <link href="css/AdminLTE.css" rel="stylesheet" type="text/css" />
+        <link href="/yangshi/css/AdminLTE.css" rel="stylesheet" type="text/css" />
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -25,7 +25,7 @@
         <header class="header">
             <a href="index.html" class="logo">
                 <!-- Add the class icon to your logo image or logo icon to add the margining -->
-                AdminLTE
+                帝左Sn
             </a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top" role="navigation">
@@ -42,29 +42,29 @@
                         <li class="dropdown messages-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="fa fa-envelope"></i>
-                                <span class="label label-success">4</span>
+                                <span class="label label-success">(消息数量)</span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li class="header">You have 4 messages</li>
+                                <li class="header">你有（数量）条信息</li>
                                 <li>
                                     <!-- inner menu: contains the actual data -->
                                     <ul class="menu">
                                         <li><!-- start message -->
                                             <a href="#">
                                                 <div class="pull-left">
-                                                    <img src="img/avatar3.png" class="img-circle" alt="User Image"/>
+                                                    <img src="/yangshi/img/avatar3.png" class="img-circle" alt="User Image"/>
                                                 </div>
                                                 <h4>
-                                                    Support Team
-                                                    <small><i class="fa fa-clock-o"></i> 5 mins</small>
+                                                    留言人民GG
+                                                    <small><i class="fa fa-clock-o"></i> 时间</small>
                                                 </h4>
-                                                <p>Why not buy a new awesome theme?</p>
+                                                <p>留言内容</p>
                                             </a>
                                         </li><!-- end message -->
                                         <li>
                                             <a href="#">
                                                 <div class="pull-left">
-                                                    <img src="img/avatar2.png" class="img-circle" alt="user image"/>
+                                                    <img src="/yangshi/img/avatar2.png" class="img-circle" alt="user image"/>
                                                 </div>
                                                 <h4>
                                                     AdminLTE Design Team
@@ -76,7 +76,7 @@
                                         <li>
                                             <a href="#">
                                                 <div class="pull-left">
-                                                    <img src="img/avatar.png" class="img-circle" alt="user image"/>
+                                                    <img src="/yangshi/img/avatar.png" class="img-circle" alt="user image"/>
                                                 </div>
                                                 <h4>
                                                     Developers
@@ -88,7 +88,7 @@
                                         <li>
                                             <a href="#">
                                                 <div class="pull-left">
-                                                    <img src="img/avatar2.png" class="img-circle" alt="user image"/>
+                                                    <img src="/yangshi/img/avatar2.png" class="img-circle" alt="user image"/>
                                                 </div>
                                                 <h4>
                                                     Sales Department
@@ -100,7 +100,7 @@
                                         <li>
                                             <a href="#">
                                                 <div class="pull-left">
-                                                    <img src="img/avatar.png" class="img-circle" alt="user image"/>
+                                                    <img src="/yangshi/img/avatar.png" class="img-circle" alt="user image"/>
                                                 </div>
                                                 <h4>
                                                     Reviewers
@@ -230,14 +230,14 @@
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="glyphicon glyphicon-user"></i>
-                                <span>Jane Doe <i class="caret"></i></span>
+                                <span>博主名<i class="caret"></i></span>
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- User image -->
                                 <li class="user-header bg-light-blue">
-                                    <img src="img/avatar3.png" class="img-circle" alt="User Image" />
+                                    <img src="/yangshi/img/avatar3.png" class="img-circle" alt="User Image" />博主头像
                                     <p>
-                                        Jane Doe - Web Developer
+                                        博主名 - 的个人微博
                                         <small>Member since Nov. 2012</small>
                                     </p>
                                 </li>
@@ -256,10 +256,10 @@
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
                                     <div class="pull-left">
-                                        <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                        <a href="#" class="btn btn-default btn-flat">简介</a>
                                     </div>
                                     <div class="pull-right">
-                                        <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                        <a href="#" class="btn btn-default btn-flat">退出</a>
                                     </div>
                                 </li>
                             </ul>
@@ -270,18 +270,19 @@
         </header>
         <div class="wrapper row-offcanvas row-offcanvas-left">
             <!-- Left side column. contains the logo and sidebar -->
-            <aside class="left-side sidebar-offcanvas">                
+            <aside class="left-side sidebar-offcanvas">
                 <!-- sidebar: style can be found in sidebar.less -->
                 <section class="sidebar">
                     <!-- Sidebar user panel -->
                     <div class="user-panel">
                         <div class="pull-left image">
-                            <img src="img/avatar3.png" class="img-circle" alt="User Image" />
+                            <img src="/yangshi/img/avatar3.png" class="img-circle" alt="User Image" />
+                            博主头像
                         </div>
                         <div class="pull-left info">
-                            <p>Hello, Jane</p>
+                            <p>Hello, 博主名</p>
 
-                            <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                            <a href="#"><i class="fa fa-circle text-success"></i> 在线状态</a>
                         </div>
                     </div>
                     <!-- search form -->
@@ -298,7 +299,7 @@
                     <ul class="sidebar-menu">
                         <li class="active">
                             <a href="index.html">
-                                <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                                <i class="fa fa-dashboard"></i> <span>主页</span>
                             </a>
                         </li>
                         <li>
@@ -308,30 +309,152 @@
                         </li>
                         <li class="treeview">
                             <a href="#">
-                                <i class="fa fa-bar-chart-o"></i>
-                                <span>Charts</span>
+                                <i class="fa fa-edit"></i> <span>用户管理</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="pages/charts/morris.html"><i class="fa fa-angle-double-right"></i> Morris</a></li>
-                                <li><a href="pages/charts/flot.html"><i class="fa fa-angle-double-right"></i> Flot</a></li>
-                                <li><a href="pages/charts/inline.html"><i class="fa fa-angle-double-right"></i> Inline charts</a></li>
+                                <li><a href="pages/forms/general.html"><i class="fa fa-angle-double-right"></i> 查看用户</a></li>
+                                <li><a href="pages/forms/advanced.html"><i class="fa fa-angle-double-right"></i> 添加用户</a></li>
+                                <li><a href="pages/forms/editors.html"><i class="fa fa-angle-double-right"></i> 禁用用户</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-edit"></i> <span>文章管理</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li>
+                                    <li class="treeview">
+                                        <a href="#">
+                                            <i class="fa fa-edit"></i> <span>文章一类</span>
+                                            <i class="fa fa-angle-left pull-right"></i>
+                                        </a>
+                                        <ul class="treeview-menu">
+                                            <li><a href="pages/forms/general.html"><i class="fa fa-angle-double-right"></i> 查看文章</a></li>
+                                            <li><a href="pages/forms/advanced.html"><i class="fa fa-angle-double-right"></i> 添加文章</a></li>
+
+                                        </ul>
+                                    </li>
+                    
+                                </li>
+                                <li><li class="treeview">
+                                        <a href="#">
+                                            <i class="fa fa-edit"></i> <span>文章二类</span>
+                                            <i class="fa fa-angle-left pull-right"></i>
+                                        </a>
+                                        <ul class="treeview-menu">
+                                            <li><a href="pages/forms/general.html"><i class="fa fa-angle-double-right"></i> 查看文章</a></li>
+                                            <li><a href="pages/forms/advanced.html"><i class="fa fa-angle-double-right"></i> 添加文章</a></li>
+
+                                        </ul>
+                                    </li></li>
+
+                            </ul>
+                        </li>
+                         <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-edit"></i> <span>评论管理</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="pages/forms/general.html"><i class="fa fa-angle-double-right"></i> 查看评论</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-bar-chart-o"></i>
+                                <span>关于我</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="pages/charts/morris.html"><i class="fa fa-angle-double-right"></i> 个人信息</a></li>
+                                <li><a href="pages/charts/flot.html"><i class="fa fa-angle-double-right"></i> 我的相册</a></li>
+                                <li><a href="pages/charts/inline.html"><i class="fa fa-angle-double-right"></i> 我的日记</a></li>
+                                <li><a href="pages/charts/inline.html"><i class="fa fa-angle-double-right"></i> 我的作品</a></li>
                             </ul>
                         </li>
                         <li class="treeview">
                             <a href="#">
                                 <i class="fa fa-laptop"></i>
-                                <span>UI Elements</span>
+                                <span>慢生活</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="pages/UI/general.html"><i class="fa fa-angle-double-right"></i> General</a></li>
-                                <li><a href="pages/UI/icons.html"><i class="fa fa-angle-double-right"></i> Icons</a></li>
-                                <li><a href="pages/UI/buttons.html"><i class="fa fa-angle-double-right"></i> Buttons</a></li>
-                                <li><a href="pages/UI/sliders.html"><i class="fa fa-angle-double-right"></i> Sliders</a></li>
-                                <li><a href="pages/UI/timeline.html"><i class="fa fa-angle-double-right"></i> Timeline</a></li>
+                                <li><a href="pages/UI/general.html"><i class="fa fa-angle-double-right"></i> 欣赏</a></li>
+                                <li><a href="pages/UI/icons.html"><i class="fa fa-angle-double-right"></i>经典语录</a></li>
+                                
                             </ul>
                         </li>
+
+
+
+
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-edit"></i> <span>网站配置</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li>
+                                    <li class="treeview">
+                                        <a href="#">
+                                            <i class="fa fa-edit"></i> <span>网站配置管理</span>
+                                            <i class="fa fa-angle-left pull-right"></i>
+                                        </a>
+                                        <ul class="treeview-menu">
+                                            <li><a href="pages/forms/general.html"><i class="fa fa-angle-double-right"></i> logo...</a></li>
+                                            <li><a href="pages/forms/advanced.html"><i class="fa fa-angle-double-right"></i> 添加文章</a></li>
+
+                                        </ul>
+                                    </li>
+                    
+                                </li>
+                                <li><li class="treeview">
+                                        <a href="#">
+                                            <i class="fa fa-edit"></i> <span>轮播图</span>
+                                            <i class="fa fa-angle-left pull-right"></i>
+                                        </a>
+                                        <ul class="treeview-menu">
+                                            <li><a href="pages/forms/general.html"><i class="fa fa-angle-double-right"></i> 查看图片</a></li>
+                                            <li><a href="pages/forms/advanced.html"><i class="fa fa-angle-double-right"></i> 管理图片</a></li>
+
+                                        </ul>
+                                    </li>
+                                </li>
+                                <li><li class="treeview">
+                                        <a href="#">
+                                            <i class="fa fa-edit"></i> <span>友情链接</span>
+                                            <i class="fa fa-angle-left pull-right"></i>
+                                        </a>
+                                        <ul class="treeview-menu">
+                                            <li><a href="pages/forms/general.html"><i class="fa fa-angle-double-right"></i> 查看友情</a></li>
+                                            <li><a href="pages/forms/advanced.html"><i class="fa fa-angle-double-right"></i> 管理友情</a></li>
+
+                                        </ul>
+                                    </li>
+                                </li>
+                                <li><li class="treeview">
+                                        <a href="#">
+                                            <i class="fa fa-edit"></i> <span>广告管理</span>
+                                            <i class="fa fa-angle-left pull-right"></i>
+                                        </a>
+                                        <ul class="treeview-menu">
+                                            <li><a href="pages/forms/general.html"><i class="fa fa-angle-double-right"></i> 查看广告</a></li>
+                                            <li><a href="pages/forms/advanced.html"><i class="fa fa-angle-double-right"></i> 管理广告</a></li>
+
+                                        </ul>
+                                    </li>
+                                </li>
+
+                            </ul>
+                        </li>
+
+
+
+
+
                         <li class="treeview">
                             <a href="#">
                                 <i class="fa fa-edit"></i> <span>Forms</span>
@@ -340,7 +463,7 @@
                             <ul class="treeview-menu">
                                 <li><a href="pages/forms/general.html"><i class="fa fa-angle-double-right"></i> General Elements</a></li>
                                 <li><a href="pages/forms/advanced.html"><i class="fa fa-angle-double-right"></i> Advanced Elements</a></li>
-                                <li><a href="pages/forms/editors.html"><i class="fa fa-angle-double-right"></i> Editors</a></li>                                
+                                <li><a href="pages/forms/editors.html"><i class="fa fa-angle-double-right"></i> Editors</a></li>
                             </ul>
                         </li>
                         <li class="treeview">
@@ -376,7 +499,7 @@
                                 <li><a href="pages/examples/register.html"><i class="fa fa-angle-double-right"></i> Register</a></li>
                                 <li><a href="pages/examples/lockscreen.html"><i class="fa fa-angle-double-right"></i> Lockscreen</a></li>
                                 <li><a href="pages/examples/404.html"><i class="fa fa-angle-double-right"></i> 404 Error</a></li>
-                                <li><a href="pages/examples/500.html"><i class="fa fa-angle-double-right"></i> 500 Error</a></li>                                
+                                <li><a href="pages/examples/500.html"><i class="fa fa-angle-double-right"></i> 500 Error</a></li>
                                 <li><a href="pages/examples/blank.html"><i class="fa fa-angle-double-right"></i> Blank Page</a></li>
                             </ul>
                         </li>
@@ -384,8 +507,10 @@
                 </section>
                 <!-- /.sidebar -->
             </aside>
-
-            <!-- Right side column. Contains the navbar and content of the page -->
+            
+        <!-- add new calendar event modal -->
+<!-- 内容页面 -->
+ <!-- Right side column. Contains the navbar and content of the page -->
             <aside class="right-side">                
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
@@ -406,14 +531,38 @@
                 </section><!-- /.content -->
             </aside><!-- /.right-side -->
         </div><!-- ./wrapper -->
-
+<!-- 内容页面结束 -->
 
         <!-- jQuery 2.0.2 -->
-        <script src="js/jquery.min.js"></script>
+        <script src="/yangshi/js/jquery.min.js"></script>
+        <!-- jQuery UI 1.10.3 -->
+        <script src="/yangshi/js/jquery-ui-1.10.3.min.js" type="text/javascript"></script>
         <!-- Bootstrap -->
-        <script src="js/plugins/bootstrap.min.js" type="text/javascript"></script>
+        <script src="/yangshi/js/bootstrap.min.js" type="text/javascript"></script>
+        <!-- Morris.js charts -->
+        <script src="/yangshi/js/raphael-min.js"></script>
+        <script src="/yangshi/js/plugins/morris/morris.min.js" type="text/javascript"></script>
+        <!-- Sparkline -->
+        <script src="/yangshi/js/plugins/sparkline/jquery.sparkline.min.js" type="text/javascript"></script>
+        <!-- jvectormap -->
+        <script src="/yangshi/js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js" type="text/javascript"></script>
+        <script src="/yangshi/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js" type="text/javascript"></script>
+        <!-- fullCalendar -->
+        <script src="/yangshi/js/plugins/fullcalendar/fullcalendar.min.js" type="text/javascript"></script>
+        <!-- jQuery Knob Chart -->
+        <script src="/yangshi/js/plugins/jqueryKnob/jquery.knob.js" type="text/javascript"></script>
+        <!-- daterangepicker -->
+        <script src="/yangshi/js/plugins/daterangepicker/daterangepicker.js" type="text/javascript"></script>
+        <!-- Bootstrap WYSIHTML5 -->
+        <script src="/yangshi/js/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js" type="text/javascript"></script>
+        <!-- iCheck -->
+        <script src="/yangshi/js/plugins/iCheck/icheck.min.js" type="text/javascript"></script>
+
         <!-- AdminLTE App -->
-        <script src="js/plugins/AdminLTE/app.js" type="text/javascript"></script>
+        <script src="/yangshi/js/AdminLTE/app.js" type="text/javascript"></script>
+        
+        <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+        <script src="/yangshi/js/AdminLTE/dashboard.js" type="text/javascript"></script>        
 
     </body>
 </html>
