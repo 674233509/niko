@@ -8,6 +8,7 @@
 <link href="/yangshi/css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link href="/yangshi/css/font-awesome2.css" rel="stylesheet">
 <!--搜索按钮css-->
+
 <!-- 个人名片样式 -->
 <link href="/yangshi/css/styles.css" rel="stylesheet">
 <!-- 个人名片样式结束 -->
@@ -68,6 +69,29 @@
     });
     </script>
 <!-- 搜索按钮头部结束 -->
+<!-- 轮播图样式 -->
+<link rel="stylesheet" type="text/css" href="/yangshi/css/lunbo/style.css">
+
+<script type="text/javascript" src="/yangshi/js/lunbo/koala.min.1.5.js"></script>
+<script type="text/javascript">
+Qfast.add('widgets', { path: "/yangshi/js/lunbo/terminator2.2.min.js", type: "js", requires: ['fx'] });  
+Qfast(false, 'widgets', function () {
+  K.tabs({
+    id: 'decoroll2',//焦点图包裹id  
+    conId: "decoimg_a2",//大图域包裹id  
+    tabId:"deconum2",//小圆点数字提示id
+    tabTn:"a",
+    conCn: '.decoimg_b2',//大图域配置class       
+    auto: 1,//自动播放 1或0
+    effect: 'fade',//效果配置
+    eType: 'mouseover',// 鼠标事件
+    pageBt:true,//是否有按钮切换页码
+    bns: ['.prev', '.next'],//前后按钮配置class                          
+    interval: 3000// 停顿时间  
+  }) 
+}) 
+</script>
+<!-- 轮播图样式结束 -->
 </head>
 <body>
 <header>
@@ -102,13 +126,34 @@
                 </form>
               </div>  
 <!-- 搜索按钮结束 -->
+<!-- 轮播图开始 -->
+<div id="decoroll2" class="imgfocus">
+
+  <div id="decoimg_a2" class="imgbox">
+    <div class="decoimg_b2"><a href="http://sc.chinaz.com/"><img src="/yangshi/lunboimg/1.jpg"></a></div>
+    <div class="decoimg_b2"><a href="http://sc.chinaz.com/"><img src="/yangshi/lunboimg/2.jpg"></a></div>
+    <div class="decoimg_b2"><a href="http://sc.chinaz.com/"><img src="/yangshi/lunboimg/3.jpg"></a></div>
+    <div class="decoimg_b2"><a href="http://sc.chinaz.com/"><img src="/yangshi/lunboimg/4.jpg"></a></div>
+  </div>
+  
+  <ul id="deconum2" class="num_a2">
+    <li><a href="javascript:void(0)" hidefocus="true" target="_self">名字1</a></li>
+    <li><a href="javascript:void(0)" hidefocus="true" target="_self">名字2</a></li>
+    <li><a href="javascript:void(0)" hidefocus="true" target="_self">名字3</a></li>
+    <li><a href="javascript:void(0)" hidefocus="true" target="_self">名字4</a></li>
+  </ul>
+  
+</div>
+
+
+<!-- 轮播图结束 -->
 <!-- 个人名片开始 -->
 <div class="card">
       <h1>我的名片</h1>
-      <p>网名：DanceSmile | 即步非烟</p>
-      <p>职业：Web前端设计师、网页设计</p>
-      <p>电话：13662012345</p>
-      <p>Email：dancesmiling@qq.com</p>
+      <p>网名：Dzuo | 博主中文名</p>
+      <p>职业：博主职业</p>
+      <p>电话：博主电话</p>
+      <p>Email：博主邮箱</p>
       <ul class="linkmore">
         <li><a href="/" class="talk" title="给我留言"></a></li>
         <li><a href="/" class="address" title="联系地址"></a></li>
@@ -118,5 +163,6 @@
       </ul>
     </div>
 <!-- 个人名片结束 -->
+
 </body>
 </html>

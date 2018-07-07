@@ -1,0 +1,36 @@
+前台搜索
+前台首页
+登录
+	物理路径	\Niko\app\Http\Controllers\LoginController.php
+	网上路径	http://www.nikoni.com/sn/login
+		登录完成，待数据库验证
+注册
+文章显示
+轮播图
+	网上地址：http://www.nikoni.com/admin/sn/lun/index
+	文件物理：
+		控制器：Niko\app\Http\Controllers\hou\LunController.php
+		展示页：Niko\resources\views\hou\lun\show.blade.php
+		添加液：Niko\resources\views\hou\lun\create.blade.php
+	添加展示完成，
+	待修改，删除前台展示
+		//需在数据库添加创建时间。修改时间
+广告显示
+评论
+友情链接
+
+
+
+
+2018年7月6日
+后台模板位置
+Niko\resources\views\muban\houtai
+
+\ban.blade.php
+
+导入
+@extends('muban.houtai.ban')
+显示内容
+ @section('hou.index')
+	内容
+ @endsection

@@ -14,10 +14,92 @@
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get('/',function () {
-	return view('qian.index');
-});
 
+Route::get('/','qian\ShouController@index');
 Route::get('/admin',function () {
 	return view('admin.houtai.index');
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Dzuo的路由开始
+// 登录路由
+Route::controller('/sn/login','LoginController');
+// 轮播图路由
+Route::controller('/admin/sn/lun','hou\LunController');
+// Dzuo的路由结束
