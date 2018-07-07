@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Models\Lun;
 
 class ShouController extends Controller
 {
@@ -17,7 +18,9 @@ class ShouController extends Controller
     public function index()
     {
         //
-        return view('/qian/index');
+        $data = Lun::all();
+        // dump($data);
+        return view('/qian/index',['data'=>$data]);
     }
 
     /**

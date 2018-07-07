@@ -130,17 +130,25 @@ Qfast(false, 'widgets', function () {
 <div id="decoroll2" class="imgfocus">
 
   <div id="decoimg_a2" class="imgbox">
-    <div class="decoimg_b2"><a href="http://sc.chinaz.com/"><img src="/yangshi/lunboimg/1.jpg"></a></div>
+    <!-- <div class="decoimg_b2"><a href="http://sc.chinaz.com/"><img src="/yangshi/lunboimg/1.jpg"></a></div>
     <div class="decoimg_b2"><a href="http://sc.chinaz.com/"><img src="/yangshi/lunboimg/2.jpg"></a></div>
     <div class="decoimg_b2"><a href="http://sc.chinaz.com/"><img src="/yangshi/lunboimg/3.jpg"></a></div>
-    <div class="decoimg_b2"><a href="http://sc.chinaz.com/"><img src="/yangshi/lunboimg/4.jpg"></a></div>
+    <div class="decoimg_b2"><a href="http://sc.chinaz.com/"><img src="/yangshi/lunboimg/4.jpg"></a></div> -->
+    @foreach ($data as $k => $v)
+    <div class="decoimg_b2"><a href="http://sc.chinaz.com/"><img src="{{ $v->pic }}"></a></div>
+
+    @endforeach
   </div>
   
   <ul id="deconum2" class="num_a2">
-    <li><a href="javascript:void(0)" hidefocus="true" target="_self">名字1</a></li>
+    <!-- <li><a href="javascript:void(0)" hidefocus="true" target="_self">名字1</a></li>
     <li><a href="javascript:void(0)" hidefocus="true" target="_self">名字2</a></li>
     <li><a href="javascript:void(0)" hidefocus="true" target="_self">名字3</a></li>
-    <li><a href="javascript:void(0)" hidefocus="true" target="_self">名字4</a></li>
+    <li><a href="javascript:void(0)" hidefocus="true" target="_self">名字4</a></li> -->
+    @foreach ($data as $k => $v)
+    <li><a href="javascript:void(0)" hidefocus="true" target="_self"> {{ $v->name }} </a></li>
+
+    @endforeach
   </ul>
   
 </div>
