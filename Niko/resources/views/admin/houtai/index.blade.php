@@ -1,3 +1,4 @@
+
 @extends('muban.houtai.ban')
  @section('hou.index')
 <table>

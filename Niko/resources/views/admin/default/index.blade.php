@@ -12,8 +12,7 @@
         <link href="/yangshi/css/ionicons.min.css" rel="stylesheet" type="text/css" />
         <!-- Theme style -->
         <link href="/yangshi/css/AdminLTE.css" rel="stylesheet" type="text/css" />
-        <script type="text/javascript" src="/yangshi/js/jquery-1.8.3.min.js"></script>
-        <script type="text/javascript" src="/yangshi/ajax/ajax3.0-min.js"></script>
+
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -314,8 +313,8 @@
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="/admin/houtai/user/index"><i class="fa fa-angle-double-right"></i> 查看用户</a></li>
-                                <li><a href="/admin/houtai/user/create"><i class="fa fa-angle-double-right"></i> 添加用户</a></li>
+                                <li><a href="pages/forms/general.html"><i class="fa fa-angle-double-right"></i> 查看用户</a></li>
+                                <li><a href="pages/forms/advanced.html"><i class="fa fa-angle-double-right"></i> 添加用户</a></li>
                                 <li><a href="pages/forms/editors.html"><i class="fa fa-angle-double-right"></i> 禁用用户</a></li>
                             </ul>
                         </li>
@@ -418,8 +417,8 @@
                                             <i class="fa fa-angle-left pull-right"></i>
                                         </a>
                                         <ul class="treeview-menu">
-                                            <li><a href="/admin/sn/lun/index"><i class="fa fa-angle-double-right"></i> 查看图片</a></li>
-                                            <li><a href="/admin/sn/lun/create"><i class="fa fa-angle-double-right"></i> 添加图片</a></li>
+                                            <li><a href="/admin/lun/create"><i class="fa fa-angle-double-right"></i> 查看图片</a></li>
+                                            <li><a href="/admin/lun/index"><i class="fa fa-angle-double-right"></i> 管理图片</a></li>
 
                                         </ul>
                                     </li>
@@ -430,7 +429,7 @@
                                             <i class="fa fa-angle-left pull-right"></i>
                                         </a>
                                         <ul class="treeview-menu">
-                                            <li><a href="/admin/fri/create"><i class="fa fa-angle-double-right"></i> 查看友情</a></li>
+                                            <li><a href="/admin/fri/create"><i class="fa fa-angle-double-right"></i> 添加友情</a></li>
                                             <li><a href="/admin/fri/index"><i class="fa fa-angle-double-right"></i> 管理友情</a></li>
 
                                         </ul>
@@ -512,10 +511,8 @@
         <!-- add new calendar event modal -->
 <!-- 内容页面 -->
  <!-- Right side column. Contains the navbar and content of the page -->
- 
             <aside class="right-side">                
                 <!-- Content Header (Page header) -->
-@section('hou.index')
                 <section class="content-header">
                     <h1>
                         Blank page
@@ -527,17 +524,27 @@
                     </ol>
                 </section>
 
-
-
                 <!-- Main content -->
                 <section class="content">
+                <!-- 读取处理信息 -->   
+                @if (session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
 
-
+                @if (session('error'))
+                    <div class="alert alert-error">
+                        {{ session('error') }}
+                    </div>
+                @endif
+                    
+				@section('content')
+					
+				@show
                 </section><!-- /.content -->
-@show
             </aside><!-- /.right-side -->
         </div><!-- ./wrapper -->
-
 <!-- 内容页面结束 -->
 
         <!-- jQuery 2.0.2 -->

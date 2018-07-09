@@ -1,0 +1,16 @@
+回收站
+广告管理
+友情链接管理  
+  网页   http://www.niko.com/admin/fri/create 
+  控制器  D:\xampp\htdocs\Saber\niko\Niko\app\Http\Controllers\Admin\FriController.php
+  添加页面  D:\xampp\htdocs\Saber\niko\Niko\resources\views\admin\fri\create.blade.php
+  路由  D:\xampp\htdocs\Saber\niko\Niko\app\Http\routes.php
+  
+  页面展示完成
+  
+  
+轮播图管理
+网站培植管理
+导航管理
+评论管理
+文章管理
