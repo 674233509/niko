@@ -417,8 +417,8 @@
                                             <i class="fa fa-angle-left pull-right"></i>
                                         </a>
                                         <ul class="treeview-menu">
-                                            <li><a href="pages/forms/general.html"><i class="fa fa-angle-double-right"></i> 查看图片</a></li>
-                                            <li><a href="pages/forms/advanced.html"><i class="fa fa-angle-double-right"></i> 管理图片</a></li>
+                                            <li><a href="/admin/lun/create"><i class="fa fa-angle-double-right"></i> 查看图片</a></li>
+                                            <li><a href="/admin/lun/index"><i class="fa fa-angle-double-right"></i> 管理图片</a></li>
 
                                         </ul>
                                     </li>
@@ -429,8 +429,8 @@
                                             <i class="fa fa-angle-left pull-right"></i>
                                         </a>
                                         <ul class="treeview-menu">
-                                            <li><a href="/admin/fri"><i class="fa fa-angle-double-right"></i> 查看友情</a></li>
-                                            <li><a href="/admin/fri/create"><i class="fa fa-angle-double-right"></i> 管理友情</a></li>
+                                            <li><a href="/admin/fri/create"><i class="fa fa-angle-double-right"></i> 添加友情</a></li>
+                                            <li><a href="/admin/fri/index"><i class="fa fa-angle-double-right"></i> 管理友情</a></li>
 
                                         </ul>
                                     </li>
@@ -441,8 +441,8 @@
                                             <i class="fa fa-angle-left pull-right"></i>
                                         </a>
                                         <ul class="treeview-menu">
-                                            <li><a href="pages/forms/general.html"><i class="fa fa-angle-double-right"></i> 查看广告</a></li>
-                                            <li><a href="pages/forms/advanced.html"><i class="fa fa-angle-double-right"></i> 管理广告</a></li>
+                                            <li><a href="/admin/guang/create"><i class="fa fa-angle-double-right"></i> 查看广告</a></li>
+                                            <li><a href="/admin/guang/index"><i class="fa fa-angle-double-right"></i> 管理广告</a></li>
 
                                         </ul>
                                     </li>
@@ -526,8 +526,22 @@
 
                 <!-- Main content -->
                 <section class="content">
+                <!-- 读取处理信息 -->   
+                @if (session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
 
-
+                @if (session('error'))
+                    <div class="alert alert-error">
+                        {{ session('error') }}
+                    </div>
+                @endif
+                    
+				@section('content')
+					
+				@show
                 </section><!-- /.content -->
             </aside><!-- /.right-side -->
         </div><!-- ./wrapper -->

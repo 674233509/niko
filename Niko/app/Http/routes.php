@@ -21,3 +21,11 @@ Route::get('/',function () {
 Route::get('/admin',function () {
 	return view('admin.houtai.index');
 });
+//友情链接
+Route::controller('/admin/fri','admin\FriController');
+//广告路由
+Route::controller('/admin/guang','admin\GuangController');
+//轮播路由
+Route::controller('/admin/lun','admin\LunController');
+
+
