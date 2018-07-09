@@ -21,3 +21,32 @@ Route::get('/',function () {
 Route::get('/admin',function () {
 	return view('admin.houtai.index');
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//用户路由
+Route::controller('/admin/houtai/user','admin\UserController');
+

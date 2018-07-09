@@ -8,11 +8,13 @@
         <link href="/yangshi/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <!-- font Awesome -->
         <link href="/yangshi/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        
         <!-- Ionicons -->
         <link href="/yangshi/css/ionicons.min.css" rel="stylesheet" type="text/css" />
         <!-- Theme style -->
         <link href="/yangshi/css/AdminLTE.css" rel="stylesheet" type="text/css" />
-
+        <script type="text/javascript" src="/yangshi/js/jquery-1.8.3.min.js"></script>
+        <script type="text/javascript" src="/yangshi/ajax/ajax3.0-min.js"></script>
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -313,8 +315,8 @@
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="pages/forms/general.html"><i class="fa fa-angle-double-right"></i> 查看用户</a></li>
-                                <li><a href="pages/forms/advanced.html"><i class="fa fa-angle-double-right"></i> 添加用户</a></li>
+                                <li><a href="/admin/houtai/user/index"><i class="fa fa-angle-double-right"></i> 查看用户</a></li>
+                                <li><a href="/admin/houtai/user/create"><i class="fa fa-angle-double-right"></i> 添加用户</a></li>
                                 <li><a href="pages/forms/editors.html"><i class="fa fa-angle-double-right"></i> 禁用用户</a></li>
                             </ul>
                         </li>
@@ -526,8 +528,9 @@
 
                 <!-- Main content -->
                 <section class="content">
+                    @section('content')
 
-
+                    @show
                 </section><!-- /.content -->
             </aside><!-- /.right-side -->
         </div><!-- ./wrapper -->
