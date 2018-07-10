@@ -23,10 +23,10 @@ class FriController extends Controller
         $search = $request -> input('search','');
         //接收数据
         $data = DB::table('sn_fris as f')
-        //->where('username','like','%'.$search.'%')
+        ->where('title','like','%'.$search.'%')
         ->select('f.id','f.title','f.content','f.url','f.pic')
         ->paginate(3);
-        return  view('admin.fri.index',['title'=>'用户管理','data'=>$data,'search'=>$search]);
+        return  view('admin.fri.index',['title'=>'友情链接管理','data'=>$data,'search'=>$search]);
         
     }
 
@@ -38,7 +38,7 @@ class FriController extends Controller
     public function getCreate()
     {
         //
-        return view('admin.fri.create',['title'=>'添加用户']);
+        return view('admin.fri.create',['title'=>'添加链接']);
     }
 
     /**
@@ -79,10 +79,11 @@ class FriController extends Controller
             // dump($temp_name);
             $name =  $temp_name.'.'.$ext;
             $dirname = date('Y-m-d',time());
-            $res = $profile -> move('./uploads/'.$dirname,$name);
+            $res = $profile -> move('uploads/'.$dirname,$name);
             // dump($dirname);
             $data['pic'] = $res;
             // dump($res);
+            
         }else{
             return back();
         }
@@ -134,7 +135,7 @@ class FriController extends Controller
         ->select('f.id','f.title','f.content','f.url','f.pic')
        ->first();
         //修改显示页面
-        return view('admin.fri.edit',['title'=>'用户修改','data'=>$data]);
+        return view('admin.fri.edit',['title'=>'友情链接修改','data'=>$data]);
     }
 
     /**
@@ -146,7 +147,7 @@ class FriController extends Controller
      */
 
 
-     public function getDel(Request $request)
+     public function postDel($id)
     {
         //获取数据
         $data = $request -> input('id');

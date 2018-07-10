@@ -31,6 +31,8 @@ Route::controller('/admin/fri','admin\FriController');
 Route::controller('/admin/guang','admin\GuangController');
 //轮播路由
 Route::controller('/admin/lun','admin\LunController');
+//配置路由
+Route::controller('/admin/sn/peizhi','hou\PeizhiController');
 
 
 

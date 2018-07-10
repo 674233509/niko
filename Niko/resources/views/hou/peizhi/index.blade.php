@@ -1,6 +1,5 @@
-@extends('admin.default.index')
-
-@section('content')
+@extends('muban.houtai.ban')
+ @section('hou.index')
 
 @if(session('success'))
         <div class="alert alert-success alert-dismissible fade in" role="alert">
@@ -25,7 +24,7 @@
                                 <i class="glyphicon glyphicon-user"></i>
                                 <h3 class="box-title text-info"> &nbsp;&nbsp;{{ $title }}</h3>
                             </div>
-                          &nbsp;&nbsp;&nbsp;<a href="/admin/guang/del"><div class="glyphicon glyphicon-trash">&nbsp;<font color="red">批量删除</font></div></a>
+                          
                            
                             <!-- Navigation - folders-->
                             <div style="margin-top: 15px;">
@@ -38,46 +37,58 @@
                                    
                                     <!-- Action button -->
                                 </div>
-                                <div class="col-sm-6 search-form">
-                                    <form action="#" class="text-right">
-                                        <div class="input-group">
-                                            <input type="text" name="search" class="form-control input-sm" placeholder="关键字">
-                                            <div class="input-group-btn">
-                                                <button type="submit" name="name" class="btn btn-sm btn-primary"><i class="fa fa-search"></i></button>
-                                            </div>
-                                        </div>                      
-                                    </form>
-                                </div>
+                                
+                               
                             </div><!-- /.row -->
                                 
                             <div class="container" style="float:right;width:1052px;margin-top:30px">
                                 <!-- THE MESSAGES -->
+                                
+                                 {{ csrf_field() }}
+                                
+
+
                                 <table class="table table-bordered table-striped  table-hover">
                                 <tr class="unread text-center">
-                                <td class="small-col"><input type="checkbox" /></td>
+                                
+
                                     <td>ID</td>
-                                    <td>广告名称</td>
-                                    <td>广告内容</td>
-                                    <td>广告地址</td>
-                                    <td>广告图片</td>
+                                    <td>网站头部</td>
+                                    <td>网站标题</td>
+                                    <td>网站版权</td>
+                                    <td>网站状态</td>
+                                    <td>网站logo</td>
                                     <td>操作</td>
                                 </tr>
                                 @foreach($data as $k=>$v)
                                     <tr class="text-center">
-                                        <td class="small-col"><input type="checkbox" /></td>
+                                        
                                         <td >{{ $v->id }}</td>
-                                        <td >{{ $v->name }}</td>
-                                        <td >{{ $v->content }}</td>
-                                        <td >{{ $v->url }}</td>
-                                        <td > <img src="/{{ $v->pic }}" alt="" height="50px"> </td>
+                                        <td >{{ $v->hand }}</td>
+                                        <td >{{ $v->title }}</td>
+                                        <td >{{ $v->kami }}</td>
+                                        <td >
+                                        @if (($v->open) === '1')
+                                             {{'打开'}}
+                                        @elseif (($v->open) === '2')
+                                                {{'关闭'}}
+                                        @endif
+                                     
+                                           
+
+                                         
+                                        </td>
+                                        <td > <img src="/{{ $v->logo }}" alt="" height="50px"> </td>
                                         <td >
                                             
-                                            <a href="/admin/guang/destroy/{{$v->id}}" class="btn btn-danger">删除</a>
-                                            <a href="/admin/guang/edit/{{$v->id}}" class="btn btn-warning">修改</a>
+                                            <a href="/admin/sn/peizhi/destroy/{{$v->id}}" class="btn btn-danger">删除</a>
+                                            <a href="/admin/sn/peizhi/edit/{{$v->id}}" class="btn btn-warning">修改</a>
                                         </td>
                                     </tr> 
                                 @endforeach
                                 </table>
+
+                            </form>
                                 
                             </div><!-- /.table-responsive -->
                         </div><!-- /.col (RIGHT) -->

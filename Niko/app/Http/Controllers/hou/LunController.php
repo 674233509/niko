@@ -96,9 +96,16 @@ class LunController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function getEdit($id)
     {
         //
+          //接收数据
+        $data = DB::table('sn_luns as l')
+        ->where('l.id','=',$id)
+        ->select('l.id','l.name','l.content','l.url','l.pic')
+       ->first();
+        //修改显示页面
+        return view('admin.sn.lun.edit',['data'=>$data]);
     }
 
     /**

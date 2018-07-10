@@ -1,15 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\hou;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Models\Guangs;
+use App\Models\Peizhi;
 use DB;
-
-class GuangController extends Controller
+class PeizhiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,16 +17,15 @@ class GuangController extends Controller
      */
     public function getIndex(Request $request)
     {
-        
+        //
          // 获取搜索关键字
         $search = $request -> input('search','');
         //接收数据
-        $data = DB::table('sn_guangs as g')
-        ->where('name','like','%'.$search.'%')
-        ->select('g.id','g.name','g.content','g.url','g.pic')
+        $data = DB::table('sn_peizhis as p')
+        ->where('title','like','%'.$search.'%')
+        ->select('p.id','p.hand','p.title','p.kami','p.open','p.logo')
         ->paginate(3);
-        
-        return view('admin.guang.index',['title'=>'管理广告','data'=>$data,'search'=>$search]);
+        return view('hou.peizhi.index',['title'=>'管理网站配置','data'=>$data,'search'=>$search]);
     }
 
     /**
@@ -38,7 +36,7 @@ class GuangController extends Controller
     public function getCreate()
     {
         //
-        return view('admin.guang.create',['title'=>'添加广告']);
+        return view('hou.peizhi.create',['title'=>'添加网站配置']);
     }
 
     /**
@@ -50,44 +48,45 @@ class GuangController extends Controller
     public function postStore(Request $request)
     {
         //
-        //数据库
          //开启事物
         DB::beginTransaction();
         //接收提交的数据
         $data = $request -> except('_token');
-        //dump($data);
+        // dump($data);
         
         //上传头像
-        if($request -> hasFile('pic')){
+        if($request -> hasFile('logo')){
 
             // 使用request 创建文件上传对象
-            $profile = $request -> file('pic');
+            $profile = $request -> file('logo');
             $ext = $profile->getClientOriginalExtension();
             // 处理文件名称
             $temp_name = str_random(10);
+            // dump($temp_name);
             $name =  $temp_name.'.'.$ext;
             $dirname = date('Y-m-d',time());
-            $res = $profile -> move('./uploads/'.$dirname,$name);
-            $data['pic'] = $res;
-            //dump($res);
+            $res = $profile -> move('uploads/'.$dirname,$name);
+            // dump($dirname);
+            $data['logo'] = $res;
+            // dump($res);
+            
         }else{
             return back();
         }
-
+        // dump($data);
         //dd(date('Y-m-d H:s:i',time()));
-        //获取表单提交到sn_users表里的信息，并返回id
-       $uid = DB::table('sn_guangs')->insertGetId(['name'=>$data['name'],'content'=>$data['content'],'url'=>$data['url'],'pic'=>$data['pic']]);
+        //获取表单提交到sn_peizhis表里的信息，并返回id
+       $pid = DB::table('sn_peizhis')->insertGetId(['hand'=>$data['hand'],'title'=>$data['title'],'kami'=>$data['kami'],'open'=>$data['open'],'logo'=>$data['logo']]);
        
+       // dump($uid);
        
-       
-        if($uid){
+        if($pid){
             DB::commit();
-           return redirect('/admin/guang/index')->with('success','添加成功');
+           return redirect('/admin/sn/peizhi/index')->with('success','添加成功');
        }else{
             DB::rollBack();
             return back()->with('error','添加失败');
        }
-
     }
 
     /**
@@ -111,12 +110,13 @@ class GuangController extends Controller
     {
         //
          //接收数据
-        $data = DB::table('sn_guangs as g')
-        ->where('g.id','=',$id)
-        ->select('g.id','g.name','g.content','g.url','g.pic')
+        $data = DB::table('sn_peizhis as p')
+        ->where('p.id','=',$id)
+        ->select('p.id','p.hand','p.title','p.kami','p.open','p.logo')
        ->first();
         //修改显示页面
-        return view('admin.guang.edit',['title'=>'广告修改','data'=>$data]);
+        return view('hou.peizhi.edit',['title'=>'网站配置修改','data'=>$data]);
+
     }
 
     /**
@@ -129,42 +129,40 @@ class GuangController extends Controller
     public function postUpdate(Request $request, $id)
     {
         //
-          DB::beginTransaction();
+        //开启事物
+        DB::beginTransaction();
         //接收提交的数据
         $data = $request -> except('_token');
         //dump($data);
-        
         //上传头像
-        if($request -> hasFile('pic')){
+        if($request -> hasFile('logo')){
 
             // 使用request 创建文件上传对象
-            $profile = $request -> file('pic');
+            $profile = $request -> file('logo');
             $ext = $profile->getClientOriginalExtension();
             // 处理文件名称
             $temp_name = str_random(10);
             $name =  $temp_name.'.'.$ext;
             $dirname = date('Y-m-d',time());
             $res = $profile -> move('./uploads/'.$dirname,$name);
-            $data['pic'] = $res;
+            $data['logo'] = $res;
             //dump($res);
         }else{
             return back();
         }
 
         //dd(date('Y-m-d H:s:i',time()));
-        //获取表单提交到sn_guangs表里的信息，并返回id
-       $uid = DB::table('sn_guangs')->insertGetId(['name'=>$data['name'],'content'=>$data['content'],'url'=>$data['url'],'pic'=>$data['pic']]);
-       
+        //获取表单提交到sn_peizhis表里的信息，并返回id
+       $uid = DB::table('sn_peizhis')->where('id','=',$id)->update(['hand'=>$data['hand'],'title'=>$data['title'],'kami'=>$data['kami'],'open'=>$data['open'], 'logo'=>$data['logo']]);
        
        
         if($uid){
             DB::commit();
-           return redirect('/admin/guang/index')->with('success','修改成功');
+           return redirect('/admin/sn/peizhi/index')->with('success','修改成功');
        }else{
             DB::rollBack();
             return back()->with('error','修改失败');
        }
-
 
     }
 
@@ -174,16 +172,15 @@ class GuangController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function getDestroy($id)
+    public function destroy($id)
     {
         //
-
           //开启事物
        DB::beginTransaction();
-       $res = DB::table('sn_guangs')->where('id','=',$id)->delete();
+       $res = DB::table('sn_peizhis')->where('id','=',$id)->delete();
        if($res){
             DB::commit();
-           return redirect('/admin/guang/index')->with('success','删除成功');
+           return redirect('/admin/sn/peizhi/index')->with('success','删除成功');
        }else{
             DB::rollBack();
             return back()->with('error','删除失败');

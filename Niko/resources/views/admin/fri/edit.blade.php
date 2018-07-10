@@ -36,7 +36,7 @@
 
                 <div class="form-group">
                     <label for="pic">头像上传</label>
-                    <input type="file" id="pic"  name="pic"><img  src="{{ $data->pic }}">
+                    <input type="file" id="pic"  name="pic"><img  src="/{{ $data->pic }}" height="50px">
                     <p class="help-block">一个美丽的心情从头像开始.</p>
                 </div>
             </div><!-- /.box-body -->

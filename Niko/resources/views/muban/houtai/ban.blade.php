@@ -405,8 +405,8 @@
                                             <i class="fa fa-angle-left pull-right"></i>
                                         </a>
                                         <ul class="treeview-menu">
-                                            <li><a href="pages/forms/general.html"><i class="fa fa-angle-double-right"></i> logo...</a></li>
-                                            <li><a href="pages/forms/advanced.html"><i class="fa fa-angle-double-right"></i> 添加文章</a></li>
+                                            <li><a href="/admin/sn/peizhi/create"><i class="fa fa-angle-double-right"></i>添加配置</a></li>
+                                            <li><a href="/admin/sn/peizhi/index"><i class="fa fa-angle-double-right"></i>管理配置</a></li>
 
                                         </ul>
                                     </li>

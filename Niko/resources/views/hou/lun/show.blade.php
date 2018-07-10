@@ -22,8 +22,8 @@
                 <td> {{ $v->url }} </td>
                 <td> <img src=" {{ $v->pic }} " alt="" height="100px"> </td>
                 <td>
-                    <a href="" >修改</a>
-                    <a href="">删除</a>
+                    <a href="/admin/sn/lun/edit/{{$v->id}}" class="btn btn-danger">修改</a>
+                    <a href="/admin/sn/lun/destroy/{{$v->id}}" class="btn btn-warning">删除</a>
                     
                 </td>
             </tr>
