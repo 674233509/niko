@@ -1,14 +1,13 @@
 @extends('muban.houtai.ban')
- @section('hou.index')
+@section('hou.index')
 
-
-@if(session('success'))
+	@if(session('success'))
         <div class="alert alert-success alert-dismissible fade in" role="alert">
           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">×</span></button>
             {{ session('success') }}
         </div>
-@endif
+	@endif
 
 <!-- Main content -->
 <section class="content">
@@ -25,7 +24,7 @@
                                 <i class="glyphicon glyphicon-user"></i>
                                 <h3 class="box-title text-info"> &nbsp;&nbsp;{{ $title }}</h3>
                             </div>
-                          &nbsp;&nbsp;&nbsp;<a href="/admin/guang/del"><div class="glyphicon glyphicon-trash">&nbsp;<font color="red">批量删除</font></div></a>
+                          
                            
                             <!-- Navigation - folders-->
                             <div style="margin-top: 15px;">
@@ -43,41 +42,50 @@
                                         <div class="input-group">
                                             <input type="text" name="search" class="form-control input-sm" placeholder="关键字">
                                             <div class="input-group-btn">
-                                                <button type="submit" name="name" class="btn btn-sm btn-primary"><i class="fa fa-search"></i></button>
+                                                <button type="submit" name="content" class="btn btn-sm btn-primary"><i class="fa fa-search"></i></button>
                                             </div>
                                         </div>                      
                                     </form>
                                 </div>
+                            </div>
+                               
                             </div><!-- /.row -->
                                 
                             <div class="container" style="float:right;width:1052px;margin-top:30px">
                                 <!-- THE MESSAGES -->
+                                
+                                 {{ csrf_field() }}
                                 <table class="table table-bordered table-striped  table-hover">
                                 <tr class="unread text-center">
-                                <td class="small-col"><input type="checkbox" /></td>
+                                
+
                                     <td>ID</td>
-                                    <td>广告名称</td>
-                                    <td>广告内容</td>
-                                    <td>广告地址</td>
-                                    <td>广告图片</td>
+                                    <td>文章ID</td>
+                                    <td>评论内容</td>
+                                    <td>用户ID</td>
+                                    <td>评论时间</td>
+                                    <td>评论IP</td>
                                     <td>操作</td>
                                 </tr>
                                 @foreach($data as $k=>$v)
                                     <tr class="text-center">
-                                        <td class="small-col"><input type="checkbox" /></td>
+                                        
                                         <td >{{ $v->id }}</td>
-                                        <td >{{ $v->name }}</td>
+                                        <td >{{ $v->wid }}</td>
                                         <td >{{ $v->content }}</td>
-                                        <td >{{ $v->url }}</td>
-                                        <td > <img src="/{{ $v->pic }}" alt="" height="50px"> </td>
-                                        <td >
-                                            
-                                            <a href="/admin/guang/destroy/{{$v->id}}" class="btn btn-danger">删除</a>
-                                            <a href="/admin/guang/edit/{{$v->id}}" class="btn btn-warning">修改</a>
+                                        <td >{{ $v->qweqwe['username'] }}</td>
+                                        <td >{{ $v->ptime }}</td>
+                                        <td >{{ $v->pip }}</td>
+                                        
+                                        <td>
+                                            <a href="/admin/sn/ping/destroy/{{$v->id}}" class="btn btn-danger">删除</a>
+                                            <a href="/admin/sn/ping/edit/{{$v->id}}" class="btn btn-warning">修改</a>
                                         </td>
                                     </tr> 
                                 @endforeach
                                 </table>
+
+                            </form>
                                 
                             </div><!-- /.table-responsive -->
                         </div><!-- /.col (RIGHT) -->
@@ -85,7 +93,8 @@
                 </div><!-- /.box-body -->
                 <div class="box-footer clearfix">
                     <div class="pages pull-right">
-                        {!! $data->appends(['search'=>$search])->render() !!}
+                       
+                        {!! $data->render() !!}
                     </div>
                 </div><!-- box-footer -->
             </div><!-- /.box -->
@@ -96,4 +105,13 @@
 </section><!-- /.content -->
 
 
+
 @endsection
+
+
+
+
+
+
+
+

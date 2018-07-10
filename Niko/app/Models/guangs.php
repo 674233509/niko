@@ -7,4 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class guangs extends Model
 {
     //
+    public $table = 'sn_guangs';
 }

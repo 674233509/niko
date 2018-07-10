@@ -5,11 +5,12 @@
   控制器  D:\xampp\htdocs\Saber\niko\Niko\app\Http\Controllers\Admin\FriController.php
   添加页面  D:\xampp\htdocs\Saber\niko\Niko\resources\views\admin\fri\create.blade.php
   路由  D:\xampp\htdocs\Saber\niko\Niko\app\Http\routes.php
-  
-  页面展示完成
+  已完成
   
   
 轮播图管理
+已完成
+
 网站配置管理
 网页 http://www.niko.com/admin/sn/peizhi/create
 控制器  D:\xampp\htdocs\Saber\niko\Niko\app\Http\Controllers\hou\PeizhiController.php
@@ -22,4 +23,11 @@
 
 导航管理
 评论管理
+网页 http://www.niko.com/admin/sn/ping/create
+控制器  D:\xampp\htdocs\Saber\niko\Niko\app\Http\Controllers\hou\PeizhiController.php
+路由 D:\xampp\htdocs\Saber\niko\Niko\app\Http\routes.php
+添加页面 D:\xampp\htdocs\Saber\niko\Niko\resources\views\hou\ping\create.blade.php
+显示页面 D:\xampp\htdocs\Saber\niko\Niko\resources\views\hou\ping\index.blade.php
+修改页面 D:\xampp\htdocs\Saber\niko\Niko\resources\views\hou\ping\edit.blade.php
+前台友情链接 广告显示完成   
 文章管理

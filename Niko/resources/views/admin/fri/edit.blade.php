@@ -31,7 +31,7 @@
                 </div> 
                 <div class="form-group">
                     <label for="url">地址</label>
-                    <input type="url" name="url" class="form-control" id="url" value="{{ $data->url }}" placeholder="url">
+                    <input type="text" name="url" class="form-control" id="url" value="{{ $data->url }}" placeholder="url">
                 </div>
 
                 <div class="form-group">

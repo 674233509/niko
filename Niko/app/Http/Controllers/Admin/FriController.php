@@ -90,9 +90,12 @@ class FriController extends Controller
         // dump($data);
         //dd(date('Y-m-d H:s:i',time()));
         //获取表单提交到sn_users表里的信息，并返回id
-       $uid = DB::table('sn_fris')->insertGetId(['title'=>$data['title'],'content'=>$data['content'],'url'=>$data['url'],'pic'=>$data['pic']]);
+        //'url'.'https://';
+        $url = ('https://'.$data['url']);
+        
+       $uid = DB::table('sn_fris')->insertGetId(['title'=>$data['title'],'content'=>$data['content'],'url'=>$url,'pic'=>$data['pic']]);
        
-       // dump($uid);
+       // dump();
        
         if($uid){
             DB::commit();
@@ -181,7 +184,7 @@ class FriController extends Controller
         }
 
         //dd(date('Y-m-d H:s:i',time()));
-        //获取表单提交到sn_users表里的信息，并返回id
+        //获取表单提交到sn_fris表里的信息，并返回id
        $uid = DB::table('sn_fris')->where('id','=',$id)->update(['title'=>$data['title'],'content'=>$data['content'],'url'=>$data['url'],'pic'=>$data['pic']]);
        
        

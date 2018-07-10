@@ -6,11 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Models\Lun;
 use App\Models\Fris;
-use App\Models\Guangs;
 
-class ShouController extends Controller
+class FriController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,11 +18,10 @@ class ShouController extends Controller
     public function index()
     {
         //
-        $data = Lun::all();
-        $res = Fris::all();
-        $res2 = Guangs::all(); 
-        // dump($res2);
-        return view('/qian/index',['data'=>$data,'res'=>$res,'res2'=>$res2]);
+		
+		$data = Fris::all();
+		dump($data);
+		//return view('qian.fri.index',['data'=>$data]);
     }
 
     /**

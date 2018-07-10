@@ -172,7 +172,7 @@ class PeizhiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function getDestroy($id)
     {
         //
           //开启事物

@@ -73,10 +73,10 @@ class GuangController extends Controller
         }else{
             return back();
         }
-
+          $url = ('https://'.$data['url']);
         //dd(date('Y-m-d H:s:i',time()));
         //获取表单提交到sn_users表里的信息，并返回id
-       $uid = DB::table('sn_guangs')->insertGetId(['name'=>$data['name'],'content'=>$data['content'],'url'=>$data['url'],'pic'=>$data['pic']]);
+       $uid = DB::table('sn_guangs')->insertGetId(['name'=>$data['name'],'content'=>$data['content'],'url'=>$url,'pic'=>$data['pic']]);
        
        
        
@@ -153,10 +153,7 @@ class GuangController extends Controller
 
         //dd(date('Y-m-d H:s:i',time()));
         //获取表单提交到sn_guangs表里的信息，并返回id
-       $uid = DB::table('sn_guangs')->insertGetId(['name'=>$data['name'],'content'=>$data['content'],'url'=>$data['url'],'pic'=>$data['pic']]);
-       
-       
-       
+       $uid = DB::table('sn_guangs')->where('id','=',$id)->update(['name'=>$data['name'],'content'=>$data['content'],'url'=>$data['url'],'pic'=>$data['pic']]);
         if($uid){
             DB::commit();
            return redirect('/admin/guang/index')->with('success','修改成功');

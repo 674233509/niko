@@ -33,6 +33,8 @@ Route::controller('/admin/guang','admin\GuangController');
 Route::controller('/admin/lun','admin\LunController');
 //配置路由
 Route::controller('/admin/sn/peizhi','hou\PeizhiController');
+//评论路由
+Route::controller('/admin/sn/ping','hou\PingController');
 
 
 

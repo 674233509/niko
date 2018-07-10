@@ -359,7 +359,8 @@
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="pages/forms/general.html"><i class="fa fa-angle-double-right"></i> 查看评论</a></li>
+                                <li><a href="/admin/sn/ping/create"><i class="fa fa-angle-double-right"></i> 添加评论</a></li>
+                                <li><a href="/admin/sn/ping/index"><i class="fa fa-angle-double-right"></i> 查看评论</a></li>
                             </ul>
                         </li>
 
