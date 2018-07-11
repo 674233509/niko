@@ -6,25 +6,19 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Models\Lun;
-use App\Models\Fris;
-use App\Models\Guangs;
-
-class ShouController extends Controller
+use App\Models\Ping;
+class PingController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function getIndex()
     {
-        //
-        $data = Lun::all();
-        $res = Fris::all();
-        $res2 = Guangs::all();
-        // dump($res2);
-        return view('/qian/index',['data'=>$data,'res'=>$res,'res2'=>$res2]);
+        $data = Ping::all();
+        //dump($data);
+        return view('qian.ping.index',['data'=>$data]);
     }
 
     /**
@@ -32,9 +26,12 @@ class ShouController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function getCreate()
     {
         //
+        return view('qian.ping.create');
+        
+        
     }
 
     /**
@@ -43,9 +40,29 @@ class ShouController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function postStore(Request $request)
     {
         //
+        //echo 'sdada';
+        //接收提交的数据
+        $data = $request -> except('_token');
+        //接受ip
+        $ip = $request -> ip();
+        //dump($data);
+        $ping = new Ping;
+        //dump($ping);
+        // exit;
+        $ping -> content = $data['content'];
+        $ping -> ptime = date('Y-m-d H:i:s',time());
+        $ping -> pip = $ip;
+        // dump($data);
+        $ping -> save();
+        if($ping){
+            return redirect('/qian/sn/ping/index')->with('success','添加成功');
+        }else{
+            return back()->with('error','添加失败');
+
+        }
     }
 
     /**

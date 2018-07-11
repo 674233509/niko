@@ -35,6 +35,8 @@ Route::controller('/admin/lun','admin\LunController');
 Route::controller('/admin/sn/peizhi','hou\PeizhiController');
 //评论路由
 Route::controller('/admin/sn/ping','hou\PingController');
+//前台评论
+Route::controller('/qian/sn/ping','qian\PingController');
 
 
 

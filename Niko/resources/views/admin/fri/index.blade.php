@@ -1,13 +1,13 @@
 @extends('muban.houtai.ban')
- @section('hou.index')
+@section('hou.index')
 
-@if(session('success'))
+	@if(session('success'))
         <div class="alert alert-success alert-dismissible fade in" role="alert">
           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">×</span></button>
             {{ session('success') }}
         </div>
-@endif
+	@endif
 
 <!-- Main content -->
 <section class="content">
@@ -37,27 +37,24 @@
                                    
                                     <!-- Action button -->
                                 </div>
-                                
                                 <div class="col-sm-6 search-form">
                                     <form action="#" class="text-right">
                                         <div class="input-group">
                                             <input type="text" name="search" class="form-control input-sm" placeholder="关键字">
                                             <div class="input-group-btn">
-                                                <button type="submit" name="title" class="btn btn-sm btn-primary"><i class="fa fa-search"></i></button>
+                                                <button type="submit" name="content" class="btn btn-sm btn-primary"><i class="fa fa-search"></i></button>
                                             </div>
                                         </div>                      
                                     </form>
                                 </div>
+                            </div>
+                               
                             </div><!-- /.row -->
                                 
-                            <div class="container" style="float:right;width:1052px;margin-top:30px">
+                            <div class="container" style="float:right;width:100%;margin-top:30px">
                                 <!-- THE MESSAGES -->
-                                <form action="/admin/fri/del" method="post">
+                                
                                  {{ csrf_field() }}
-                                 &nbsp;&nbsp;&nbsp;<a href="/admin/fri/del"><div class="glyphicon glyphicon-trash">&nbsp;<font color="red"><input type="submit" value="批量删除"> </font></div></a>
-
-
-
                                 <table class="table table-bordered table-striped  table-hover">
                                 <tr class="unread text-center">
                                 <td class="small-col">选项</td>
@@ -95,6 +92,7 @@
                 <div class="box-footer clearfix">
                     <div class="pages pull-right">
                         {!! $data->appends(['search'=>$search])->render() !!}
+
                     </div>
                 </div><!-- box-footer -->
             </div><!-- /.box -->
@@ -105,4 +103,13 @@
 </section><!-- /.content -->
 
 
+
 @endsection
+
+
+
+
+
+
+
+

@@ -1,13 +1,13 @@
 @extends('muban.houtai.ban')
- @section('hou.index')
+@section('hou.index')
 
-@if(session('success'))
+	@if(session('success'))
         <div class="alert alert-success alert-dismissible fade in" role="alert">
           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">×</span></button>
             {{ session('success') }}
         </div>
-@endif
+	@endif
 
 <!-- Main content -->
 <section class="content">
@@ -37,17 +37,24 @@
                                    
                                     <!-- Action button -->
                                 </div>
-                                
+                                <div class="col-sm-6 search-form">
+                                    <form action="#" class="text-right">
+                                        <div class="input-group">
+                                            <input type="text" name="search" class="form-control input-sm" placeholder="关键字">
+                                            <div class="input-group-btn">
+                                                <button type="submit" name="content" class="btn btn-sm btn-primary"><i class="fa fa-search"></i></button>
+                                            </div>
+                                        </div>                      
+                                    </form>
+                                </div>
+                            </div>
                                
                             </div><!-- /.row -->
                                 
-                            <div class="container" style="float:right;width:1052px;margin-top:30px">
+                            <div class="container" style="float:right;width:100%;margin-top:30px">
                                 <!-- THE MESSAGES -->
                                 
                                  {{ csrf_field() }}
-                                
-
-
                                 <table class="table table-bordered table-striped  table-hover">
                                 <tr class="unread text-center">
                                 
@@ -107,4 +114,13 @@
 </section><!-- /.content -->
 
 
+
 @endsection
+
+
+
+
+
+
+
+

@@ -107,6 +107,8 @@ Qfast(false, 'widgets', function () {
        <li><a href="newlist.html">慢生活</a></li>
        <li><a href="ablumlist.html">我的相册</a></li>
        <li><a href="book.html">留言版</a></li>
+       <li><a href="/qian/sn/ping/index">最新评论</a></li>
+       <li><a href="/qian/sn/ping/create"添加评论</a></li>
      </ul>
      <script src="/yangshi/js/silder.js"></script><!--获取当前页导航 高亮显示标题-->
 </div>

@@ -25,11 +25,28 @@
                                 <h3 class="box-title text-info"> &nbsp;&nbsp;{{ $title }}</h3>
                             </div>
                           
-                           
-                            <!-- Navigation - folders-->
                             <div style="margin-top: 15px;">
                                 
                             </div>
+                        <!--下拉框-->
+                        <div class="col-md-9 col-sm-8">
+                            <div class="row pad">
+                                <div class="col-sm-6" >
+                                   
+                                    <!-- Action button -->
+                                <select style="width:150px;height:30px;position:absolute; bottom:-15px;">
+                                    <option value="chrome">最近一天</option>
+                                    <option value="safari">最近三天</option>
+                                    <option value="Edge">最近七天</option>
+                                    
+                                </select>
+                                </div>
+                                
+                            </div>
+                               
+                            </div><!-- /.row -->
+
+
                         </div><!-- /.col (LEFT) -->
                         <div class="col-md-9 col-sm-8">
                             <div class="row pad">
@@ -37,23 +54,26 @@
                                    
                                     <!-- Action button -->
                                 </div>
-                                <div class="col-sm-6 search-form">
-                                    <form action="#" class="text-right">
-                                        <div class="input-group">
-                                            <input type="text" name="search" class="form-control input-sm" placeholder="关键字">
-                                            <div class="input-group-btn">
-                                                <button type="submit" name="content" class="btn btn-sm btn-primary"><i class="fa fa-search"></i></button>
-                                            </div>
-                                        </div>                      
-                                    </form>
-                                </div>
+                                
+
+
+                                
                             </div>
                                
                             </div><!-- /.row -->
                                 
-                            <div class="container" style="float:right;width:1052px;margin-top:30px">
+                            <div class="container" style="float:right;width:100%;margin-top:30px">
                                 <!-- THE MESSAGES -->
-                                
+                                <div class="col-sm-6 search-form" style="float:right">
+                                    <form action="#" class="text-right">
+                                        <div class="input-group">
+                                            <input type="text" name="search" class="form-control input-sm" placeholder="关键字">
+                                            <div class="input-group-btn">
+                                                <button type="submit" name="" class="btn btn-sm btn-primary"><i class="fa fa-search"></i></button>
+                                            </div>
+                                        </div>                      
+                                    </form>
+                                </div>
                                  {{ csrf_field() }}
                                 <table class="table table-bordered table-striped  table-hover">
                                 <tr class="unread text-center">
@@ -63,6 +83,7 @@
                                     <td>文章ID</td>
                                     <td>评论内容</td>
                                     <td>用户ID</td>
+                                    <td>用户头像</td>
                                     <td>评论时间</td>
                                     <td>评论IP</td>
                                     <td>操作</td>
@@ -74,6 +95,7 @@
                                         <td >{{ $v->wid }}</td>
                                         <td >{{ $v->content }}</td>
                                         <td >{{ $v->qweqwe['username'] }}</td>
+                                        <td ><img src="/{{$v->qweqwe['pic']}}" height="50px"></td>
                                         <td >{{ $v->ptime }}</td>
                                         <td >{{ $v->pip }}</td>
                                         
@@ -103,7 +125,6 @@
     <!-- MAILBOX END -->
 
 </section><!-- /.content -->
-
 
 
 @endsection

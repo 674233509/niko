@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\Ping;
 use App\Models\User;
+use App\Models\Wen;
 use DB;
 class PingController extends Controller
 {
@@ -28,8 +29,8 @@ class PingController extends Controller
        //  ->paginate(3);
          $data = Ping::where('content','like','%'.$search.'%')->paginate(10);
          // foreach($data as $k => $v){
-         //    // dump($v->qweqwe['name']);
-         //    // dump($v);
+         // dump($v->zxczxc['id']);
+         //    // dump($data);
          // }
 
          //dump($data);
@@ -70,7 +71,7 @@ class PingController extends Controller
        //$res2 = DB::table('sn_wens')->insert(['wid'=>$wid]);
       
        // dump();
-        if($res && $res2 && $res3){
+        if($res){
             DB::commit();
            return redirect('/admin/sn/ping/index')->with('success','添加成功');
        }else{
@@ -103,7 +104,10 @@ class PingController extends Controller
     {
         //获取修改模板
         //echo '23232';
-        return view('hou.ping.edit',['title'=>'修改评论']);
+        //接受修改的数据
+        $ping = Ping::find($id);
+        
+        return view('hou.ping.edit',['title'=>'修改评论','ping'=>$ping]);
     }
 
     /**
@@ -115,7 +119,21 @@ class PingController extends Controller
      */
     public function postUpdate(Request $request, $id)
     {
-        //执行修改
+        //获取提交的数据
+        $data = $request -> except('_token');
+        //dump($data);
+        //从数据库中查询要修改的数据
+        $ping = Ping::find($id);
+        //dump($ping);
+        //数据库的值        被修改的值
+        $ping -> content = $data['content'];
+         // dump($ping);
+        $ping -> save();
+        if($ping){
+            return redirect('/admin/sn/ping/index')->with('success','修改成功');
+        }else{
+            return back()->with('error','修改失败');
+        }
 
     }
 
