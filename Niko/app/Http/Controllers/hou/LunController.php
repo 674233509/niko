@@ -107,10 +107,12 @@ class LunController extends Controller
     public function getEdit($id)
     {
         //
+
         // echo 'edit'.$id;
         $data = Lun::find($id);
         // dump($data);
         return view('hou.lun.edit',['data'=>$data]);
+
 
 
     }

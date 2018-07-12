@@ -23,6 +23,7 @@ class GuangController extends Controller
         $search = $request -> input('search','');
         //接收数据
         $data = DB::table('sn_guangs as g')
+        ->where('name','like','%'.$search.'%')
         ->select('g.id','g.name','g.content','g.url','g.pic')
         ->paginate(3);
         
@@ -66,16 +67,16 @@ class GuangController extends Controller
             $temp_name = str_random(10);
             $name =  $temp_name.'.'.$ext;
             $dirname = date('Y-m-d',time());
-            $res = $profile -> move('./uploads/'.$dirname,$name);
+            $res = $profile -> move('./uploads/guanggao/'.$dirname,$name);
             $data['pic'] = $res;
             //dump($res);
         }else{
             return back();
         }
-
+          $url = ('https://'.$data['url']);
         //dd(date('Y-m-d H:s:i',time()));
         //获取表单提交到sn_users表里的信息，并返回id
-       $uid = DB::table('sn_guangs')->insertGetId(['name'=>$data['name'],'content'=>$data['content'],'url'=>$data['url'],'pic'=>$data['pic']]);
+       $uid = DB::table('sn_guangs')->insertGetId(['name'=>$data['name'],'content'=>$data['content'],'url'=>$url,'pic'=>$data['pic']]);
        
        
        
@@ -151,11 +152,8 @@ class GuangController extends Controller
         }
 
         //dd(date('Y-m-d H:s:i',time()));
-        //获取表单提交到sn_users表里的信息，并返回id
-       $uid = DB::table('sn_guangs')->insertGetId(['name'=>$data['name'],'content'=>$data['content'],'url'=>$data['url'],'pic'=>$data['pic']]);
-       
-       
-       
+        //获取表单提交到sn_guangs表里的信息，并返回id
+       $uid = DB::table('sn_guangs')->where('id','=',$id)->update(['name'=>$data['name'],'content'=>$data['content'],'url'=>$data['url'],'pic'=>$data['pic']]);
         if($uid){
             DB::commit();
            return redirect('/admin/guang/index')->with('success','修改成功');

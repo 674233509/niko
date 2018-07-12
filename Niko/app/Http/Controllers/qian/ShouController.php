@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\Lun;
+use App\Models\Fris;
+use App\Models\Guangs;
 
 class ShouController extends Controller
 {
@@ -19,8 +21,10 @@ class ShouController extends Controller
     {
         //
         $data = Lun::all();
-        // dump($data);
-        return view('/qian/index',['data'=>$data]);
+        $res = Fris::all();
+        $res2 = Guangs::all();
+        // dump($res2);
+        return view('/qian/index',['data'=>$data,'res'=>$res,'res2'=>$res2]);
     }
 
     /**

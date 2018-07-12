@@ -527,18 +527,7 @@
                 <!-- Main content -->
                 <section class="content">
                 <!-- 读取处理信息 -->   
-                @if (session('success'))
-                    <div class="alert alert-success">
-                        {{ session('success') }}
-                    </div>
-                @endif
-
-                @if (session('error'))
-                    <div class="alert alert-error">
-                        {{ session('error') }}
-                    </div>
-                @endif
-                    
+               
 				@section('content')
 					
 				@show

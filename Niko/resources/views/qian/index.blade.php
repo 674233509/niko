@@ -54,4 +54,37 @@
       </ul>
     </div>
 <!-- 个人名片结束 -->
+
+<!--友情链接部分start-->			
+	<div class="card" style=" position: absolute; top: 950px; width:600px;height:150px;background:#99CCCC">
+      <center>
+	  <h1 >友情链接</h1>
+	 </center>
+	  @foreach ($res as $k => $v)
+	   <ul style="float:left; margin:5px">
+	   <a href="{{ $v->url }}">
+      <li>{{ $v->title }}</li>
+	  </a>
+      <li><img src="{{ $v->pic }}" height="50px"></li>
+	</ul>
+	@endforeach
+    </div>	
+<!--友情链接部分end-->
+
+<!-- 广告开始 -->
+	<div class="tb-footer-ft" style="position:absolute; bottom:-310px; width:500px; height:150px;right:3px">
+	<center>
+	<h1>广告</h1>
+	</center>
+	@foreach ($res2 as $k => $v)
+	<ul style="float:right; margin:10px">
+		<a target="_blank" href="{{ $v->url }}" class="tb-footer-mod">
+		 <li><img src="{{ $v->pic }}" height="30px";width="30px"></li>
+	</ul>		   
+		
+	@endforeach
+	</div>
+<!-- 广告结束 -->
+            
+
 @endsection

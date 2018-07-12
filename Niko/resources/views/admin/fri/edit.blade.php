@@ -31,12 +31,12 @@
                 </div> 
                 <div class="form-group">
                     <label for="url">地址</label>
-                    <input type="url" name="url" class="form-control" id="url" value="{{ $data->url }}" placeholder="url">
+                    <input type="text" name="url" class="form-control" id="url" value="{{ $data->url }}" placeholder="url">
                 </div>
 
                 <div class="form-group">
                     <label for="pic">头像上传</label>
-                    <input type="file" id="pic"  name="pic"><img  src="{{ $data->pic }}">
+                    <input type="file" id="pic"  name="pic"><img  src="/{{ $data->pic }}" height="50px">
                     <p class="help-block">一个美丽的心情从头像开始.</p>
                 </div>
             </div><!-- /.box-body -->

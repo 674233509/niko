@@ -34,8 +34,10 @@
                 <td> {{ $v->url }} </td>
                 <td> <img src=" {{ $v->pic }} " alt="" height="100px"> </td>
                 <td>
+
                     <a href="/admin/sn/lun/edit/{{ $v->id }} " class="btn btn-success btn-sm">修改</a>
                     <a href="/admin/sn/lun/delete/{{ $v->id }} " class="btn btn-danger btn-sm">删除</a>
+
                     
                 </td>
             </tr>

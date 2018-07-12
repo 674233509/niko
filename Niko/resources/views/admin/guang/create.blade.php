@@ -1,6 +1,5 @@
-@extends('admin.default.index')
-
-@section('content')
+@extends('muban.houtai.ban')
+@section('hou.index')
   <!-- left column -->
 <div class="" style="width:800px;margin:0px auto">
     <!-- general form elements -->
@@ -31,7 +30,7 @@
 
                 <div class="form-group">
                     <label for="url">广告地址</label>
-                    <input type="url" name="url" class="form-control" id="url" placeholder="url">
+                    <input type="text" name="url" class="form-control" id="url" placeholder="url">
                 </div>
 
                 

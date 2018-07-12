@@ -30,6 +30,14 @@ Route::controller('/admin/fri','admin\FriController');
 //广告路由
 Route::controller('/admin/guang','admin\GuangController');
 
+//轮播路由
+Route::controller('/admin/lun','admin\LunController');
+//配置路由
+Route::controller('/admin/sn/peizhi','hou\PeizhiController');
+//评论路由
+Route::controller('/admin/sn/ping','hou\PingController');
+//前台评论
+Route::controller('/qian/sn/ping','qian\PingController');
 
 
 
