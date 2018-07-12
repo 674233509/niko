@@ -8,6 +8,8 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use DB;
+use App\Models\Forbiddens;
+use Hash;
 class UserController extends Controller
 {
     /**
@@ -51,6 +53,25 @@ class UserController extends Controller
         
         //开启事物
         DB::beginTransaction();
+        //将除了指定的所有数据存在闪存中
+        //$request->flashExcept('_token','password','repass');
+        //返回上一步并将数据存在闪存中
+        //return back()->withInput();
+        //获取表单的值
+        $username = $request->input('username');
+        $password = $request->input('password');
+        $repass = $request->input('repass');
+
+        
+        if($password != $repass){
+            DB::rollBack();
+            //返回上一步并将数据存在闪存中  并提示错误信息
+            return back()->with('error','密码不一致')->withInput();
+        }
+        
+       //hash 加密  密码
+        //$pass = Hash::make($password);
+        //用户登录验证密码   使用  Hash::check('用户输入的密码',$pass);
         //接收提交的数据
         $data = $request -> except('_token');
         //dump($data);
@@ -66,7 +87,7 @@ class UserController extends Controller
             $temp_name = str_random(10);
             $name =  $temp_name.'.'.$ext;
             $dirname = date('Y-m-d',time());
-            $res = $profile -> move('./uploads/'.$dirname,$name);
+            $res = $profile -> move('uploads/'.$dirname,$name);
             $data['pic'] = $res;
             //dump($res);
         }else{
@@ -75,7 +96,7 @@ class UserController extends Controller
 
         //dd(date('Y-m-d H:s:i',time()));
         //获取表单提交到sn_users表里的信息，并返回id
-       $uid = DB::table('sn_users')->insertGetId(['username'=>$data['username'],'password'=>$data['password'],'qx'=>$data['qx'],'pic'=>$data['pic']]);
+       $uid = DB::table('sn_users')->insertGetId(['username'=>$data['username'],'password'=>$password,'qx'=>$data['qx'],'pic'=>$data['pic']]);
        $res = DB::table('sn_userxiangs')->insert(['uid'=>$uid,'sex'=>$data['sex'],'tel'=>$data['tel'],'mail'=>$data['mail'],'rtime'=>date('Y-m-d H:i:s',time()),'zip'=>$ip]);
        
        
@@ -95,12 +116,19 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function getDel(Request $request)
-    {
-        //获取数据
-        echo '批量删除待写';
+    public function getDel(Request $request){
+       //接收数据
+       
+        $data = DB::table('sn_users as u')
+        
+        ->join('sn_userxiangs as ux','u.id','=','ux.uid')
+        ->select('u.id','u.username','u.qx','ux.mail','ux.zip','ux.rtime','ux.tel','ux.sex')
+        ->first();
+        //dump($data);
+    
     }
 
+    
     /**
      * Show the form for editing the specified resource.
      *
@@ -129,15 +157,31 @@ class UserController extends Controller
     public function postUpdate(Request $request, $id)
     {
         //开启事物
-        DB::beginTransaction();
-        //接收提交的数据
+        //DB::beginTransaction();
+        // //接收提交的数据
+        //'username' => 'alpha_num'
+        //'name' => 'size:10'
         $data = $request -> except('_token');
-        //dump($data);
+        if($data['password']!=$data['repass']){
+            return back()->with('error','密码必须一致且不能为空');
+        }else if($data['password']=="" || $data['repass']==""){
+            return back()->with('error','密码不能为空');
+        }
+       
+        
+        
+        //获取数据库照片
+        $photo = DB::table('sn_users')->where('id','=',$id)->first();
+        if($photo == null ){
+            return back()->with('error','内容不能为空');
+        }
+       //获取数据库原图片地址
+       $pic = $photo->pic;
+      
         //获取IP
         $ip = $request ->ip();
         //上传头像
         if($request -> hasFile('pic')){
-
             // 使用request 创建文件上传对象
             $profile = $request -> file('pic');
             $ext = $profile->getClientOriginalExtension();
@@ -145,26 +189,39 @@ class UserController extends Controller
             $temp_name = str_random(10);
             $name =  $temp_name.'.'.$ext;
             $dirname = date('Y-m-d',time());
-            $res = $profile -> move('./uploads/'.$dirname,$name);
+            $res = $profile -> move('uploads/'.$dirname,$name);
             $data['pic'] = $res;
             //dump($res);
+            //修改数据
+            $res2 = DB::table('sn_users')->where('id','=',$id)->update(['username'=>$data['username'],'password'=>$data['password'],'qx'=>$data['qx'],'pic'=>$data['pic']]);
+            $res1 = DB::table('sn_userxiangs')->where('id','=',$id)->update(['sex'=>$data['sex'],'tel'=>$data['tel'],'mail'=>$data['mail'],'rtime'=>date('Y-m-d H:i:s',time()),'zip'=>$ip]);
+               
+               
+                if($res2 && $res1){
+                    //DB::commit();
+                   return redirect('/admin/houtai/user/index')->with('success','修改成功');
+               }else{
+                    //DB::rollBack();
+                    return back()->with('error','修改失败');
+               }
         }else{
-            return back();
-        }
 
-        //dd(date('Y-m-d H:s:i',time()));
-        //获取表单提交到sn_users表里的信息，并返回id
-       $uid = DB::table('sn_users')->where('id','=',$id)->update(['username'=>$data['username'],'password'=>$data['password'],'qx'=>$data['qx'],'pic'=>$data['pic']]);
-       $res = DB::table('sn_userxiangs')->where('id','=',$id)->update(['sex'=>$data['sex'],'tel'=>$data['tel'],'mail'=>$data['mail'],'rtime'=>date('Y-m-d H:i:s',time()),'zip'=>$ip]);
-       
-       
-        if($uid && $res){
-            DB::commit();
-           return redirect('/admin/houtai/user/index')->with('success','添加成功');
-       }else{
-            DB::rollBack();
-            return back()->with('error','添加失败');
-       }
+               //修改数据
+               $res2 = DB::table('sn_users')->where('id','=',$id)->update(['username'=>$data['username'],'password'=>$data['password'],'qx'=>$data['qx'],'pic'=>$pic]);
+               $res1 = DB::table('sn_userxiangs')->where('id','=',$id)->update(['sex'=>$data['sex'],'tel'=>$data['tel'],'mail'=>$data['mail'],'rtime'=>date('Y-m-d H:i:s',time()),'zip'=>$ip]);
+               
+               
+                if($res2 && $res1){
+                    //DB::commit();
+                   return redirect('/admin/houtai/user/index')->with('success','修改成功');
+               }else{
+                    //DB::rollBack();
+                    return back()->with('error','修改失败');
+               }
+
+            
+        }
+  
     }
 
     /**

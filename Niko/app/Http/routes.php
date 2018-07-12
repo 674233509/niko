@@ -50,16 +50,21 @@ Route::controller('/qian/sn/ping','qian\PingController');
 
 
 
+
+
+
+
 // 赵标路由
 //用户路由
 Route::controller('/admin/houtai/user','admin\UserController');
-
-
-
-
-
-
-
+//禁用用户
+Route::controller('/admin/houtai/forbidden','admin\ForbiddenController');
+//后台登录
+Route::controller('/admin/houtai/login','admin\LoginController');
+//后台搜索
+Route::controller('/admin/houtai/search','admin\SearchController');
+//密码管理
+Route::controller('/admin/houtai/repass','admin\RepassController');
 
 
 

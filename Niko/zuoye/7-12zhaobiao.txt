@@ -1,0 +1,57 @@
+已完成
+禁用用户功能
+后台登录   忘记密码
+密码管理
+对用户的增删改查
+
+待完善
+用户添加里的验证功能
+批量删除功能
+
+
+路由 50-60 行
+50  // 赵标路由
+51	//用户路由
+52	Route::controller('/admin/houtai/user','admin\UserController');
+53	//禁用用户
+54	Route::controller('/admin/houtai/forbidden','admin\ForbiddenController');
+55	//后台登录
+56	Route::controller('/admin/houtai/login','admin\LoginController');
+57	//后台搜索
+58	Route::controller('/admin/houtai/search','admin\SearchController');
+59	//密码管理
+60	Route::controller('/admin/houtai/repass','admin\RepassController');
+
+
+说明：
+UsernameController  用户控制器已更新
+RepassController  密码管理控制器
+ForbiddenController   禁用用户控制器
+LoginController     后台登录控制器
+SearchController    搜索控制器未完成
+Search  搜索模型未完成
+
+更新
+数据库
+sn_users 表  新增字段 forbidden 数据类型 Enum(‘y’,’n’)  默认值 n  不为空    说明：禁用用户字段
+
+
+ban.blade.php  共三个位置
+
+<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+	<i class="glyphicon glyphicon-user"></i>
+	@if(session('denglu'))
+	<span> {{ session('denglu') }}<i class="caret"></i></span>
+	@endif
+</a>
+
+
+<li><a href="/admin/houtai/forbidden/index"><i class="fa fa-angle-double-right"></i> 禁用用户</a>
+</li>
+
+
+<div class="pull-right">
+    <a href="/admin/houtai/login/logout" class="btn btn-default btn-flat">退出</a>
+</div>
+
+

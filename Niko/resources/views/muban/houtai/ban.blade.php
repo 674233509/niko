@@ -231,7 +231,9 @@
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="glyphicon glyphicon-user"></i>
-                                <span>博主名<i class="caret"></i></span>
+                                @if(session('denglu'))
+                                <span> {{ session('denglu') }}<i class="caret"></i></span>
+                                @endif
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- User image -->
@@ -260,7 +262,7 @@
                                         <a href="#" class="btn btn-default btn-flat">简介</a>
                                     </div>
                                     <div class="pull-right">
-                                        <a href="#" class="btn btn-default btn-flat">退出</a>
+                                        <a href="/admin/houtai/login/logout" class="btn btn-default btn-flat">退出</a>
                                     </div>
                                 </li>
                             </ul>
@@ -287,9 +289,9 @@
                         </div>
                     </div>
                     <!-- search form -->
-                    <form action="#" method="get" class="sidebar-form">
+                    <form action="/admin/houtai/search/index" method="get" class="sidebar-form">
                         <div class="input-group">
-                            <input type="text" name="q" class="form-control" placeholder="Search..."/>
+                            <input type="text" name="search" id="search" class="form-control" placeholder="Search..."/>
                             <span class="input-group-btn">
                                 <button type='submit' name='seach' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
                             </span>
@@ -316,7 +318,7 @@
                             <ul class="treeview-menu">
                                 <li><a href="/admin/houtai/user/index"><i class="fa fa-angle-double-right"></i> 查看用户</a></li>
                                 <li><a href="/admin/houtai/user/create"><i class="fa fa-angle-double-right"></i> 添加用户</a></li>
-                                <li><a href="pages/forms/editors.html"><i class="fa fa-angle-double-right"></i> 禁用用户</a></li>
+                                <li><a href="/admin/houtai/forbidden/index"><i class="fa fa-angle-double-right"></i> 禁用用户</a></li>
                             </ul>
                         </li>
                         <li class="treeview">
@@ -362,6 +364,17 @@
                                 <li><a href="/admin/sn/ping/index"><i class="fa fa-angle-double-right"></i> 查看评论</a></li>
                             </ul>
                         </li>
+
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-edit"></i> <span>密码管理</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="/admin/houtai/repass/index"><i class="fa fa-angle-double-right"></i> 修改密码</a></li>
+                            </ul>
+                        </li>
+
 
                         <li class="treeview">
                             <a href="#">

@@ -21,25 +21,25 @@
             <div class="box-body">
                 <div class="form-group">
                     <label for="username">用户账号</label>
-                    <input type="text" class="form-control"  name="username" id="username" placeholder="username">
+                    <input type="text" class="form-control"  name="username" id="username" placeholder="username" value="{{ old('username') }}"><span></span>
                 </div>
                 <div class="form-group">
                     <label for="password">密码</label>
-                    <input type="password" name="password" class="form-control" id="password" placeholder="password">
+                    <input type="password" name="password" class="form-control" id="password" placeholder="password"><span></span>
                 </div>
 
                 <div class="form-group">
-                    <label for="password">确认密码</label>
+                    <label for="password">确认密码</label><span></span>
                     <input type="password" name="repass" class="form-control" id="repass" placeholder="repass">
                 </div>
 
                 <div class="form-group">
-                    <label for="mail">邮箱</label>
-                    <input type="email" name="mail" class="form-control" id="mail" placeholder="email">
+                    <label for="mail">邮箱</label><span></span>
+                    <input type="email" name="mail" class="form-control" id="mail" placeholder="email" value="{{ old('mail') }}">
                 </div> 
                 <div class="form-group">
-                    <label for="tel">手机号</label>
-                    <input type="tel" name="tel" class="form-control" id="tel" placeholder="phone">
+                    <label for="tel">手机号</label><span></span>
+                    <input type="phone" name="tel" class="form-control" id="tel" placeholder="phone" value="{{ old('tel') }}">
                 </div>
 				
 				<div class="form-group">
@@ -54,7 +54,7 @@
 
                 <div class="form-group">
                     <label for="pic">头像上传</label>
-                    <input type="file"  id="pic" name="pic">
+                    <input type="file"  id="pic" name="pic" >
                     <p class="help-block">一个美丽的心情从头像开始.</p>
                 </div>
                 <div class="form-group text-center" style="margin-top:-60px">
@@ -75,7 +75,7 @@
                 <button type="submit" class="btn btn-primary">提交</button>
             </div>
         </form>
-        
+       
     </div>
 </div><!-- /.box -->
 
