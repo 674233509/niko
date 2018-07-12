@@ -1,5 +1,6 @@
 @extends('muban.qiantai.ban')
  @section('qian.index')
+
 <!-- 轮播图开始 -->
 <div id="decoroll2" class="imgfocus">
 
@@ -9,7 +10,7 @@
     <div class="decoimg_b2"><a href="http://sc.chinaz.com/"><img src="/yangshi/lunboimg/3.jpg"></a></div>
     <div class="decoimg_b2"><a href="http://sc.chinaz.com/"><img src="/yangshi/lunboimg/4.jpg"></a></div> -->
     @foreach ($data as $k => $v)
-    <div class="decoimg_b2"><a href="http://sc.chinaz.com/"><img src="{{ $v->pic }}"></a></div>
+    <div class="decoimg_b2"><a href="{{ $v->url }}"><img src="{{ $v->pic }}"></a></div>
 
     @endforeach
   </div>
@@ -30,6 +31,14 @@
 
 <!-- 轮播图结束 -->
 <!-- 个人名片开始 -->
+<style>
+  .card{
+    position: absolute;
+    right: 110px;
+    background-color: rgba(50,50,50,0.9);
+  }
+</style>
+<br>
 <div class="card">
       <h1>我的名片</h1>
       <p>网名：Dzuo | 博主中文名</p>

@@ -29,8 +29,7 @@ Route::get('/admin',function () {
 Route::controller('/admin/fri','admin\FriController');
 //广告路由
 Route::controller('/admin/guang','admin\GuangController');
-//轮播路由
-Route::controller('/admin/lun','admin\LunController');
+
 
 
 
@@ -104,4 +103,18 @@ Route::controller('/admin/houtai/user','admin\UserController');
 Route::controller('/sn/login','LoginController');
 // 轮播图路由
 Route::controller('/admin/sn/lun','hou\LunController');
+// 文章路由
+Route::controller('/admin/sn/wen','hou\WenController');
+// 标签管理
+Route::controller('/admin/sn/biao','hou\BiaoController');
+// 文章显示界面
+Route::controller('/sn/wen','qian\WenController');
+// 后台相册界面
+Route::controller('/admin/sn/xiang','hou\XiangController');
+// 前台相册展示界面
+Route::controller('/sn/pic','qian\PicController');
+// 经典语录后台添加
+Route::controller('/admin/sn/yulu','hou\YuluController');
+// 后台欣赏
+Route::controller('/admin/sn/xin','hou\XinController');
 // Dzuo的路由结束

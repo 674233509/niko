@@ -1,4 +1,4 @@
-模板，放文件夹里，之后
+﻿模板，放文件夹里，之后
 后台模板路径
 	Niko\app\Http\Controllers\hou\LunController.php
 后台网页放位置
@@ -21,3 +21,8 @@
  @section('qian.index')
  放内容
   @endsection
+
+
+数据库
+sn_wens。去除pic烂
+sn_lans,改成 sn_biaos。。标签栏，替换之前 的，栏目

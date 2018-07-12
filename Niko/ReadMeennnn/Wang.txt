@@ -6,6 +6,9 @@
 		登录完成，待数据库验证
 注册
 文章显示
+	模型：\Models\Wen.php
+	文件：views\hou\wen\edit.blade.php
+	控制器：\Controllers\hou\WenController.php
 轮播图
 	网上地址：http://www.nikoni.com/admin/sn/lun/index
 	文件物理：

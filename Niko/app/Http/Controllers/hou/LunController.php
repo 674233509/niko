@@ -33,6 +33,13 @@ class LunController extends Controller
     {
         //
         // echo 'create';
+        $data = Lun::all();
+        if (count($data)>= 5) {
+
+        return redirect('/admin/sn/lun/index')->with('success','轮播图不能超过5个');
+        }
+
+
         return view('hou.lun.create');
     }
 
@@ -71,7 +78,8 @@ class LunController extends Controller
             $lun -> save();
             return redirect('/admin/sn/lun/index')->with('success','添加成功');
        } else {
-                echo 'ヽ●*´∀`*●ﾉ终于可以光明正大的学习了';
+            return back()->with('error','添加失败');
+                
             }
        
              
@@ -96,9 +104,15 @@ class LunController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function getEdit($id)
     {
         //
+        // echo 'edit'.$id;
+        $data = Lun::find($id);
+        // dump($data);
+        return view('hou.lun.edit',['data'=>$data]);
+
+
     }
 
     /**
@@ -108,9 +122,40 @@ class LunController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function postUpdate(Request $request, $id)
     {
         //
+        // echo $id;
+        $data = $request->except(['_token']);
+            // dump($data);//打印测试
+        $lun = Lun::find($id);
+        // dump($data ['name']);
+        $lun -> name = $data ['name'];
+        $lun -> content = $data ['content'];
+        $lun -> url = $data ['url'];
+        $cheng = $lun -> save();
+        if($request -> hasFile('pic')){
+            // // 使用request 创建文件上传对象
+            $profile = $request -> file('pic');
+            $ext = $profile->getClientOriginalExtension();
+            // // 处理文件名称
+            $temp_name = str_random(20);
+            $name =  $temp_name.'.'.$ext;
+            $dirname = date('Ymd',time());
+            $res = $profile -> move('./uploads/'.$dirname,$name);
+            // dump($res);
+            $wename = '/uploads/'.$dirname.'/'.$name;
+            $lun -> pic = $wename;
+            $cheng = $lun -> save();
+            return redirect('/admin/sn/lun/index')->with('success','添加成功');
+        }
+        if ($cheng) {
+            return redirect('/admin/sn/lun/index')->with('success','添加成功');
+
+        } else {
+            return back()->with('error','添加失败');
+        }
+
     }
 
     /**
@@ -119,8 +164,17 @@ class LunController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function getDelete($id)
     {
         //
+        // $data = Lun::find($id);
+        // dump($data);
+        $user = Lun::find($id) -> delete(); 
+        // dump($user);
+        if ($user) {
+            return redirect('/admin/sn/lun/index')->with('success','删除成功');
+        } else {
+            return back()->with('error','删除失败');
+        }
     }
 }

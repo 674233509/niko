@@ -328,28 +328,27 @@
                                 <li>
                                     <li class="treeview">
                                         <a href="#">
-                                            <i class="fa fa-edit"></i> <span>文章一类</span>
+                                            <i class="fa fa-edit"></i> <span>标签管理</span>
                                             <i class="fa fa-angle-left pull-right"></i>
                                         </a>
                                         <ul class="treeview-menu">
-                                            <li><a href="pages/forms/general.html"><i class="fa fa-angle-double-right"></i> 查看文章</a></li>
-                                            <li><a href="pages/forms/advanced.html"><i class="fa fa-angle-double-right"></i> 添加文章</a></li>
+                                            <li><a href="/admin/sn/biao/index"><i class="fa fa-angle-double-right"></i> 查看标签</a></li>
+                                            <li><a href="/admin/sn/biao/create"><i class="fa fa-angle-double-right"></i> 添加标签</a></li>
 
                                         </ul>
                                     </li>
                     
                                 </li>
                                 <li><li class="treeview">
-                                        <a href="#">
-                                            <i class="fa fa-edit"></i> <span>文章二类</span>
-                                            <i class="fa fa-angle-left pull-right"></i>
-                                        </a>
-                                        <ul class="treeview-menu">
-                                            <li><a href="pages/forms/general.html"><i class="fa fa-angle-double-right"></i> 查看文章</a></li>
-                                            <li><a href="pages/forms/advanced.html"><i class="fa fa-angle-double-right"></i> 添加文章</a></li>
-
-                                        </ul>
-                                    </li></li>
+                            <a href="#">
+                                <i class="fa fa-edit"></i> <span>文章管理</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="/admin/sn/wen/index"><i class="fa fa-angle-double-right"></i> 查看文章</a></li>
+                                <li><a href="/admin/sn/wen/create"><i class="fa fa-angle-double-right"></i> 添加文章</a></li>
+                            </ul>
+                        </li></li>
 
                             </ul>
                         </li>
@@ -371,7 +370,18 @@
                             </a>
                             <ul class="treeview-menu">
                                 <li><a href="pages/charts/morris.html"><i class="fa fa-angle-double-right"></i> 个人信息</a></li>
-                                <li><a href="pages/charts/flot.html"><i class="fa fa-angle-double-right"></i> 我的相册</a></li>
+                                <li><li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-edit"></i>
+                                <span>我的相册</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="/admin/sn/xiang/index"><i class="fa fa-angle-double-right"></i> 查看相册</a></li>
+                                <li><a href="/admin/sn/xiang/create"><i class="fa fa-angle-double-right"></i> 添加相册</a></li>
+                                <li><a href="/admin/sn/xiang/jiazhao"><i class="fa fa-angle-double-right"></i> 添加相片</a></li>
+                            </ul>
+                        </li></li>
                                 <li><a href="pages/charts/inline.html"><i class="fa fa-angle-double-right"></i> 我的日记</a></li>
                                 <li><a href="pages/charts/inline.html"><i class="fa fa-angle-double-right"></i> 我的作品</a></li>
                             </ul>
@@ -383,8 +393,31 @@
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="pages/UI/general.html"><i class="fa fa-angle-double-right"></i> 欣赏</a></li>
-                                <li><a href="pages/UI/icons.html"><i class="fa fa-angle-double-right"></i>经典语录</a></li>
+                                
+                                <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-laptop"></i>
+                                <span>欣赏</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="/admin/sn/xin/index"><i class="fa fa-angle-double-right"></i> 查看欣赏</a></li>
+                                <li><a href="/admin/sn/xin/create"><i class="fa fa-angle-double-right"></i> 添加欣赏</a></li>
+                                
+                            </ul>
+                        </li>
+                                <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-laptop"></i>
+                                <span>经典语录</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="/admin/sn/yulu/index"><i class="fa fa-angle-double-right"></i> 查看语录</a></li>
+                                <li><a href="/admin/sn/yulu/create"><i class="fa fa-angle-double-right"></i> 添加语录</a></li>
+                                
+                            </ul>
+                        </li>
                                 
                             </ul>
                         </li>
