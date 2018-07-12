@@ -54,7 +54,7 @@
                         <div class="container" style="float:right;width:100%;margin-top:10px">
                                 <!-- THE MESSAGES -->
                                 <table class="table table-bordered table-striped  table-hover" >
-                                <a class="btn btn-danger" width="" height="" href="/admin/houtai/user/del"><div class="glyphicon glyphicon-trash">&nbsp;<font size="3">批量删除</font></div></a>
+                               
                                 <tr class="unread text-center">
                                 <td >选项</td>
                                     <td>ID</td>

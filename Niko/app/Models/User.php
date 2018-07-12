@@ -10,4 +10,9 @@ class User extends Model
     public $table = 'sn_users';
     //不验证事件字段
     //public $timestamps = false;
+    // 配置一对多关系
+    public function user()
+    {
+        return $this->hasMany('App\Models\Wen','uid');
+    } 
 }

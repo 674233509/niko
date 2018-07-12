@@ -24,7 +24,7 @@
                     <input type="text" class="form-control"  name="username" id="username" value="{{$data->username}}" placeholder="username">
                 </div>
                 <div class="form-group">
-                    <label for="password">密码</label>
+                    <label for="password">修改密码</label>
                     <input type="password" name="password" class="form-control" id="password" placeholder="password">
                 </div>
 
@@ -54,7 +54,7 @@
 
                 <div class="form-group">
                     <label for="pic">头像上传</label>
-                    <input type="file" id="pic"  name="pic"><img  src="{{ $data->pic }}">
+                    <input type="file" id="pic" value="/{{ $data->pic }}" name="pic"><img name="img" width="70px" src="/{{ $data->pic }}">
                     <p class="help-block">一个美丽的心情从头像开始.</p>
                 </div>
                 <div class="form-group text-center" style="margin-top:-60px">
