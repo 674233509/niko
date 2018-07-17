@@ -30,7 +30,7 @@ class LoginController extends Controller
         // echo '验证';
         // 接收传输过来的用户名和密码
         $data = $request->except(['_token']);
-        dump($data);//打印测试
+        //dump($data);//打印测试
     }
 
     /**

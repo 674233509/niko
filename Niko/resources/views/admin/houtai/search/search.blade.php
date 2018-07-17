@@ -38,11 +38,11 @@
                                     <!-- Action button -->
                                 </div>
                                 <div class="col-sm-6 search-form">
-                                    <form action="#" class="text-right">
+                                    <form action="/admin/houtai/search/index" method="get" class="text-right">
                                         <div class="input-group">
-                                            <input type="text" name="search" class="form-control input-sm" placeholder="用户名">
+                                            <input type="text" name="search" class="form-control input-sm" placeholder="精确搜索...">
                                             <div class="input-group-btn">
-                                                <button type="submit" name="q" class="btn btn-sm btn-primary"><i class="fa fa-search"></i></button>
+                                                <button type="submit" name="q" class="btn btn-sm btn-primary" style="height:30px"><i class="fa fa-search"></i></button>
                                             </div>
                                         </div>                      
                                     </form>
@@ -56,49 +56,30 @@
                                 <table class="table table-bordered table-striped  table-hover" >
                                
                                 <tr class="unread text-center">
-                                <td >选项</td>
+                                
                                     <td>ID</td>
                                     <td>用户账号</td>
-                                    <td>邮箱</td>
-                                    <td>手机号</td>
-                                    <td>性别</td>
-                                    <td>权限</td>
-                                    <td>注册时间</td>
-                                    <td>注册IP</td>
+                                    <td>文章标题</td>
+                                    <td>最新评论时间</td>
+                                    <td>点击数量</td>
+                                    <td>创建用户时间</td>
+                                    <td>用户IP</td>
                                     <td>操作</td>
                                 </tr>
-                                @foreach($data as $k=>$v)
+                                @foreach($res as $k=>$v)
                                     <tr class="text-center">
-                                        <td class="small-col">
-                                            <input type="checkbox"  name="che[]" value="{{$v->id}}" />
-                                        </td>
-                                        <td >{{ $v->id }}</td>
-                                        <td >{{ $v->username }}</td>
-                                        <td >{{ $v->mail }}</td>
-                                        <td >{{ $v->tel }}</td>
-                                        <td >
-                                           @if ($v->sex =='w')
-                                           女
-                                           @elseif($v->sex =='m')
-                                           男
-                                           @else
-                                           -
-                                           @endif
-                                        </td>
-                                        <td >
-                                          @if ($v->qx =='1')
-                                           管理员
-                                           
-                                           @else
-                                           会员用户
-                                           @endif
-                                        </td>
-                                        <td >{{ $v->rtime }}</td>
-                                        <td >{{ $v->zip }}</td>
+                                       <td>{{ $v -> id }} </td>
+                                       <td>{{ $v -> username }} </td>
+                                       <td>{{ $v -> wen -> title }} </td>
+                                       <td>{{ $v -> ping -> ptime }} </td>
+                                       <td>{{ $v -> wen -> dianji }} </td>
+                                       <td>{{ $v -> userxiang -> rtime }} </td>
+                                       <td>{{ $v -> userxiang -> zip }} </td>
+                                       
                                         <td >
                                             
-                                            <a style="display: inline;" href="/admin/houtai/user/destroy/{{$v->id}}" class="btn btn-danger">删除</a>
-                                            <a style="display: inline;" href="/admin/houtai/user/edit/{{$v->id}}" class="btn btn-warning">修改</a>
+                                            <a style="display: inline;" href="/sn/wen/index">欣赏美文</a>
+                                           
                                         </td>
                                     </tr> 
                                 @endforeach
@@ -109,7 +90,7 @@
                 </div><!-- /.box-body -->
                 <div class="box-footer clearfix">
                     <div class="pages pull-right">
-                        {!! $data->appends(['search'=>$search])->render() !!}
+                        {!! $res->appends(['search'=>$search])->render() !!}
                     </div>
                 </div><!-- box-footer -->
             </div><!-- /.box -->

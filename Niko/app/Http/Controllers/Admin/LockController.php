@@ -7,36 +7,17 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\User;
-use App\Models\Wen;
-class SearchController extends Controller
+class LockController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function getIndex(Request $request)
+    public function getIndex()
     {
-        //接收搜索的数据
-        $search = $request->input('search');
-       
-        //获取数据库的信息
-        $res = User::where('id','=',$search)->orWhere('username','=',$search)->paginate(3);
-        //dd($res);
-        //判断搜索的信息是否为空
-        if($search == null){
-           return redirect('/errors')->with('error','搜索内容不能为空');
-            
-        }else if($res){
-            
-            return view('admin.houtai.search.search',['title'=>'搜索结果','res'=>$res,'search'=>$search]);
-        }else{
-            return redirect('/errors')->with('error','搜索内容不存在');
-        }
-        
-       
-       
-
+        //锁屏界面
+        return view('admin.houtai.suoping.lock');
     }
 
     /**
@@ -44,9 +25,30 @@ class SearchController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function postCreate(Request $request)
     {
-        //
+        //接收表单传来的信息
+        $password = $request->input('password');
+        $d = $request->has('password');
+        if($request->session()->has('user')){
+             if($d){
+                $data = session('user');
+                //获取数据库数据
+                $res = User::where('username',$data)->first();
+                if($res->password == $password){
+                    
+                    return redirect('/admin/houtai/shouye/index');
+                }else{
+                    return back()->with('error','请输入正确的密码');
+                }
+                
+            }else{
+                return back()->with('error','密码不能为空');
+            }
+         }else{
+            return back()->with('error','请登录');
+         }
+         //return redirect('/admin/houtai/shouye/index');
     }
 
     /**

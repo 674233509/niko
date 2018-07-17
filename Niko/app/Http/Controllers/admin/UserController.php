@@ -10,6 +10,8 @@ use App\Models\User;
 use DB;
 use App\Models\Forbiddens;
 use Hash;
+use Validator;
+use App\Http\Requests\Admin\UserRequest;
 class UserController extends Controller
 {
     /**
@@ -48,7 +50,7 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function postStore(Request $request)
+    public function postStore(UserRequest $request)
     {
         
         //开启事物
@@ -57,15 +59,17 @@ class UserController extends Controller
         //$request->flashExcept('_token','password','repass');
         //返回上一步并将数据存在闪存中
         //return back()->withInput();
-        //获取表单的值
-        $username = $request->input('username');
-        $password = $request->input('password');
-        $repass = $request->input('repass');
 
+
+       
+        //获取表单的值
+        $data = $request -> except('_token');
+        $users = DB::table('sn_users')->where('username',$data['username'])->first();
+        if($users){
+             return back()->with('error','用户名已存在')->withInput();
+        }
         
-        if($password != $repass){
-            DB::rollBack();
-            //返回上一步并将数据存在闪存中  并提示错误信息
+        if($data['password'] != $data['repass']){
             return back()->with('error','密码不一致')->withInput();
         }
         
@@ -73,7 +77,7 @@ class UserController extends Controller
         //$pass = Hash::make($password);
         //用户登录验证密码   使用  Hash::check('用户输入的密码',$pass);
         //接收提交的数据
-        $data = $request -> except('_token');
+        
         //dump($data);
         //获取IP
         $ip = $request ->ip();
@@ -96,7 +100,7 @@ class UserController extends Controller
 
         //dd(date('Y-m-d H:s:i',time()));
         //获取表单提交到sn_users表里的信息，并返回id
-       $uid = DB::table('sn_users')->insertGetId(['username'=>$data['username'],'password'=>$password,'qx'=>$data['qx'],'pic'=>$data['pic']]);
+       $uid = DB::table('sn_users')->insertGetId(['username'=>$data['username'],'password'=>$data['password'],'qx'=>$data['qx'],'pic'=>$data['pic']]);
        $res = DB::table('sn_userxiangs')->insert(['uid'=>$uid,'sex'=>$data['sex'],'tel'=>$data['tel'],'mail'=>$data['mail'],'rtime'=>date('Y-m-d H:i:s',time()),'zip'=>$ip]);
        
        
@@ -117,14 +121,18 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function getDel(Request $request){
+
        //接收数据
-       
+        $d = $request->input('name');
+        dd($d);
+       //数据库信息
         $data = DB::table('sn_users as u')
         
         ->join('sn_userxiangs as ux','u.id','=','ux.uid')
         ->select('u.id','u.username','u.qx','ux.mail','ux.zip','ux.rtime','ux.tel','ux.sex')
         ->first();
         //dump($data);
+
     
     }
 
@@ -135,8 +143,12 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function getEdit($id)
+    public function getEdit(Request $request,$id)
     {
+        if($request->session()->has('id')){
+            $id = session('id');
+
+        }
         //接收数据
         $data = DB::table('sn_users as u')
         ->where('u.id','=',$id)
@@ -162,10 +174,16 @@ class UserController extends Controller
         //'username' => 'alpha_num'
         //'name' => 'size:10'
         $data = $request -> except('_token');
-        if($data['password']!=$data['repass']){
-            return back()->with('error','密码必须一致且不能为空');
-        }else if($data['password']=="" || $data['repass']==""){
-            return back()->with('error','密码不能为空');
+       if($data['username'] == ""){
+            return back()->with('error','用户名不能为空')->withInput();
+        }else if($data['password'] == ""){
+            return back()->with('error','密码不能为空')->withInput();
+        }else if($data['password'] != $data['repass']){
+            return back()->with('error','密码不一致')->withInput();
+        }else if($data['mail'] == ""){
+            return back()->with('error','邮箱不能为空')->withInput();
+        }else if($data['tel'] == ""){
+            return back()->with('error','手机号不能为空')->withInput();
         }
        
         
@@ -199,7 +217,7 @@ class UserController extends Controller
                
                 if($res2 && $res1){
                     //DB::commit();
-                   return redirect('/admin/houtai/user/index')->with('success','修改成功');
+                   return redirect('/admin/houtai/user/index')->with('success','修改成功，此用户请重新登录');
                }else{
                     //DB::rollBack();
                     return back()->with('error','修改失败');
@@ -213,7 +231,7 @@ class UserController extends Controller
                
                 if($res2 && $res1){
                     //DB::commit();
-                   return redirect('/admin/houtai/user/index')->with('success','修改成功');
+                   return redirect('/admin/houtai/user/index')->with('success','修改成功，此用户请重新登录');
                }else{
                     //DB::rollBack();
                     return back()->with('error','修改失败');

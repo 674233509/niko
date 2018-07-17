@@ -39,6 +39,7 @@
                     <div class="form-group">
                         <input type="password" name="repass" id="repass" class="form-control" placeholder="确认密码"/>
                     </div>
+                    <p class="text-center text-warning">{{session('error')}}</p>
                 </div>
                 <div class="footer">                    
 

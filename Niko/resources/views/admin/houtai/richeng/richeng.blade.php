@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>AdminLTE | Dashboard</title>
+        <title>AdminLTE | Calendar</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <!-- bootstrap 3.0.2 -->
         <link href="/yangshi/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -10,13 +10,12 @@
         <link href="/yangshi/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
         <!-- Ionicons -->
         <link href="/yangshi/css/ionicons.min.css" rel="stylesheet" type="text/css" />
-         <!-- fullCalendar -->
+        <!-- fullCalendar -->
         <link href="/yangshi/css/fullcalendar/fullcalendar.css" rel="stylesheet" type="text/css" />
         <link href="/yangshi/css/fullcalendar/fullcalendar.print.css" rel="stylesheet" type="text/css" media='print' />
         <!-- Theme style -->
         <link href="/yangshi/css/AdminLTE.css" rel="stylesheet" type="text/css" />
-        <script type="text/javascript" src="/yangshi/js/jquery-1.8.3.min.js"></script>
-        <script type="text/javascript" src="/yangshi/ajax/ajax3.0-min.js"></script>
+        
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -46,10 +45,10 @@
                         <li class="dropdown messages-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="fa fa-envelope"></i>
-                                <span class="label label-success"></span>
+                                <span class="label label-success">(消息数量)</span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li class="header"></li>
+                                <li class="header">你有（数量）条信息</li>
                                 <li>
                                     <!-- inner menu: contains the actual data -->
                                     <ul class="menu">
@@ -118,47 +117,151 @@
                                 <li class="footer"><a href="#">See All Messages</a></li>
                             </ul>
                         </li>
-                        
+                        <!-- Notifications: style can be found in dropdown.less -->
+                        <li class="dropdown notifications-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-warning"></i>
+                                <span class="label label-warning">10</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header">You have 10 notifications</li>
+                                <li>
+                                    <!-- inner menu: contains the actual data -->
+                                    <ul class="menu">
+                                        <li>
+                                            <a href="#">
+                                                <i class="ion ion-ios7-people info"></i> 5 new members joined today
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fa fa-warning danger"></i> Very long description here that may not fit into the page and may cause design problems
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fa fa-users warning"></i> 5 new members joined
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#">
+                                                <i class="ion ion-ios7-cart success"></i> 25 sales made
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="ion ion-ios7-person danger"></i> You changed your username
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="footer"><a href="#">View all</a></li>
+                            </ul>
+                        </li>
+                        <!-- Tasks: style can be found in dropdown.less -->
+                        <li class="dropdown tasks-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-tasks"></i>
+                                <span class="label label-danger">9</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header">You have 9 tasks</li>
+                                <li>
+                                    <!-- inner menu: contains the actual data -->
+                                    <ul class="menu">
+                                        <li><!-- Task item -->
+                                            <a href="#">
+                                                <h3>
+                                                    Design some buttons
+                                                    <small class="pull-right">20%</small>
+                                                </h3>
+                                                <div class="progress xs">
+                                                    <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                        <span class="sr-only">20% Complete</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li><!-- end task item -->
+                                        <li><!-- Task item -->
+                                            <a href="#">
+                                                <h3>
+                                                    Create a nice theme
+                                                    <small class="pull-right">40%</small>
+                                                </h3>
+                                                <div class="progress xs">
+                                                    <div class="progress-bar progress-bar-green" style="width: 40%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                        <span class="sr-only">40% Complete</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li><!-- end task item -->
+                                        <li><!-- Task item -->
+                                            <a href="#">
+                                                <h3>
+                                                    Some task I need to do
+                                                    <small class="pull-right">60%</small>
+                                                </h3>
+                                                <div class="progress xs">
+                                                    <div class="progress-bar progress-bar-red" style="width: 60%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                        <span class="sr-only">60% Complete</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li><!-- end task item -->
+                                        <li><!-- Task item -->
+                                            <a href="#">
+                                                <h3>
+                                                    Make beautiful transitions
+                                                    <small class="pull-right">80%</small>
+                                                </h3>
+                                                <div class="progress xs">
+                                                    <div class="progress-bar progress-bar-yellow" style="width: 80%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                        <span class="sr-only">80% Complete</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li><!-- end task item -->
+                                    </ul>
+                                </li>
+                                <li class="footer">
+                                    <a href="#">View all tasks</a>
+                                </li>
+                            </ul>
+                        </li>
                         <!-- User Account: style can be found in dropdown.less -->
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="glyphicon glyphicon-user"></i>
-                                @if(session('user'))
-                                <span> {{ session('user') }}<i class="caret"></i></span>
+                                @if(session('denglu'))
+                                <span> {{ session('denglu') }}<i class="caret"></i></span>
                                 @endif
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- User image -->
                                 <li class="user-header bg-light-blue">
-                                @if(session('pic'))
-                                <img src="/{{ session('pic') }}" class="img-circle" alt="User Image" />
-                                @else
-                                <img src="/yangshi/img/avatar3.png" class="img-circle" alt="User Image" />
-                                @endif
-                                    
-                                    @if(session('user'))
+                                    <img src="/yangshi/img/avatar3.png" class="img-circle" alt="User Image" />博主头像
                                     <p>
-                                        {{ session('user') }} - 的个人微博
-                                        <small>Member since Nov. 2018</small>
+                                        博主名 - 的个人微博
+                                        <small>Member since Nov. 2012</small>
                                     </p>
-                                    @else
-                                    <p>
-                                        <a href="/admin/houtai/login/index">请登录</a>
-                                        <small>Member since Nov. 2018</small>
-                                    </p>
-                                    @endif
                                 </li>
                                 <!-- Menu Body -->
                                 <li class="user-body">
-                                    <div class=" ">
-                                        <p >座右铭：年华一去不复返，事业放弃再难成。 —— 白郎宁</p>
+                                    <div class="col-xs-4 text-center">
+                                        <a href="#">Followers</a>
                                     </div>
-                                    
+                                    <div class="col-xs-4 text-center">
+                                        <a href="#">Sales</a>
+                                    </div>
+                                    <div class="col-xs-4 text-center">
+                                        <a href="#">Friends</a>
+                                    </div>
                                 </li>
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
                                     <div class="pull-left">
-                                        <a href="/admin/houtai/jianjie/index" class="btn btn-default btn-flat">简介</a>
+                                        <a href="#" class="btn btn-default btn-flat">简介</a>
                                     </div>
                                     <div class="pull-right">
                                         <a href="/admin/houtai/login/logout" class="btn btn-default btn-flat">退出</a>
@@ -172,31 +275,19 @@
         </header>
         <div class="wrapper row-offcanvas row-offcanvas-left">
             <!-- Left side column. contains the logo and sidebar -->
-            <aside class="left-side sidebar-offcanvas">
+            <aside class="left-side sidebar-offcanvas">                
                 <!-- sidebar: style can be found in sidebar.less -->
                 <section class="sidebar">
                     <!-- Sidebar user panel -->
                     <div class="user-panel">
                         <div class="pull-left image">
-                        @if(session('pic'))
-                            <img src="/{{ session('pic') }}" class="img-circle" alt="User Image" />
-                            @else
-                            <img src="/yangshi/img/avatar3.png" class="img-circle" alt="User Image" /><br>
-                            
-                        @endif
+                            <img src="/yangshi/img/avatar3.png" class="img-circle" alt="User Image" />
+                            博主头像
                         </div>
                         <div class="pull-left info">
-                        @if(session('user'))
-                            <p>
-                                Hello,{{ session('user') }}
-                               
-                            </p>
+                            <p>Hello, 博主名</p>
+
                             <a href="#"><i class="fa fa-circle text-success"></i> 在线状态</a>
-                        @else
-                            <p><a href="/admin/houtai/login/index">请登录</a></p>
-                            <a href="#"><i class="fa fa-circle text-inverse"></i> 在线状态</a>
-                        @endif
-                            
                         </div>
                     </div>
                     <!-- search form -->
@@ -212,7 +303,7 @@
                     <!-- sidebar menu: : style can be found in sidebar.less -->
                     <ul class="sidebar-menu">
                         <li class="active">
-                            <a href="/admin/houtai/shouye/index">
+                            <a href="index.html">
                                 <i class="fa fa-dashboard"></i> <span>主页</span>
                             </a>
                         </li>
@@ -294,7 +385,7 @@
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="/admin/houtai/jianjie/index"><i class="fa fa-angle-double-right"></i> 个人信息</a></li>
+                                <li><a href="pages/charts/morris.html"><i class="fa fa-angle-double-right"></i> 个人信息</a></li>
                                 <li><li class="treeview">
                             <a href="#">
                                 <i class="fa fa-edit"></i>
@@ -410,125 +501,267 @@
                             </ul>
                         </li>
 
-
-
-
-
-                        <li class="treeview">
-                            <a href="#">
-                                <i class="fa fa-edit"></i> <span>Forms</span>
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li><a href="pages/forms/general.html"><i class="fa fa-angle-double-right"></i> General Elements</a></li>
-                                <li><a href="pages/forms/advanced.html"><i class="fa fa-angle-double-right"></i> Advanced Elements</a></li>
-                                <li><a href="pages/forms/editors.html"><i class="fa fa-angle-double-right"></i> Editors</a></li>
-                            </ul>
-                        </li>
-                        <li class="treeview">
-                            <a href="#">
-                                <i class="fa fa-table"></i> <span>Tables</span>
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li><a href="pages/tables/simple.html"><i class="fa fa-angle-double-right"></i> Simple tables</a></li>
-                                <li><a href="pages/tables/data.html"><i class="fa fa-angle-double-right"></i> Data tables</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="pages/calendar.html">
-                                <i class="fa fa-calendar"></i> <span>Calendar</span>
-                                <small class="badge pull-right bg-red">3</small>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="pages/mailbox.html">
-                                <i class="fa fa-envelope"></i> <span>Mailbox</span>
-                                <small class="badge pull-right bg-yellow">12</small>
-                            </a>
-                        </li>
-                        <li class="treeview">
-                            <a href="#">
-                                <i class="fa fa-folder"></i> <span>Examples</span>
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li><a href="pages/examples/invoice.html"><i class="fa fa-angle-double-right"></i> Invoice</a></li>
-                                <li><a href="pages/examples/login.html"><i class="fa fa-angle-double-right"></i> Login</a></li>
-                                <li><a href="pages/examples/register.html"><i class="fa fa-angle-double-right"></i> Register</a></li>
-                                <li><a href="pages/examples/lockscreen.html"><i class="fa fa-angle-double-right"></i> Lockscreen</a></li>
-                                <li><a href="pages/examples/404.html"><i class="fa fa-angle-double-right"></i> 404 Error</a></li>
-                                <li><a href="pages/examples/500.html"><i class="fa fa-angle-double-right"></i> 500 Error</a></li>
-                                <li><a href="pages/examples/blank.html"><i class="fa fa-angle-double-right"></i> Blank Page</a></li>
-                            </ul>
-                        </li>
+                       
                     </ul>
                 </section>
                 <!-- /.sidebar -->
             </aside>
-            
-        <!-- add new calendar event modal -->
-<!-- 内容页面 -->
- <!-- Right side column. Contains the navbar and content of the page -->
- 
+
+            <!-- Right side column. Contains the navbar and content of the page -->
             <aside class="right-side">                
                 <!-- Content Header (Page header) -->
-@section('hou.index')
                 <section class="content-header">
                     <h1>
-                        Blank page
-                        <small>Control panel</small>
+                        日程表
+                        <small>控制面板</small>
                     </h1>
-                    <ol class="breadcrumb">
-                        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                        <li class="active">Blank page</li>
-                    </ol>
+                    
                 </section>
-
-
 
                 <!-- Main content -->
                 <section class="content">
 
 
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="box box-primary">
+                                <div class="box-header">
+                                    <h4 class="box-title">拖曳事件</h4>
+                                </div>
+                                <div class="box-body">
+                                    <!-- the events -->
+                                    <div id='external-events'>                                 
+                                        <div class='external-event bg-green'>午饭</div>
+                                        <div class='external-event bg-red'>回家</div>
+                                        <div class='external-event bg-aqua'>开会</div>
+                                        <div class='external-event bg-yellow'>工作</div>
+                                        <div class='external-event bg-navy'>睡觉</div>
+                                        <p>
+                                            <input type='checkbox' id='drop-remove' /> <label for='drop-remove'>移除选中项</label>
+                                        </p>
+                                    </div>
+                                </div><!-- /.box-body -->
+                            </div><!-- /. box -->
+                            <div class="box box-primary">
+                                <div class="box-header">
+                                    <h3 class="box-title">添加事件</h3>
+                                </div>
+                                <div class="box-body">
+                                    <div class="btn-group" style="width: 100%; margin-bottom: 10px;">
+                                        <button type="button" id="color-chooser-btn" class="btn btn-danger btn-block btn-sm dropdown-toggle" data-toggle="dropdown">颜色 <span class="caret"></span></button>
+                                        <ul class="dropdown-menu" id="color-chooser">
+                                            <li><a class="text-green" href="#"><i class="fa fa-square"></i> 绿色</a></li>
+                                            <li><a class="text-blue" href="#"><i class="fa fa-square"></i> 蓝色</a></li>                                            
+                                            <li><a class="text-navy" href="#"><i class="fa fa-square"></i> 海军蓝</a></li>                                            
+                                            <li><a class="text-yellow" href="#"><i class="fa fa-square"></i> 黄色</a></li>
+                                            <li><a class="text-orange" href="#"><i class="fa fa-square"></i> 桔色</a></li>
+                                            <li><a class="text-aqua" href="#"><i class="fa fa-square"></i> 浅蓝色</a></li>
+                                            <li><a class="text-red" href="#"><i class="fa fa-square"></i> 红色</a></li>
+                                            <li><a class="text-fuchsia" href="#"><i class="fa fa-square"></i> 紫红色</a></li>
+                                            <li><a class="text-purple" href="#"><i class="fa fa-square"></i> 紫色</a></li>
+                                        </ul>
+                                    </div><!-- /btn-group -->
+                                     <form action="/admin/houtai/search/index" method="get" class="sidebar-form">
+                                    <div class="input-group">     
+
+                                        <input id="new-event" type="text" name="label" class="form-control" placeholder="事件标题">
+                                        <div class="input-group-btn">
+                                            <button id="add-new-event" type="submit" class="btn btn-default btn-flat">添加</button>
+                                        </div><!-- /btn-group -->
+                                    
+                                    </div><!-- /input-group -->
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div><!-- /.col -->
+                        <div class="col-md-9">
+                            <div class="box box-primary">                             
+                                <div class="box-body no-padding">
+                                    <!-- THE CALENDAR -->
+                                    <div id="calendar"></div>
+                                </div><!-- /.box-body -->
+                            </div><!-- /. box -->
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->  
+
+
                 </section><!-- /.content -->
-@show
             </aside><!-- /.right-side -->
         </div><!-- ./wrapper -->
 
-<!-- 内容页面结束 -->
-        <!-- 后台登录验证js -->
-        
+
         <!-- jQuery 2.0.2 -->
         <script src="/yangshi/js/jquery.min.js"></script>
         <!-- jQuery UI 1.10.3 -->
         <script src="/yangshi/js/jquery-ui-1.10.3.min.js" type="text/javascript"></script>
         <!-- Bootstrap -->
         <script src="/yangshi/js/bootstrap.min.js" type="text/javascript"></script>
-        <!-- Morris.js charts -->
-        <script src="/yangshi/js/raphael-min.js"></script>
-        <script src="/yangshi/js/plugins/morris/morris.min.js" type="text/javascript"></script>
-        <!-- Sparkline -->
-        <script src="/yangshi/js/plugins/sparkline/jquery.sparkline.min.js" type="text/javascript"></script>
-        <!-- jvectormap -->
-        <script src="/yangshi/js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js" type="text/javascript"></script>
-        <script src="/yangshi/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js" type="text/javascript"></script>
-        <!-- fullCalendar -->
-        <script src="/yangshi/js/plugins/fullcalendar/fullcalendar.min.js" type="text/javascript"></script>
-        <!-- jQuery Knob Chart -->
-        <script src="/yangshi/js/plugins/jqueryKnob/jquery.knob.js" type="text/javascript"></script>
-        <!-- daterangepicker -->
-        <script src="/yangshi/js/plugins/daterangepicker/daterangepicker.js" type="text/javascript"></script>
-        <!-- Bootstrap WYSIHTML5 -->
-        <script src="/yangshi/js/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js" type="text/javascript"></script>
-        <!-- iCheck -->
-        <script src="/yangshi/js/plugins/iCheck/icheck.min.js" type="text/javascript"></script>
-
         <!-- AdminLTE App -->
         <script src="/yangshi/js/AdminLTE/app.js" type="text/javascript"></script>
-        
-        <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-        <script src="/yangshi/js/AdminLTE/dashboard.js" type="text/javascript"></script>        
+        <!-- fullCalendar -->
+        <script src="/yangshi/js/plugins/fullcalendar/fullcalendar.min.js" type="text/javascript"></script>
+        <!-- Page specific script -->
+        <script type="text/javascript">
+            $(function() {
+
+                /* initialize the external events
+                 -----------------------------------------------------------------*/
+                function ini_events(ele) {
+                    ele.each(function() {
+
+                        // create an Event Object (http://arshaw.com/fullcalendar/docs/event_data/Event_Object/)
+                        // it doesn't need to have a start or end
+                        var eventObject = {
+                            title: $.trim($(this).text()) // use the element's text as the event title
+                        };
+
+                        // store the Event Object in the DOM element so we can get to it later
+                        $(this).data('eventObject', eventObject);
+
+                        // make the event draggable using jQuery UI
+                        $(this).draggable({
+                            zIndex: 1070,
+                            revert: true, // will cause the event to go back to its
+                            revertDuration: 0  //  original position after the drag
+                        });
+
+                    });
+                }
+                ini_events($('#external-events div.external-event'));
+
+                /* initialize the calendar
+                 -----------------------------------------------------------------*/
+                //Date for the calendar events (dummy data)
+                var date = new Date();
+                var d = date.getDate(),
+                        m = date.getMonth(),
+                        y = date.getFullYear();
+                $('#calendar').fullCalendar({
+                    header: {
+                        left: 'prev,next today',
+                        center: 'title',
+                        right: 'month,agendaWeek,agendaDay'
+                    },
+                    buttonText: {//This is to add icons to the visible buttons
+                        prev: "<span class='fa fa-caret-left'></span>",
+                        next: "<span class='fa fa-caret-right'></span>",
+                        today: 'today',
+                        month: 'month',
+                        week: 'week',
+                        day: 'day'
+                    },
+                    //Random default events
+                    events: [
+                        {
+                            title: 'All Day Event',
+                            start: new Date(y, m, 1),
+                            backgroundColor: "#f56954", //red 
+                            borderColor: "#f56954" //red
+                        },
+                        {
+                            title: 'Long Event',
+                            start: new Date(y, m, d - 5),
+                            end: new Date(y, m, d - 2),
+                            backgroundColor: "#f39c12", //yellow
+                            borderColor: "#f39c12" //yellow
+                        },
+                        {
+                            title: 'Meeting',
+                            start: new Date(y, m, d, 10, 30),
+                            allDay: false,
+                            backgroundColor: "#0073b7", //Blue
+                            borderColor: "#0073b7" //Blue
+                        },
+                        {
+                            title: 'Lunch',
+                            start: new Date(y, m, d, 12, 0),
+                            end: new Date(y, m, d, 14, 0),
+                            allDay: false,
+                            backgroundColor: "#00c0ef", //Info (aqua)
+                            borderColor: "#00c0ef" //Info (aqua)
+                        },
+                        {
+                            title: 'Birthday Party',
+                            start: new Date(y, m, d + 1, 19, 0),
+                            end: new Date(y, m, d + 1, 22, 30),
+                            allDay: false,
+                            backgroundColor: "#00a65a", //Success (green)
+                            borderColor: "#00a65a" //Success (green)
+                        },
+                        {
+                            title: 'Click for Google',
+                            start: new Date(y, m, 28),
+                            end: new Date(y, m, 29),
+                            url: 'http://google.com/',
+                            backgroundColor: "#3c8dbc", //Primary (light-blue)
+                            borderColor: "#3c8dbc" //Primary (light-blue)
+                        }
+                    ],
+                    editable: true,
+                    droppable: true, // this allows things to be dropped onto the calendar !!!
+                    drop: function(date, allDay) { // this function is called when something is dropped
+
+                        // retrieve the dropped element's stored Event Object
+                        var originalEventObject = $(this).data('eventObject');
+
+                        // we need to copy it, so that multiple events don't have a reference to the same object
+                        var copiedEventObject = $.extend({}, originalEventObject);
+
+                        // assign it the date that was reported
+                        copiedEventObject.start = date;
+                        copiedEventObject.allDay = allDay;
+                        copiedEventObject.backgroundColor = $(this).css("background-color");
+                        copiedEventObject.borderColor = $(this).css("border-color");
+
+                        // render the event on the calendar
+                        // the last `true` argument determines if the event "sticks" (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
+                        $('#calendar').fullCalendar('renderEvent', copiedEventObject, true);
+
+                        // is the "remove after drop" checkbox checked?
+                        if ($('#drop-remove').is(':checked')) {
+                            // if so, remove the element from the "Draggable Events" list
+                            $(this).remove();
+                        }
+
+                    }
+                });
+
+                /* ADDING EVENTS */
+                var currColor = "#f56954"; //Red by default
+                //Color chooser button
+                var colorChooser = $("#color-chooser-btn");
+                $("#color-chooser > li > a").click(function(e) {
+                    e.preventDefault();
+                    //Save color
+                    currColor = $(this).css("color");
+                    //Add color effect to button
+                    colorChooser
+                            .css({"background-color": currColor, "border-color": currColor})
+                            .html($(this).text()+' <span class="caret"></span>');
+                });
+                $("#add-new-event").click(function(e) {
+                    e.preventDefault();
+                    //Get value and make sure it is not null
+                    var val = $("#new-event").val();
+                    if (val.length == 0) {
+                        return;
+                    }
+
+                    //Create event
+                    var event = $("<div />");
+                    event.css({"background-color": currColor, "border-color": currColor, "color": "#fff"}).addClass("external-event");
+                    event.html(val);
+                    $('#external-events').prepend(event);
+
+                    //Add draggable funtionality
+                    ini_events(event);
+
+                    //Remove event from text input
+                    $("#new-event").val("");
+                });
+            });
+        </script>
 
     </body>
 </html>
