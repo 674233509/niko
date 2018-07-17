@@ -3,6 +3,7 @@
 <head>
 <meta charset="gb2312">
 <title>上帝用左手Sn</title>
+
 <!--搜索按钮css-->
 <link href="/yangshi/css/bootstrap2.css" rel="stylesheet" type="text/css" media="all"/>
 <link href="/yangshi/css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -94,6 +95,9 @@ Qfast(false, 'widgets', function () {
 <!-- 轮播图样式结束 -->
 </head>
 <body>
+<script type="text/javascript" color='50, 205, 50' zIndex='-1' opacity='1' count='99' src="/yangshi/beijing/1.js"></script>
+
+<div class="note-bottom">
 <header>
   <h1><a href="/">God Only Knows</a></h1>
   <p>这夏天里流动的风情，是停不住的舞步和唱不完的情歌，当玫瑰花瓣飘飞的那一刻，风会带走所有的想念.......</p>
@@ -108,7 +112,9 @@ Qfast(false, 'widgets', function () {
        <li><a href="ablumlist.html">我的相册</a></li>
        <li><a href="book.html">留言版</a></li>
        <li><a href="/qian/sn/ping/index">最新评论</a></li>
-       <li><a href="/qian/sn/ping/create"添加评论</a></li>
+       <li><a href="/qian/sn/ping/create">添加评论</a></li>
+       <li><a href="/qian/sn/yin/create">音乐房</a></li>
+
      </ul>
      <script src="/yangshi/js/silder.js"></script><!--获取当前页导航 高亮显示标题-->
 </div>
@@ -130,9 +136,12 @@ Qfast(false, 'widgets', function () {
               </div>  
 <!-- 搜索按钮结束 -->
 
+
+
+
  @section('qian.index')
 
   @show
-
+</div>
 </body>
 </html>

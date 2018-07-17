@@ -24,20 +24,26 @@ Route::get('/admin',function () {
 
 
 
-// 肖成路由
+// 小成路由
 //友情链接
 Route::controller('/admin/fri','admin\FriController');
 //广告路由
 Route::controller('/admin/guang','admin\GuangController');
-
 //轮播路由
-Route::controller('/admin/lun','admin\LunController');
+// Route::controller('/admin/lun','admin\LunController');
 //配置路由
 Route::controller('/admin/sn/peizhi','hou\PeizhiController');
 //评论路由
 Route::controller('/admin/sn/ping','hou\PingController');
+//回收站
+Route::controller('/admin/sn/hui','hou\HuiController');
+//音乐
+Route::controller('/admin/sn/yin','hou\YinController');
+
 //前台评论
 Route::controller('/qian/sn/ping','qian\PingController');
+//前台音乐
+Route::controller('/qian/sn/yin','qian\YinController');
 
 
 

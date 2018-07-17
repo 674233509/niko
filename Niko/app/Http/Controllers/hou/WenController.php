@@ -194,17 +194,33 @@ class WenController extends Controller
 
     }
     // 删除
-    public function getDelete($id)
+    public function getDelete($id,$str)
     {
         // echo $id;
         // $data = Wen::find($id);
-        $res = Wen::destroy($id);
-        if ($res) {
-            return redirect('/admin/sn/wen/index')->with('success','删除成功');
-        } else {
-            return back()->with('success','删除失败');
-        }
+
+        // $res = Wen::destroy($id);
+        // if ($res) {
+        //     return redirect('/admin/sn/wen/index')->with('success','删除成功');
+        // } else {
+        //     return back()->with('success','删除失败');
+        // }
         // dump($data);
+
+         if($str == 'delone'){
+            $wen = Wen::find($id); 
+            // dd($wen);
+            if($wen -> delete()){
+                return redirect('/admin/sn/wen/index')->with('success','删除至回收站');
+            }
+        }else{
+            $res = Wen::find($id)->forceDelete();
+
+                return redirect('/admin/sn/wen/index')->with('success','永久删除成功');
+            
+            // dump($res);
+
+        }
     }
 
     /**

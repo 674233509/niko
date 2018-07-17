@@ -1,6 +1,5 @@
-@extends('admin.default.index')
-
-@section('content')
+@extends('muban.houtai.ban')
+@section('hou.index')
   <!-- left column -->
 <div class="" style="width:800px;margin:0px auto">
     <!-- general form elements -->
@@ -37,8 +36,8 @@
 
                 <div class="form-group">
                     <label for="pic">广告图片</label>
-                    <input type="file" id="pic"  name="pic"><img  src="{{ $data->pic }}">
-                    <p class="help-block">一个美丽的心情从头像开始.</p>
+                    <input type="file" id="pic"  name="pic"><img  src="/{{ $data->pic }}">
+                  
                 </div>
             </div><!-- /.box-body -->
 

@@ -20,7 +20,7 @@ class FriController extends Controller
         //
 		
 		$data = Fris::all();
-		dump($data);
+		// dump($data);
 		//return view('qian.fri.index',['data'=>$data]);
     }
 

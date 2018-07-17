@@ -29,22 +29,7 @@
                                 
                             </div>
                         <!--下拉框-->
-                        <div class="col-md-9 col-sm-8">
-                            <div class="row pad">
-                                <div class="col-sm-6" >
-                                   
-                                    <!-- Action button -->
-                                <select style="width:150px;height:30px;position:absolute; bottom:-15px;">
-                                    <option value="chrome">最近一天</option>
-                                    <option value="safari">最近三天</option>
-                                    <option value="Edge">最近七天</option>
-                                    
-                                </select>
-                                </div>
-                                
-                            </div>
-                               
-                            </div><!-- /.row -->
+                        
 
 
                         </div><!-- /.col (LEFT) -->
@@ -100,8 +85,9 @@
                                         <td >{{ $v->pip }}</td>
                                         
                                         <td>
-                                            <a href="/admin/sn/ping/destroy/{{$v->id}}" class="btn btn-danger">删除</a>
+                                            <a href="/admin/sn/ping/destroy/{{$v->id}}/delone" class="btn btn-danger">删除</a>
                                             <a href="/admin/sn/ping/edit/{{$v->id}}" class="btn btn-warning">修改</a>
+                                            <a href="/admin/sn/ping/destroy/{{$v->id}}/delall" onclick="return confirm('确认要永久删除吗')" class="btn btn-danger">永久删除</a>
                                         </td>
                                     </tr> 
                                 @endforeach
