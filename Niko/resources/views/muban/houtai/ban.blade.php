@@ -10,6 +10,9 @@
         <link href="/yangshi/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
         <!-- Ionicons -->
         <link href="/yangshi/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+         <!-- fullCalendar -->
+        <link href="/yangshi/css/fullcalendar/fullcalendar.css" rel="stylesheet" type="text/css" />
+        <link href="/yangshi/css/fullcalendar/fullcalendar.print.css" rel="stylesheet" type="text/css" media='print' />
         <!-- Theme style -->
         <link href="/yangshi/css/AdminLTE.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="/yangshi/js/jquery-1.8.3.min.js"></script>
@@ -24,7 +27,7 @@
     <body class="skin-blue">
         <!-- header logo: style can be found in header.less -->
         <header class="header">
-            <a href="index.html" class="logo">
+            <a href="/admin/houtai/shouye/index" class="logo">
                 <!-- Add the class icon to your logo image or logo icon to add the margining -->
                 帝左Sn
             </a>
@@ -43,10 +46,10 @@
                         <li class="dropdown messages-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="fa fa-envelope"></i>
-                                <span class="label label-success">(消息数量)</span>
+                                <span class="label label-success"></span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li class="header">你有（数量）条信息</li>
+                                <li class="header"></li>
                                 <li>
                                     <!-- inner menu: contains the actual data -->
                                     <ul class="menu">
@@ -115,151 +118,47 @@
                                 <li class="footer"><a href="#">See All Messages</a></li>
                             </ul>
                         </li>
-                        <!-- Notifications: style can be found in dropdown.less -->
-                        <li class="dropdown notifications-menu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-warning"></i>
-                                <span class="label label-warning">10</span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li class="header">You have 10 notifications</li>
-                                <li>
-                                    <!-- inner menu: contains the actual data -->
-                                    <ul class="menu">
-                                        <li>
-                                            <a href="#">
-                                                <i class="ion ion-ios7-people info"></i> 5 new members joined today
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="fa fa-warning danger"></i> Very long description here that may not fit into the page and may cause design problems
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="fa fa-users warning"></i> 5 new members joined
-                                            </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="#">
-                                                <i class="ion ion-ios7-cart success"></i> 25 sales made
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="ion ion-ios7-person danger"></i> You changed your username
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="footer"><a href="#">View all</a></li>
-                            </ul>
-                        </li>
-                        <!-- Tasks: style can be found in dropdown.less -->
-                        <li class="dropdown tasks-menu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-tasks"></i>
-                                <span class="label label-danger">9</span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li class="header">You have 9 tasks</li>
-                                <li>
-                                    <!-- inner menu: contains the actual data -->
-                                    <ul class="menu">
-                                        <li><!-- Task item -->
-                                            <a href="#">
-                                                <h3>
-                                                    Design some buttons
-                                                    <small class="pull-right">20%</small>
-                                                </h3>
-                                                <div class="progress xs">
-                                                    <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                                                        <span class="sr-only">20% Complete</span>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li><!-- end task item -->
-                                        <li><!-- Task item -->
-                                            <a href="#">
-                                                <h3>
-                                                    Create a nice theme
-                                                    <small class="pull-right">40%</small>
-                                                </h3>
-                                                <div class="progress xs">
-                                                    <div class="progress-bar progress-bar-green" style="width: 40%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                                                        <span class="sr-only">40% Complete</span>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li><!-- end task item -->
-                                        <li><!-- Task item -->
-                                            <a href="#">
-                                                <h3>
-                                                    Some task I need to do
-                                                    <small class="pull-right">60%</small>
-                                                </h3>
-                                                <div class="progress xs">
-                                                    <div class="progress-bar progress-bar-red" style="width: 60%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                                                        <span class="sr-only">60% Complete</span>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li><!-- end task item -->
-                                        <li><!-- Task item -->
-                                            <a href="#">
-                                                <h3>
-                                                    Make beautiful transitions
-                                                    <small class="pull-right">80%</small>
-                                                </h3>
-                                                <div class="progress xs">
-                                                    <div class="progress-bar progress-bar-yellow" style="width: 80%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                                                        <span class="sr-only">80% Complete</span>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li><!-- end task item -->
-                                    </ul>
-                                </li>
-                                <li class="footer">
-                                    <a href="#">View all tasks</a>
-                                </li>
-                            </ul>
-                        </li>
+                        
                         <!-- User Account: style can be found in dropdown.less -->
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="glyphicon glyphicon-user"></i>
-                                @if(session('denglu'))
-                                <span> {{ session('denglu') }}<i class="caret"></i></span>
+                                @if(session('user'))
+                                <span> {{ session('user') }}<i class="caret"></i></span>
                                 @endif
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- User image -->
                                 <li class="user-header bg-light-blue">
-                                    <img src="/yangshi/img/avatar3.png" class="img-circle" alt="User Image" />博主头像
+                                @if(session('pic'))
+                                <img src="/{{ session('pic') }}" class="img-circle" alt="User Image" />
+                                @else
+                                <img src="/yangshi/img/avatar3.png" class="img-circle" alt="User Image" />
+                                @endif
+                                    
+                                    @if(session('user'))
                                     <p>
-                                        博主名 - 的个人微博
-                                        <small>Member since Nov. 2012</small>
+                                        {{ session('user') }} - 的个人微博
+                                        <small>Member since Nov. 2018</small>
                                     </p>
+                                    @else
+                                    <p>
+                                        <a href="/admin/houtai/login/index">请登录</a>
+                                        <small>Member since Nov. 2018</small>
+                                    </p>
+                                    @endif
                                 </li>
                                 <!-- Menu Body -->
                                 <li class="user-body">
-                                    <div class="col-xs-4 text-center">
-                                        <a href="#">Followers</a>
+                                    <div class=" ">
+                                        <p >座右铭：年华一去不复返，事业放弃再难成。 —— 白郎宁</p>
                                     </div>
-                                    <div class="col-xs-4 text-center">
-                                        <a href="#">Sales</a>
-                                    </div>
-                                    <div class="col-xs-4 text-center">
-                                        <a href="#">Friends</a>
-                                    </div>
+                                    
                                 </li>
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
                                     <div class="pull-left">
-                                        <a href="#" class="btn btn-default btn-flat">简介</a>
+                                        <a href="/admin/houtai/jianjie/index" class="btn btn-default btn-flat">简介</a>
                                     </div>
                                     <div class="pull-right">
                                         <a href="/admin/houtai/login/logout" class="btn btn-default btn-flat">退出</a>
@@ -279,19 +178,31 @@
                     <!-- Sidebar user panel -->
                     <div class="user-panel">
                         <div class="pull-left image">
-                            <img src="/yangshi/img/avatar3.png" class="img-circle" alt="User Image" />
-                            博主头像
+                        @if(session('pic'))
+                            <img src="/{{ session('pic') }}" class="img-circle" alt="User Image" />
+                            @else
+                            <img src="/yangshi/img/avatar3.png" class="img-circle" alt="User Image" /><br>
+                            
+                        @endif
                         </div>
                         <div class="pull-left info">
-                            <p>Hello, 博主名</p>
-
+                        @if(session('user'))
+                            <p>
+                                Hello,{{ session('user') }}
+                               
+                            </p>
                             <a href="#"><i class="fa fa-circle text-success"></i> 在线状态</a>
+                        @else
+                            <p><a href="/admin/houtai/login/index">请登录</a></p>
+                            <a href="#"><i class="fa fa-circle text-inverse"></i> 在线状态</a>
+                        @endif
+                            
                         </div>
                     </div>
                     <!-- search form -->
                     <form action="/admin/houtai/search/index" method="get" class="sidebar-form">
                         <div class="input-group">
-                            <input type="text" name="search" id="search" class="form-control" placeholder="Search..."/>
+                            <input type="text" name="search" id="search" class="form-control" placeholder="精确搜索..."/>
                             <span class="input-group-btn">
                                 <button type='submit' name='seach' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
                             </span>
@@ -301,7 +212,7 @@
                     <!-- sidebar menu: : style can be found in sidebar.less -->
                     <ul class="sidebar-menu">
                         <li class="active">
-                            <a href="index.html">
+                            <a href="/admin/houtai/shouye/index">
                                 <i class="fa fa-dashboard"></i> <span>主页</span>
                             </a>
                         </li>
@@ -383,7 +294,8 @@
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="pages/charts/morris.html"><i class="fa  fa-heart"></i> 个人信息</a></li>
+
+                                <li><a href="/admin/houtai/jianjie/index"><i class="fa fa-angle-double-right"></i> 个人信息</a></li>
                                 <li><li class="treeview">
                             <a href="#">
                                 <i class="fa fa-camera"></i>
@@ -600,7 +512,8 @@
         </div><!-- ./wrapper -->
 
 <!-- 内容页面结束 -->
-
+        <!-- 后台登录验证js -->
+        
         <!-- jQuery 2.0.2 -->
         <script src="/yangshi/js/jquery.min.js"></script>
         <!-- jQuery UI 1.10.3 -->

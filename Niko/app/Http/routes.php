@@ -71,8 +71,18 @@ Route::controller('/admin/houtai/login','admin\LoginController');
 Route::controller('/admin/houtai/search','admin\SearchController');
 //密码管理
 Route::controller('/admin/houtai/repass','admin\RepassController');
-
-
+//404 搜索未找到
+Route::get('/errors',function () {
+	return view('admin.houtai.errors.404');
+});
+//后台首页
+Route::controller('/admin/houtai/shouye','admin\ShouyeController');
+//后台日程
+Route::controller('/admin/houtai/richeng','admin\RichengController');
+//后台锁屏
+Route::controller('/admin/houtai/suoping','admin\LockController');
+//后台个人简介
+Route::controller('/admin/houtai/jianjie','admin\JianjieController');
 
 
 

@@ -62,7 +62,7 @@ class WenController extends Controller
         // dump($data);
         $biao = implode(',',$data['biao']);
         // dump(implode(' ',$data['biao']));
-        // dump($data['biao']);
+         
         // echo $data['biao'];
         $wen = new Wen;
         $wen -> title = $data['title'];

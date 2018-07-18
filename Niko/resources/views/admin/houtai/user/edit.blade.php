@@ -53,7 +53,7 @@
 				</div>
 
                 <div class="form-group">
-                    <label for="pic">头像上传</label>
+                    <label for="pic">修改头像</label>
                     <input type="file" id="pic" value="/{{ $data->pic }}" name="pic"><img name="img" width="70px" src="/{{ $data->pic }}">
                     <p class="help-block">一个美丽的心情从头像开始.</p>
                 </div>

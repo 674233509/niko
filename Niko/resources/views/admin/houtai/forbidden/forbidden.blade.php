@@ -62,9 +62,9 @@
                         <div class="container" style="float:right;width:100%;margin-top:10px">
                                 <!-- THE MESSAGES -->
                                 <table class="table table-bordered table-striped  table-hover" >
-                                <a href="/admin/houtai/user/del"><div class="glyphicon glyphicon-trash">&nbsp;<font color="red" size="3">批量删除</font></div></a>
+                                
                                 <tr class="unread text-center">
-                                <td >选项</td>
+                                
                                     <td>ID</td>
                                     <td>用户账号</td>
                                     <td>邮箱</td>
@@ -77,7 +77,7 @@
                                 </tr>
                                 @foreach($data as $k=>$v)
                                     <tr class="text-center">
-                                        <td class="small-col"><input type="checkbox"  name="che[]"/></td>
+                                        
                                         <td >{{ $v->id }}</td>
                                         <td >{{ $v->username }}</td>
                                         <td >{{ $v->mail }}</td>
@@ -104,7 +104,7 @@
                                         <td >
                                             
                                             <a style="display: inline;" href="/admin/houtai/forbidden/store/{{ $v->id }}" class="btn btn-danger">禁用</a>
-                                            <a style="display: inline;" href="/admin/houtai/forbidden/show/{{ $v->id }}" class="btn btn-danger">恢复</a>
+                                            <a style="display: inline;" href="/admin/houtai/forbidden/show/{{ $v->id }}" class="btn btn-success">恢复</a>
                                             
                                         </td>
                                     </tr> 

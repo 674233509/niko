@@ -26,4 +26,5 @@ class Wen extends Model
         return $this->hasMany('App\Models\Ping','wid');
     }    
 
+
 }

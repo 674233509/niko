@@ -1,5 +1,19 @@
 @extends('muban.houtai.ban')
  @section('hou.index')
+ @if (count($errors) > 0)
+    <div class="alert alert-danger">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">×</span></button>
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+
+
   <!-- left column -->
 <div class="" style="width:800px;margin:0px auto">
     <!-- general form elements -->
@@ -21,25 +35,25 @@
             <div class="box-body">
                 <div class="form-group">
                     <label for="username">用户账号</label>
-                    <input type="text" class="form-control"  name="username" id="username" placeholder="username" value="{{ old('username') }}"><span></span>
+                    <input type="text" class="form-control"  name="username" id="username" placeholder="username" value="{{ old('username') }}" ><span></span>
                 </div>
                 <div class="form-group">
                     <label for="password">密码</label>
-                    <input type="password" name="password" class="form-control" id="password" placeholder="password"><span></span>
+                    <input type="password" name="password" class="form-control" id="password" placeholder="password" ><span></span>
                 </div>
 
                 <div class="form-group">
                     <label for="password">确认密码</label><span></span>
-                    <input type="password" name="repass" class="form-control" id="repass" placeholder="repass">
+                    <input type="password" name="repass" class="form-control" id="repass" placeholder="repass" >
                 </div>
 
                 <div class="form-group">
                     <label for="mail">邮箱</label><span></span>
-                    <input type="email" name="mail" class="form-control" id="mail" placeholder="email" value="{{ old('mail') }}">
+                    <input type="text" name="mail" class="form-control" id="mail" placeholder="email" value="{{ old('mail') }}">
                 </div> 
                 <div class="form-group">
                     <label for="tel">手机号</label><span></span>
-                    <input type="phone" name="tel" class="form-control" id="tel" placeholder="phone" value="{{ old('tel') }}">
+                    <input type="phone" name="tel" class="form-control" id="tel" placeholder="phone" value="{{ old('tel') }}" >
                 </div>
 				
 				<div class="form-group">
@@ -53,9 +67,9 @@
 				</div>
 
                 <div class="form-group">
-                    <label for="pic">头像上传</label>
+                    <label for="pic"><font color="red"> *头像上传</font></label>
                     <input type="file"  id="pic" name="pic" >
-                    <p class="help-block">一个美丽的心情从头像开始.</p>
+                    <p class="help-block">一个美丽的心情从头像开始.请选择头像</p>
                 </div>
                 <div class="form-group text-center" style="margin-top:-60px">
                 <tr class="text-center" >
@@ -72,10 +86,10 @@
             </div><!-- /.box-body -->
 
             <div class="box-footer">
-                <button type="submit" class="btn btn-primary">提交</button>
+                <button type="submit" onclick="zhuce()" class="btn btn-primary">提交</button>
             </div>
         </form>
-       
+       <script src="/yangshi/js/houtaiyanzheng.js"></script>
     </div>
 </div><!-- /.box -->
 

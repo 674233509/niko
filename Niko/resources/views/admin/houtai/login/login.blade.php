@@ -37,6 +37,7 @@
                     <div class="form-group">
                         <input type="checkbox" name="remember_me"/> 记住我
                     </div>
+                     <p class="text-center text-warning">{{session('error')}}</p>
                 </div>
                 <div class="footer">                                                               
                     <button type="submit" class="btn bg-olive btn-block">登录</button>  
