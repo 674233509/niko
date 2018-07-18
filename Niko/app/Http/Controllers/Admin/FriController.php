@@ -49,18 +49,7 @@ class FriController extends Controller
      */
     public function postStore(Request $request)
     {
-        //
-        //dump($request -> all());
-        //检测字段有没有填
-          //  $this->validate($request, [
-            //'title' => 'required|unique:fris',
-            //'url' => 'required',
-        //],[
-          //  'title.required' => '标题必填',
-            //'title.unique' => '该标题已存在',
-            //'url.required' => '地址必填',
 
-        //]);
         //数据库
          //开启事物
         DB::beginTransaction();
@@ -68,7 +57,6 @@ class FriController extends Controller
         $data = $request -> except('_token');
         // dump($data);
         
-        //上传头像
         if($request -> hasFile('pic')){
 
             // 使用request 创建文件上传对象
@@ -82,7 +70,8 @@ class FriController extends Controller
             $res = $profile -> move('uploads/'.$dirname,$name);
             // dump($dirname);
             $data['pic'] = $res;
-            // dump($res);
+            // dump($res);//上传头像
+        
             
         }else{
             return back();
@@ -154,7 +143,7 @@ class FriController extends Controller
     {
         //获取数据
         $data = $request -> input('id');
-        dump($data);
+        // dump($data);
     }
 
 
@@ -163,6 +152,9 @@ class FriController extends Controller
         //
         //开启事物
         DB::beginTransaction();
+         $rea  = DB::table('sn_fris')->where('id','=',$id)->first();
+         //获取数据库的图片
+         $img = $rea->pic;
         //接收提交的数据
         $data = $request -> except('_token');
         //dump($data);
@@ -179,13 +171,19 @@ class FriController extends Controller
             $res = $profile -> move('./uploads/'.$dirname,$name);
             $data['pic'] = $res;
             //dump($res);
-        }else{
-            return back();
-        }
 
-        //dd(date('Y-m-d H:s:i',time()));
-        //获取表单提交到sn_fris表里的信息，并返回id
-       $uid = DB::table('sn_fris')->where('id','=',$id)->update(['title'=>$data['title'],'content'=>$data['content'],'url'=>$data['url'],'pic'=>$data['pic']]);
+            $uid = DB::table('sn_fris')->where('id','=',$id)->update(['title'=>$data['title'],'content'=>$data['content'],'url'=>$data['url'],'pic'=>$data['pic']]);
+        if($uid){
+            DB::commit();
+           return redirect('/admin/fri/index')->with('success','修改成功');
+       }else{
+            DB::rollBack();
+            return back()->with('error','修改失败');
+       }
+
+
+ }else{
+           $uid = DB::table('sn_fris')->where('id','=',$id)->update(['title'=>$data['title'],'content'=>$data['content'],'url'=>$data['url'],'pic'=>$img]);
        
        
         if($uid){
@@ -195,6 +193,11 @@ class FriController extends Controller
             DB::rollBack();
             return back()->with('error','修改失败');
        }
+      }
+
+        //dd(date('Y-m-d H:s:i',time()));
+        //获取表单提交到sn_fris表里的信息，并返回id
+      
     }
 
     /**

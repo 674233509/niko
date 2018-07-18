@@ -32,9 +32,9 @@ class PingController extends Controller
          // dump($v->zxczxc['id']);
          //    // dump($data);
          // }
-
+         $del_data = Ping::onlyTrashed()->get();
          //dump($data);
-        return view('hou.ping.index',['title'=>'评论管理','data'=>$data,'search'=>$search]);
+        return view('hou.ping.index',['title'=>'评论管理','data'=>$data,'del_data'=>$del_data, 'search'=>$search]);
         //
     }
 
@@ -60,21 +60,32 @@ class PingController extends Controller
     {
         //
           //开启事物
+
+        // DB::beginTransaction();
+        //接收提交的数据
         $data = $request -> except('_token');
         // dd($data);
         // echo $id;
         $ip = $request -> ip();
+
+        //获取当前时间
+        $date = date('Y-m-d H:i:s',time());
+       
+       // $res = DB::table('sn_pings')->insertGetId(['content'=>$data['content'],'ptime'=>date('Y-m-d H:i:s',time()),'pip'=>$ip]);
+       //$res2 = DB::table('sn_wens')->insert(['wid'=>$wid]);
+      
         $ping = new Ping;
         $ping -> content = $data['content'];
-        // $ping -> ptime =
+        $ping -> ptime = $date;
         $ping -> pip = $ip;
-        $res = $ping -> save(); 
+        $ping -> save();
+
        // dump();
-        if($res){
-            DB::commit();
+        if($ping){
+            // DB::commit();
            return redirect('/admin/sn/ping/index')->with('success','添加成功');
        }else{
-            DB::rollBack();
+            // DB::rollBack();
             return back()->with('error','添加失败');
        }
 
@@ -136,31 +147,36 @@ class PingController extends Controller
 
     }
 
+
     /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function getDestroy($id)
+    public function getDestroy($id,$str)
     {
-        //
-           //开启事物
-    //    DB::beginTransaction();
-    //    $res = DB::table('sn_pings')->where('id','=',$id)->delete();
-    //    if($res){
-    //         DB::commit();
-    //        return redirect('/admin/sn/ping/index')->with('success','删除成功');
-    //    }else{
-    //         DB::rollBack();
-    //         return back()->with('error','删除失败');
-    //    }
-        $ping = Ping::find($id); 
-        if( $ping -> delete()){
-            return redirect('/admin/sn/ping/index')->with('success','删除成功');
+        if($str == 'delone'){
+            $ping = Ping::find($id); 
+            if($ping -> delete()){
+                return redirect('/admin/sn/ping/index')->with('success','删除至回收站');
+            }
         }else{
-            return back()->with('error','删除失败');
+            $res = Ping::find($id)->forceDelete();
+
+                return redirect('/admin/sn/ping/index')->with('success','永久删除');
+            
+            // dump($res);
+
         }
+        
+        // dump($ping->delete());
+        // exit;
+        // if( $ping -> delete()){
+        //     return redirect('/admin/sn/ping/index')->with('success','删除成功');
+        // }else{
+        //     return back()->with('error','删除失败');
+        // }
        
     }
 

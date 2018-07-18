@@ -6,22 +6,28 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Models\Fris;
+use App\Models\Yin;
+use App\Models\Dianjiliang;
 
-class FriController extends Controller
+class YinController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function getIndex()
     {
-        //
-		
-		$data = Fris::all();
-		// dump($data);
-		//return view('qian.fri.index',['data'=>$data]);
+        // $data = Yin::all();
+        // // dd($data);
+        $sn = Dianjiliang::where('name','=','yinyue')->first();
+        // // dd($sn);
+        $sn->xihuan ++;
+        $sn->save();
+        echo  $sn->xihuan;
+        // return 'sd';
+        // return view('qian.yin.index',['data'=>$data]);
+
     }
 
     /**
@@ -29,9 +35,19 @@ class FriController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function getCreate()
     {
         //
+         $data = Yin::all();
+        // dd($data);
+         $res = Dianjiliang::where('name','=','yinyue')->first();
+         // dd($res->dianjiliang);
+         $res->dianjiliang ++;
+         // $res->xihuan ++;
+         // dd($res->xihuan);
+         $res -> save();
+
+        return view('qian.yin.create',['data'=>$data,'res'=>$res]);
     }
 
     /**

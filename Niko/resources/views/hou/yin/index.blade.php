@@ -1,3 +1,4 @@
+
 @extends('muban.houtai.ban')
 @section('hou.index')
 
@@ -25,13 +26,11 @@
                                 <h3 class="box-title text-info"> &nbsp;&nbsp;{{ $title }}</h3>
                             </div>
                           
+                           
+                            <!-- Navigation - folders-->
                             <div style="margin-top: 15px;">
                                 
                             </div>
-                        <!--下拉框-->
-                        
-
-
                         </div><!-- /.col (LEFT) -->
                         <div class="col-md-9 col-sm-8">
                             <div class="row pad">
@@ -39,55 +38,47 @@
                                    
                                     <!-- Action button -->
                                 </div>
-                                
-
-
-                                
+                                <div class="col-sm-6 search-form">
+                                    <form action="#" class="text-right">
+                                        <div class="input-group">
+                                            <input type="text" name="search" class="form-control input-sm" placeholder="关键字">
+                                            <div class="input-group-btn">
+                                                <button type="submit" name="content" class="btn btn-sm btn-primary"><i class="fa fa-search"></i></button>
+                                            </div>
+                                        </div>                      
+                                    </form>
+                                </div>
                             </div>
                                
                             </div><!-- /.row -->
                                 
                             <div class="container" style="float:right;width:100%;margin-top:30px">
                                 <!-- THE MESSAGES -->
-                                <div class="col-sm-6 search-form" style="float:right">
-                                    <form action="#" class="text-right">
-                                        <div class="input-group">
-                                            <input type="text" name="search" class="form-control input-sm" placeholder="关键字">
-                                            <div class="input-group-btn">
-                                                <button type="submit" name="" class="btn btn-sm btn-primary"><i class="fa fa-search"></i></button>
-                                            </div>
-                                        </div>                      
-                                    </form>
-                                </div>
+                                
                                  {{ csrf_field() }}
                                 <table class="table table-bordered table-striped  table-hover">
                                 <tr class="unread text-center">
                                 
 
                                     <td>ID</td>
-                                    <td>文章ID</td>
-                                    <td>评论内容</td>
-                                    <td>用户ID</td>
-                                    <td>用户头像</td>
-                                    <td>评论时间</td>
-                                    <td>评论IP</td>
+                                    <td>歌名</td>
+                                    <td>作者</td>
+                                    <td>专辑</td>
+                                    <td>mp3</td>
                                     <td>操作</td>
                                 </tr>
                                 @foreach($data as $k=>$v)
                                     <tr class="text-center">
                                         
                                         <td >{{ $v->id }}</td>
-                                        <td >{{ $v->wid }}</td>
-                                        <td >{{ $v->content }}</td>
-                                        <td >{{ $v->qweqwe['username'] }}</td>
-                                        <td ><img src="/{{$v->qweqwe['pic']}}" height="50px"></td>
-                                        <td >{{ $v->ptime }}</td>
-                                        <td >{{ $v->pip }}</td>
+                                        <td >{{ $v->name }}</td>
+                                        <td >{{ $v->zuozhe }}</td>
+                                        <td >{{ $v->zhuanji }}</td> 
+                                        <td >{{ $v->mp3 }}</td>     
+                                        <td >
+                                            <a href="/admin/sn/yin/destroy/{{$v->id}}" class="btn btn-danger">删除</a>
                                         
-                                        <td>
-                                            <a href="/admin/sn/ping/destroy/{{$v->id}}/delone" class="btn btn-danger">删除</a>
-                                            <a href="/admin/sn/ping/edit/{{$v->id}}" class="btn btn-warning">修改</a>
-                                            <a href="/admin/sn/ping/destroy/{{$v->id}}/delall" onclick="return confirm('确认要永久删除吗')" class="btn btn-danger">永久删除</a>
+                                           
                                         </td>
                                     </tr> 
                                 @endforeach
@@ -101,8 +92,7 @@
                 </div><!-- /.box-body -->
                 <div class="box-footer clearfix">
                     <div class="pages pull-right">
-                       
-                        {!! $data->render() !!}
+                        {!! $data->appends(['search'=>$search])->render() !!}
                     </div>
                 </div><!-- box-footer -->
             </div><!-- /.box -->
@@ -111,6 +101,7 @@
     <!-- MAILBOX END -->
 
 </section><!-- /.content -->
+
 
 
 @endsection

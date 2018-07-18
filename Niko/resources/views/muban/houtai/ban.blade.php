@@ -312,30 +312,30 @@
                         </li>
                         <li class="treeview">
                             <a href="#">
-                                <i class="fa fa-edit"></i> <span>用户管理</span>
+                                <i class="glyphicon glyphicon-user"></i> <span>用户管理</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="/admin/houtai/user/index"><i class="fa fa-angle-double-right"></i> 查看用户</a></li>
-                                <li><a href="/admin/houtai/user/create"><i class="fa fa-angle-double-right"></i> 添加用户</a></li>
-                                <li><a href="/admin/houtai/forbidden/index"><i class="fa fa-angle-double-right"></i> 禁用用户</a></li>
+                                <li><a href="/admin/houtai/user/index"><i class="fa fa-eye"></i> 查看用户</a></li>
+                                <li><a href="/admin/houtai/user/create"><i class="fa fa-edit "></i> 添加用户</a></li>
+                                <li><a href="/admin/houtai/forbidden/index"><i class="fa fa-ban"></i> 禁用用户</a></li>
                             </ul>
                         </li>
                         <li class="treeview">
                             <a href="#">
-                                <i class="fa fa-edit"></i> <span>文章管理</span>
+                                <i class="fa fa-book"></i> <span>文章管理</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
                                 <li>
                                     <li class="treeview">
                                         <a href="#">
-                                            <i class="fa fa-edit"></i> <span>标签管理</span>
+                                            <i class="fa fa-bookmark"></i> <span>标签管理</span>
                                             <i class="fa fa-angle-left pull-right"></i>
                                         </a>
                                         <ul class="treeview-menu">
-                                            <li><a href="/admin/sn/biao/index"><i class="fa fa-angle-double-right"></i> 查看标签</a></li>
-                                            <li><a href="/admin/sn/biao/create"><i class="fa fa-angle-double-right"></i> 添加标签</a></li>
+                                            <li><a href="/admin/sn/biao/index"><i class="fa fa-eye"></i> 查看标签</a></li>
+                                            <li><a href="/admin/sn/biao/create"><i class="fa fa-edit "></i> 添加标签</a></li>
 
                                         </ul>
                                     </li>
@@ -343,12 +343,12 @@
                                 </li>
                                 <li><li class="treeview">
                             <a href="#">
-                                <i class="fa fa-edit"></i> <span>文章管理</span>
+                                <i class="fa fa-book"></i> <span>文章管理</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="/admin/sn/wen/index"><i class="fa fa-angle-double-right"></i> 查看文章</a></li>
-                                <li><a href="/admin/sn/wen/create"><i class="fa fa-angle-double-right"></i> 添加文章</a></li>
+                                <li><a href="/admin/sn/wen/index"><i class="fa fa-eye"></i> 查看文章</a></li>
+                                <li><a href="/admin/sn/wen/create"><i class="fa fa-edit "></i> 添加文章</a></li>
                             </ul>
                         </li></li>
 
@@ -356,53 +356,53 @@
                         </li>
                          <li class="treeview">
                             <a href="#">
-                                <i class="fa fa-edit"></i> <span>评论管理</span>
+                                <i class="fa fa-comments"></i> <span>评论管理</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="/admin/sn/ping/create"><i class="fa fa-angle-double-right"></i> 添加评论</a></li>
-                                <li><a href="/admin/sn/ping/index"><i class="fa fa-angle-double-right"></i> 查看评论</a></li>
+                                <li><a href="/admin/sn/ping/create"><i class="fa fa-edit "></i> 添加评论</a></li>
+                                <li><a href="/admin/sn/ping/index"><i class="fa fa-eye"></i> 查看评论</a></li>
                             </ul>
                         </li>
 
                         <li class="treeview">
                             <a href="#">
-                                <i class="fa fa-edit"></i> <span>密码管理</span>
+                                <i class="fa  fa-lock"></i> <span>密码管理</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="/admin/houtai/repass/index"><i class="fa fa-angle-double-right"></i> 修改密码</a></li>
+                                <li><a href="/admin/houtai/repass/index"><i class="fa fa-unlock"></i> 修改密码</a></li>
                             </ul>
                         </li>
 
 
                         <li class="treeview">
                             <a href="#">
-                                <i class="fa fa-bar-chart-o"></i>
+                                <i class="fa  fa-male"></i>
                                 <span>关于我</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="pages/charts/morris.html"><i class="fa fa-angle-double-right"></i> 个人信息</a></li>
+                                <li><a href="pages/charts/morris.html"><i class="fa  fa-heart"></i> 个人信息</a></li>
                                 <li><li class="treeview">
                             <a href="#">
-                                <i class="fa fa-edit"></i>
+                                <i class="fa fa-camera"></i>
                                 <span>我的相册</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="/admin/sn/xiang/index"><i class="fa fa-angle-double-right"></i> 查看相册</a></li>
-                                <li><a href="/admin/sn/xiang/create"><i class="fa fa-angle-double-right"></i> 添加相册</a></li>
+                                <li><a href="/admin/sn/xiang/index"><i class="fa  fa-picture-o"></i> 查看相册</a></li>
+                                <li><a href="/admin/sn/xiang/create"><i class="fa fa-edit "></i> 添加相册</a></li>
                                 <li><a href="/admin/sn/xiang/jiazhao"><i class="fa fa-angle-double-right"></i> 添加相片</a></li>
                             </ul>
                         </li></li>
-                                <li><a href="pages/charts/inline.html"><i class="fa fa-angle-double-right"></i> 我的日记</a></li>
-                                <li><a href="pages/charts/inline.html"><i class="fa fa-angle-double-right"></i> 我的作品</a></li>
+                                <li><a href="pages/charts/inline.html"><i class="fa  fa-calendar-o"></i> 我的日记</a></li>
+                                <li><a href="pages/charts/inline.html"><i class="fa fa-user-md"></i> 我的作品</a></li>
                             </ul>
                         </li>
                         <li class="treeview">
                             <a href="#">
-                                <i class="fa fa-laptop"></i>
+                                <i class="fa fa-coffee"></i>
                                 <span>慢生活</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
@@ -410,25 +410,38 @@
                                 
                                 <li class="treeview">
                             <a href="#">
-                                <i class="fa fa-laptop"></i>
+                                <i class="fa  fa-tint"></i>
                                 <span>欣赏</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="/admin/sn/xin/index"><i class="fa fa-angle-double-right"></i> 查看欣赏</a></li>
-                                <li><a href="/admin/sn/xin/create"><i class="fa fa-angle-double-right"></i> 添加欣赏</a></li>
+                                <li><a href="/admin/sn/xin/index"><i class="fa fa-eye"></i> 查看欣赏</a></li>
+                                <li><a href="/admin/sn/xin/create"><i class="fa fa-edit "></i> 添加欣赏</a></li>
                                 
                             </ul>
                         </li>
                                 <li class="treeview">
                             <a href="#">
-                                <i class="fa fa-laptop"></i>
+                                <i class="fa fa-umbrella"></i>
                                 <span>经典语录</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="/admin/sn/yulu/index"><i class="fa fa-angle-double-right"></i> 查看语录</a></li>
-                                <li><a href="/admin/sn/yulu/create"><i class="fa fa-angle-double-right"></i> 添加语录</a></li>
+                                <li><a href="/admin/sn/yulu/index"><i class="fa fa-eye"></i> 查看语录</a></li>
+                                <li><a href="/admin/sn/yulu/create"><i class="fa fa-edit "></i> 添加语录</a></li>
+                                
+                            </ul>
+                        </li>
+
+                                    <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-music"></i>
+                                <span>音乐</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="/admin/sn/yin/index"><i class="fa fa-eye"></i> 查看音乐</a></li>
+                                <li><a href="/admin/sn/yin/create"><i class="fa fa-edit "></i> 添加音乐</a></li>
                                 
                             </ul>
                         </li>
@@ -441,18 +454,18 @@
 
                         <li class="treeview">
                             <a href="#">
-                                <i class="fa fa-edit"></i> <span>网站配置</span>
+                                <i class="fa fa-gear "></i> <span>网站配置</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
                                 <li>
                                     <li class="treeview">
                                         <a href="#">
-                                            <i class="fa fa-edit"></i> <span>网站配置管理</span>
+                                            <i class="fa  fa-gears (alias)"></i> <span>网站配置管理</span>
                                             <i class="fa fa-angle-left pull-right"></i>
                                         </a>
                                         <ul class="treeview-menu">
-                                            <li><a href="/admin/sn/peizhi/create"><i class="fa fa-angle-double-right"></i>添加配置</a></li>
+                                            <li><a href="/admin/sn/peizhi/create"><i class="fa fa-edit "></i>添加配置</a></li>
                                             <li><a href="/admin/sn/peizhi/index"><i class="fa fa-angle-double-right"></i>管理配置</a></li>
 
                                         </ul>
@@ -461,23 +474,23 @@
                                 </li>
                                 <li><li class="treeview">
                                         <a href="#">
-                                            <i class="fa fa-edit"></i> <span>轮播图</span>
+                                            <i class="fa fa-flag"></i> <span>轮播图</span>
                                             <i class="fa fa-angle-left pull-right"></i>
                                         </a>
                                         <ul class="treeview-menu">
                                             <li><a href="/admin/sn/lun/index"><i class="fa fa-angle-double-right"></i> 查看图片</a></li>
-                                            <li><a href="/admin/sn/lun/create"><i class="fa fa-angle-double-right"></i> 添加图片</a></li>
+                                            <li><a href="/admin/sn/lun/create"><i class="fa fa-edit "></i> 添加图片</a></li>
 
                                         </ul>
                                     </li>
                                 </li>
                                 <li><li class="treeview">
                                         <a href="#">
-                                            <i class="fa fa-edit"></i> <span>友情链接</span>
+                                            <i class="fa fa-twitter"></i> <span>友情链接</span>
                                             <i class="fa fa-angle-left pull-right"></i>
                                         </a>
                                         <ul class="treeview-menu">
-                                            <li><a href="/admin/fri/create"><i class="fa fa-angle-double-right"></i> 查看友情</a></li>
+                                            <li><a href="/admin/fri/create"><i class="fa fa-edit "></i> 添加友情</a></li>
                                             <li><a href="/admin/fri/index"><i class="fa fa-angle-double-right"></i> 管理友情</a></li>
 
                                         </ul>
@@ -485,16 +498,17 @@
                                 </li>
                                 <li><li class="treeview">
                                         <a href="#">
-                                            <i class="fa fa-edit"></i> <span>广告管理</span>
+                                            <i class="fa  fa-youtube"></i> <span>广告管理</span>
                                             <i class="fa fa-angle-left pull-right"></i>
                                         </a>
                                         <ul class="treeview-menu">
-                                            <li><a href="/admin/guang/create"><i class="fa fa-angle-double-right"></i> 查看广告</a></li>
+                                            <li><a href="/admin/guang/create"><i class="fa fa-edit "></i> 添加广告</a></li>
                                             <li><a href="/admin/guang/index"><i class="fa fa-angle-double-right"></i> 管理广告</a></li>
 
                                         </ul>
                                     </li>
                                 </li>
+
 
                             </ul>
                         </li>
@@ -505,13 +519,13 @@
 
                         <li class="treeview">
                             <a href="#">
-                                <i class="fa fa-edit"></i> <span>Forms</span>
+                                <i class="fa fa-bitbucket"></i> <span>回收站</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="pages/forms/general.html"><i class="fa fa-angle-double-right"></i> General Elements</a></li>
-                                <li><a href="pages/forms/advanced.html"><i class="fa fa-angle-double-right"></i> Advanced Elements</a></li>
-                                <li><a href="pages/forms/editors.html"><i class="fa fa-angle-double-right"></i> Editors</a></li>
+                                <li><a href="/admin/sn/hui/index"><i class="fa  fa-trash-o"></i> 评论回收站</a></li>
+                               <li><a href="/admin/sn/hui/wenzhang"><i class="fa  fa-trash-o"></i> 文章回收站</a></li>
+                               
                             </ul>
                         </li>
                         <li class="treeview">

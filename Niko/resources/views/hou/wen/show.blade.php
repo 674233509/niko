@@ -56,7 +56,8 @@
                 <td> {{ $v->updated_at }} </td>
                 <td>
                     <a href="/admin/sn/wen/edit/{{ $v->id }} " class="btn btn-success btn-sm">修改</a>
-                    <a href="/admin/sn/wen/delete/{{ $v->id }} " class="btn btn-danger btn-sm">删除</a>
+                    <a href="/admin/sn/wen/delete/{{ $v->id }}/delone " class="btn btn-danger btn-sm">删除</a>
+                    <a href="/admin/sn/wen/delete/{{$v->id}}/delall" onclick="return confirm('确认要永久删除吗')" class="btn btn-danger">永久删除</a>
                     
                 </td>
             </tr>
