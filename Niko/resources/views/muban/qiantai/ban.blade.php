@@ -19,11 +19,18 @@
 <!--[if lt IE 9]>
 <script src="js/modernizr.js"></script>
 <![endif]-->
+{{-- 固定元素 --}}
+  <link rel="stylesheet" href="/yangshi/guding/css/foundation.min.css">
+  <link href="/yangshi/guding/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/yangshi/guding/css/htmleaf-demo.css"><!--演示页面样式，使用时可以不引用-->
+
+{{-- 固定元素结束 --}}
 <!-- 搜索按钮头部 -->
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <script src="/yangshi/js/jquery.min.js"></script>
 <link href='https://fonts.googleapis.com/css?family=Cagliostro' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,800italic,800,700italic,700,600italic,600,400italic,300italic,300' rel='stylesheet' type='text/css'>
+
 <!--search jQuery-->
   <script src="/yangshi/js/main.js"></script>
 <!--search jQuery-->
@@ -103,12 +110,11 @@ Qfast(false, 'widgets', function () {
        <li><a href="/admin">网站首页</a></li>
        <li><a href="javascript:;">关于我</a></li>
        <li><a href="moodlist.html">碎言碎语</a></li>
-       <li><a href="newlist.html">技术探讨</a></li>
+       <li><a href="/sn/wen">技术探讨</a></li>
        <li><a href="newlist.html">慢生活</a></li>
-       <li><a href="ablumlist.html">我的相册</a></li>
-       <li><a href="book.html">留言版</a></li>
+       <li><a href="/sn/pic">我的相册</a></li>
+       <li><a href="/sn/liu">留言版</a></li>
        <li><a href="/qian/sn/ping/index">最新评论</a></li>
-       <li><a href="/qian/sn/ping/create"添加评论</a></li>
      </ul>
      <script src="/yangshi/js/silder.js"></script><!--获取当前页导航 高亮显示标题-->
 </div>
@@ -129,10 +135,78 @@ Qfast(false, 'widgets', function () {
                 </form>
               </div>  
 <!-- 搜索按钮结束 -->
+{{-- 固定 --}}
+<style>
+  .guding{
+    position: fixed;
+    left: 20px;
+    top:100px;
+  }
+</style>
+          <section class="container">
+        <div class="row" data-sticky-container>
+          <div class="medium-3 columns show-for-medium">
+          
+           <span class="float-left" alt="Sticky" data-sticky data-margin-top="20">
+           <div class="guding">
+      @if(session('denglu'))
+      <p>欢迎</p>
+      <p>{{ session('denglu')['username'] }}</p>
+      <p><a href="/sn/login/tui">退出</a></p>
+      @else
+         <h1>游客</h1>
+      <p><a href="/sn/login">登录</a></p>
+      @endif
+      
+      </div>
+      </span>
+
+          </div>
+          <div class="small-12 medium-9 large-7 columns">
 
  @section('qian.index')
 
   @show
 
+  </div>
+          <div class="large-2 columns show-for-large" style="padding-top: 10rem;">
+         
+          </div>
+        </div>
+      </section>
+
+      <section class="container">
+        <div class="row column medium-text-center">
+          <h3>Browser compatibility</h3>
+          <p>Library is using ECMAScript 5 features. Full support available on <a href="http://caniuse.com/#search=ECMAScript%205" title="Can i use ECMAScript 5?">caniuse</a>.</p>
+          <br>
+          <ul class="no-bullet">
+            <li>IE 9+</li>
+            <li>Chrome 23+</li>
+            <li>页脚</li>
+            <li>Firefox 21+</li>
+            <li>Safari 6+</li>
+            <li>Opera 15+</li>
+          </ul>
+          <p>If you need this library working with older browsers you should use ECMAScript 5 polyfill.</p>
+        </div>
+      </section>
+
+    </main>
+        <footer class="text-center">
+          <div class="htmleaf-header">
+      <h1>js固定元素插件 <span>Library for sticky elements written in vanilla javascript</span></h1>
+     
+    </div>
+      <p>页脚</p>
+      <p>页脚</p>
+      <p>页脚</p>
+    </footer>
+  
+   <script src="/yangshi/guding/dist/sticky.compile.js"></script>
+   <script type="text/javascript">
+    var sticky = new Sticky('[data-sticky]');
+   </script>
+{{-- 固定 --}}
 </body>
 </html>

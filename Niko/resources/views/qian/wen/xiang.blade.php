@@ -42,10 +42,37 @@
   {!! $data->content !!}
 </div>
 <!-- 评论 -->
-<form action="">
-  评论<input type="text">
-</form>
+<form role="form" action="/admin/sn/ping/wen/{{ $data->id }}" method="post" enctype="multipart/form-data" >
+          {{ csrf_field() }}
+            <div class="box-body">
+                <div class="form-group">
+                    <label for="content">评论内容</label>
+                    <input type="text" name="content" class="form-control" id="content" placeholder="content">
+                </div> 
+                
+            <div class="box-footer">
+                <button type="submit" class="btn btn-primary">点击评论</button>
+            </div>
+        </form>
 <!-- 评论 -->
+<!-- 显示评论 -->
+<div class="visitors">
+
+ 
+@foreach ($data->ping as $k => $v)
+<dl>
+  <dt><img src="/{{$v->qweqwe['pic']}}" height="50px">
+  <dt>
+  {{$v->id}}
+  <dd>{{$v->qweqwe['username']}}
+    
+  
+  <time>{{$v->created_at}}</time></dd>
+  <dd>{{$v->content}}</dd>
+</dl>
+@endforeach
+</div>
+<!-- 显示评论 -->
 
 </div>
 @endsection

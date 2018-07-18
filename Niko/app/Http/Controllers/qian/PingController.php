@@ -55,6 +55,7 @@ class PingController extends Controller
         $ping -> content = $data['content'];
         $ping -> ptime = date('Y-m-d H:i:s',time());
         $ping -> pip = $ip;
+        // dd($ping);
         // dump($data);
         $ping -> save();
         if($ping){

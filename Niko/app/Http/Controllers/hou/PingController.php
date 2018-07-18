@@ -60,16 +60,15 @@ class PingController extends Controller
     {
         //
           //开启事物
-        DB::beginTransaction();
-        //接收提交的数据
         $data = $request -> except('_token');
-        //dd($data);
-        //接受ip
+        // dd($data);
+        // echo $id;
         $ip = $request -> ip();
-       
-       $res = DB::table('sn_pings')->insertGetId(['content'=>$data['content'],'ptime'=>date('Y-m-d H:i:s',time()),'pip'=>$ip]);
-       //$res2 = DB::table('sn_wens')->insert(['wid'=>$wid]);
-      
+        $ping = new Ping;
+        $ping -> content = $data['content'];
+        // $ping -> ptime =
+        $ping -> pip = $ip;
+        $res = $ping -> save(); 
        // dump();
         if($res){
             DB::commit();
@@ -163,5 +162,28 @@ class PingController extends Controller
             return back()->with('error','删除失败');
         }
        
+    }
+
+    public function postWen(Request $request,$id)
+    {
+        // echo 'asd';
+        $data = $request -> except('_token');
+        // dd($data);
+        // echo $id;
+        $ip = $request -> ip();
+        $ping = new Ping;
+        $ping -> content = $data['content'];
+        $ping -> wid = $id;
+        // $ping -> ptime =
+        $ping -> pip = $ip;
+        $ping -> uid = session('denglu')['id'];
+        // dd(session('denglu')['id']);
+        $res = $ping -> save(); 
+        if($res){
+            return back()->with('success','修改成功');
+        }else{
+            return back()->with('error','修改失败');
+        }
+
     }
 }

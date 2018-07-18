@@ -31,9 +31,13 @@
 </div>
 
  <div class="box-body table-responsive">
+<form action="/admin/sn/wen/alldelete" method="post">
 <table id="example2" class="table table-bordered table-hover">
+{{ csrf_field() }}
+
     <thead>
         <tr>
+            <th >全选</th>
             <th>ID</th>
             <th>文章标题</th>
             <th>创建时间</th>
@@ -45,6 +49,7 @@
     <tbody >
         @foreach ($data as $k => $v)
             <tr>
+                <td><input type="checkbox" name="del[]"  value="{{ $v->id }}" /></td>
                 <td> {{ $v->id }} </td>
                 <td> {{ $v->title }} </td>
                 <td> {{ $v->created_at }} </td>
@@ -59,6 +64,8 @@
         
 </tbody>
 </table>
+<input type="submit" value="全部删除" class="btn btn-danger btn-sm">
+</form>
 {!! $data->appends(['search'=>$search])->render() !!}
     
 

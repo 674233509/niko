@@ -217,4 +217,22 @@ class WenController extends Controller
     {
         //
     }
+
+    /*
+    多个删除
+    */
+    public function postAlldelete(Request $request)
+    {
+        // echo 'asd';
+         $data = $request->except(['_token']);
+         // dump($data);
+        $res = Wen::destroy($data['del']);
+
+        if ($res) {
+            return redirect('/admin/sn/wen/index')->with('success','删除成功');
+        } else {
+            return back()->with('success','删除失败');
+        }
+
+    }
 }

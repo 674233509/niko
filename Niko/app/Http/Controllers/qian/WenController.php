@@ -9,6 +9,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Wen;
 use App\Models\Biao;
 use App\Models\Guanwenbiao;
+use App\Models\Ping;
+
 
 class WenController extends Controller
 {
@@ -32,6 +34,19 @@ class WenController extends Controller
         $data->dianji ++;
         $data ->save();
         // dump($data->dianji);
+        // $ping = $data->ping;
+        // $ping = Ping::where('wid','=',$id)->get();
+        
+        // $a = array('1','2','3','7','5');
+        // $asd = array_multisort($ping,'id',SORT_DESC,SORT_STRING);
+        // krsort($ping);
+        // print_r($fruits);
+        
+        /*foreach ($ping as $key => $value) {
+            # code...
+            dump($key);
+        }
+        dd($ping);*/
         return view('qian.wen.xiang',['data'=>$data]);
 
     }

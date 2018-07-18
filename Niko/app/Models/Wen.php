@@ -19,4 +19,10 @@ class Wen extends Model
     	return $this->hasMany('App\Models\Guanwenbiao','wid');
     }
 
+    // 文章的评论
+    public function ping()
+    {
+        return $this->hasMany('App\Models\Ping','wid');
+    }    
+
 }

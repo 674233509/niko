@@ -19,7 +19,7 @@ class YuluController extends Controller
         //
         // echo '语录显示';
         $search = $request -> input('search','');
-        $data = Yulu::where('content','like','%'.$search.'%')->orwhere('name','like','%'.$search.'%')->paginate(3);
+        $data = Yulu::where('content','like','%'.$search.'%')->orwhere('name','like','%'.$search.'%')->paginate(8);
         // $data = Yulu::paginate(10);
         return view('hou.yulu.show',['data'=>$data,'search'=>$search]);
 

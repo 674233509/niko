@@ -120,14 +120,23 @@ Route::controller('/admin/sn/lun','hou\LunController');
 Route::controller('/admin/sn/wen','hou\WenController');
 // 标签管理
 Route::controller('/admin/sn/biao','hou\BiaoController');
-// 文章显示界面
-Route::controller('/sn/wen','qian\WenController');
+
 // 后台相册界面
 Route::controller('/admin/sn/xiang','hou\XiangController');
-// 前台相册展示界面
-Route::controller('/sn/pic','qian\PicController');
+
 // 经典语录后台添加
 Route::controller('/admin/sn/yulu','hou\YuluController');
 // 后台欣赏
 Route::controller('/admin/sn/xin','hou\XinController');
+
+// 前台注册
+Route::controller('/sn/zhu','qian\ZhuController');
+Route::group(['middleware'=>"denglu"],function(){
+	// 前台相册展示界面
+	Route::controller('/sn/pic','qian\PicController');
+	// 文章显示界面
+	Route::controller('/sn/wen','qian\WenController');
+	// 留言板
+	Route::controller('/sn/liu','qian\liuController');
+});	
 // Dzuo的路由结束

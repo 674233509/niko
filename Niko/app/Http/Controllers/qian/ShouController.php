@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Lun;
 use App\Models\Fris;
 use App\Models\Guangs;
+use App\Models\User;
 
 class ShouController extends Controller
 {
@@ -23,6 +24,9 @@ class ShouController extends Controller
         $data = Lun::all();
         $res = Fris::all();
         $res2 = Guangs::all();
+        // if(session('denglu')){
+        //     $user =
+        // }
         // dump($res2);
         return view('/qian/index',['data'=>$data,'res'=>$res,'res2'=>$res2]);
     }
