@@ -29,7 +29,7 @@ class Kernel extends HttpKernel
         'auth' => \App\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
-        'forbidden' => \App\Http\Middleware\ForbiddenMiddleware::class,
+        'user' => \App\Http\Middleware\LoginMiddleware::class,
         'denglu'=>\App\Http\Middleware\qian\DengMiddlewar::class,
     ];
 }

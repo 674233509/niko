@@ -1,5 +1,17 @@
 @extends('muban.houtai.ban')
  @section('hou.index')
+
+ @if (count($errors) > 0)
+    <div class="alert alert-danger">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">×</span></button>
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
   <!-- left column -->
 <div class="" style="width:800px;margin:0px auto">
     <!-- general form elements -->
@@ -25,23 +37,33 @@
                 </div>
                 <div class="form-group">
                     <label for="password">修改密码</label>
-                    <input type="password" name="password" class="form-control" id="password" placeholder="password">
+                    <input type="password" name="password" class="form-control" id="password" value="{{$data->password}}" placeholder="password">
                 </div>
 
                 <div class="form-group">
                     <label for="password">确认密码</label>
-                    <input type="password" name="repass" class="form-control" id="repass" placeholder="repass">
+                    <input type="password" name="repass" class="form-control" id="repass" value="{{$data->password}}" placeholder="repass">
                 </div>
 
                 <div class="form-group">
                     <label for="mail">邮箱</label>
-                    <input type="mail" name="mail" class="form-control" id="mail" value="{{$data->mail}}" placeholder="email">
+                    <input type="email" name="mail" class="form-control" id="mail" value="{{$data->mail}}" placeholder="email">
                 </div> 
                 <div class="form-group">
                     <label for="tel">手机号</label>
                     <input type="tel" name="tel" class="form-control" id="mail" value="{{$data->tel}}" placeholder="phone">
                 </div>
+
+                <div class="form-group">
+                    <label for="qq">QQ</label>
+                    <input type="text" name="qq" class="form-control" id="qq" value="{{$data->qq}}" placeholder="qq">
+                </div>
 				
+                <div class="form-group">
+                    <label for="dizhi">地址</label>
+                    <input type="text" class="form-control"  name="dizhi" id="dizhi" value="{{$data->dizhi}}" placeholder="address">
+                </div>
+
 				<div class="form-group">
 					<tr>
                         <label for="sex">性别:&nbsp;</label>

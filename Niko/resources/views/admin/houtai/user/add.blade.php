@@ -38,24 +38,34 @@
                     <input type="text" class="form-control"  name="username" id="username" placeholder="username" value="{{ old('username') }}" ><span></span>
                 </div>
                 <div class="form-group">
-                    <label for="password">密码</label>
-                    <input type="password" name="password" class="form-control" id="password" placeholder="password" ><span></span>
+                    <label for="password">密码</label><span></span>
+                    <input type="password" name="password" class="form-control" id="password" placeholder="password" value="{{ old('password') }}">
                 </div>
 
                 <div class="form-group">
                     <label for="password">确认密码</label><span></span>
-                    <input type="password" name="repass" class="form-control" id="repass" placeholder="repass" >
+                    <input type="password" name="repass" class="form-control" id="repass" placeholder="repass" value="{{ old('repass') }}">
                 </div>
 
                 <div class="form-group">
                     <label for="mail">邮箱</label><span></span>
-                    <input type="text" name="mail" class="form-control" id="mail" placeholder="email" value="{{ old('mail') }}">
+                    <input type="email" name="mail" class="form-control" id="mail" placeholder="email" value="{{ old('mail') }}">
                 </div> 
                 <div class="form-group">
                     <label for="tel">手机号</label><span></span>
                     <input type="phone" name="tel" class="form-control" id="tel" placeholder="phone" value="{{ old('tel') }}" >
                 </div>
+
+                <div class="form-group">
+                    <label for="tel">QQ</label><span></span>
+                    <input type="text" name="qq" class="form-control" id="qq" placeholder="qq" value="{{ old('qq') }}" >
+                </div>
 				
+                <div class="form-group">
+                    <label for="dizhi">地址</label>
+                    <input type="text" class="form-control"  name="dizhi" id="dizhi" placeholder="address" value="{{ old('dizhi') }}" ><span></span>
+                </div>
+
 				<div class="form-group">
 					<tr>
                         <label for="sex">性别:&nbsp;</label>

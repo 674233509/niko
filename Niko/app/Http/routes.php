@@ -61,12 +61,14 @@ Route::controller('/qian/sn/yin','qian\YinController');
 
 
 // 赵标路由
+//后台登录
+Route::controller('/admin/houtai/login','admin\LoginController');
+//路由组用户不登录不能访问
+Route::group(['middleware'=>"user"],function(){
 //用户路由
 Route::controller('/admin/houtai/user','admin\UserController');
 //禁用用户
 Route::controller('/admin/houtai/forbidden','admin\ForbiddenController');
-//后台登录
-Route::controller('/admin/houtai/login','admin\LoginController');
 //后台搜索
 Route::controller('/admin/houtai/search','admin\SearchController');
 //密码管理
@@ -83,6 +85,9 @@ Route::controller('/admin/houtai/richeng','admin\RichengController');
 Route::controller('/admin/houtai/suoping','admin\LockController');
 //后台个人简介
 Route::controller('/admin/houtai/jianjie','admin\JianjieController');
+//后台个人简历
+Route::controller('/admin/houtai/gerenjianli','admin\GerenjianliController');
+});
 
 
 

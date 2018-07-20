@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class ForbiddenMiddleware
+class LoginMiddleware
 {
     /**
      * Handle an incoming request.
@@ -15,10 +15,10 @@ class ForbiddenMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if($request->session()->has('forbidden')){
+        if($request->session()->has('user')){
             return $next($request);
         }else{
-            return redirect('/sn/login');
+            return redirect('/admin/houtai/login');
         }
         
     }

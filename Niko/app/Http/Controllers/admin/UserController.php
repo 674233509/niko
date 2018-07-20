@@ -88,7 +88,7 @@ class UserController extends Controller
             $profile = $request -> file('pic');
             $ext = $profile->getClientOriginalExtension();
             // 处理文件名称
-            $temp_name = str_random(10);
+            $temp_name = str_random(20);
             $name =  $temp_name.'.'.$ext;
             $dirname = date('Y-m-d',time());
             $res = $profile -> move('uploads/'.$dirname,$name);
@@ -101,7 +101,7 @@ class UserController extends Controller
         //dd(date('Y-m-d H:s:i',time()));
         //获取表单提交到sn_users表里的信息，并返回id
        $uid = DB::table('sn_users')->insertGetId(['username'=>$data['username'],'password'=>$data['password'],'qx'=>$data['qx'],'pic'=>$data['pic']]);
-       $res = DB::table('sn_userxiangs')->insert(['uid'=>$uid,'sex'=>$data['sex'],'tel'=>$data['tel'],'mail'=>$data['mail'],'rtime'=>date('Y-m-d H:i:s',time()),'zip'=>$ip]);
+       $res = DB::table('sn_userxiangs')->insert(['uid'=>$uid,'sex'=>$data['sex'],'tel'=>$data['tel'],'mail'=>$data['mail'],'rtime'=>date('Y-m-d H:i:s',time()),'zip'=>$ip,'qq'=>$data['qq'],'dizhi'=>$data['dizhi']]);
        
        
         if($uid && $res){
@@ -145,16 +145,15 @@ class UserController extends Controller
      */
     public function getEdit(Request $request,$id)
     {
-        if($request->session()->has('id')){
-            $id = session('id');
 
-        }
+
         //接收数据
         $data = DB::table('sn_users as u')
         ->where('u.id','=',$id)
         ->join('sn_userxiangs as ux','u.id','=','ux.uid')
-        ->select('u.id','u.username','u.pic','u.qx','ux.mail','ux.zip','ux.rtime','ux.tel','ux.sex')
+        ->select('u.id','u.password','u.username','u.pic','u.qx','ux.mail','ux.zip','ux.rtime','ux.tel','ux.sex','ux.qq','ux.dizhi')
        ->first();
+
         //修改显示页面
         return view('admin.houtai.user.edit',['title'=>'用户修改','data'=>$data]);
     }
@@ -166,7 +165,7 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function postUpdate(Request $request, $id)
+    public function postUpdate(UserRequest $request, $id)
     {
         //开启事物
         //DB::beginTransaction();
@@ -174,24 +173,15 @@ class UserController extends Controller
         //'username' => 'alpha_num'
         //'name' => 'size:10'
         $data = $request -> except('_token');
-       if($data['username'] == ""){
-            return back()->with('error','用户名不能为空')->withInput();
-        }else if($data['password'] == ""){
-            return back()->with('error','密码不能为空')->withInput();
-        }else if($data['password'] != $data['repass']){
+
+        if($data['password'] != $data['repass']){
             return back()->with('error','密码不一致')->withInput();
-        }else if($data['mail'] == ""){
-            return back()->with('error','邮箱不能为空')->withInput();
-        }else if($data['tel'] == ""){
-            return back()->with('error','手机号不能为空')->withInput();
-        }
-       
-        
-        
+        } 
+
         //获取数据库照片
         $photo = DB::table('sn_users')->where('id','=',$id)->first();
         if($photo == null ){
-            return back()->with('error','内容不能为空');
+            return back()->with('error','头像不能为空');
         }
        //获取数据库原图片地址
        $pic = $photo->pic;
@@ -204,7 +194,7 @@ class UserController extends Controller
             $profile = $request -> file('pic');
             $ext = $profile->getClientOriginalExtension();
             // 处理文件名称
-            $temp_name = str_random(10);
+            $temp_name = str_random(20);
             $name =  $temp_name.'.'.$ext;
             $dirname = date('Y-m-d',time());
             $res = $profile -> move('uploads/'.$dirname,$name);
@@ -212,12 +202,12 @@ class UserController extends Controller
             //dump($res);
             //修改数据
             $res2 = DB::table('sn_users')->where('id','=',$id)->update(['username'=>$data['username'],'password'=>$data['password'],'qx'=>$data['qx'],'pic'=>$data['pic']]);
-            $res1 = DB::table('sn_userxiangs')->where('id','=',$id)->update(['sex'=>$data['sex'],'tel'=>$data['tel'],'mail'=>$data['mail'],'rtime'=>date('Y-m-d H:i:s',time()),'zip'=>$ip]);
+            $res1 = DB::table('sn_userxiangs')->where('id','=',$id)->update(['sex'=>$data['sex'],'tel'=>$data['tel'],'mail'=>$data['mail'],'rtime'=>date('Y-m-d H:i:s',time()),'zip'=>$ip,'qq'=>$data['qq'],'dizhi'=>$data['dizhi']]);
                
                
                 if($res2 && $res1){
                     //DB::commit();
-                   return redirect('/admin/houtai/user/index')->with('success','修改成功，此用户请重新登录');
+                   return redirect('/admin/houtai/user/index')->with('success','修改成功，用户请重新登录');
                }else{
                     //DB::rollBack();
                     return back()->with('error','修改失败');
@@ -226,12 +216,12 @@ class UserController extends Controller
 
                //修改数据
                $res2 = DB::table('sn_users')->where('id','=',$id)->update(['username'=>$data['username'],'password'=>$data['password'],'qx'=>$data['qx'],'pic'=>$pic]);
-               $res1 = DB::table('sn_userxiangs')->where('id','=',$id)->update(['sex'=>$data['sex'],'tel'=>$data['tel'],'mail'=>$data['mail'],'rtime'=>date('Y-m-d H:i:s',time()),'zip'=>$ip]);
+               $res1 = DB::table('sn_userxiangs')->where('id','=',$id)->update(['sex'=>$data['sex'],'tel'=>$data['tel'],'mail'=>$data['mail'],'rtime'=>date('Y-m-d H:i:s',time()),'zip'=>$ip,'qq'=>$data['qq'],'dizhi'=>$data['dizhi']]);
                
-               
+                $res2=true;
                 if($res2 && $res1){
                     //DB::commit();
-                   return redirect('/admin/houtai/user/index')->with('success','修改成功，此用户请重新登录');
+                   return redirect('/admin/houtai/user/index')->with('success','修改成功，用户请重新登录');
                }else{
                     //DB::rollBack();
                     return back()->with('error','修改失败');
