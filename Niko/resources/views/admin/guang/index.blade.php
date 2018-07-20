@@ -71,11 +71,13 @@
                                         <td >{{ $v->name }}</td>
                                         <td >{{ $v->content }}</td>
                                         <td >{{ $v->url }}</td>
-                                        <td > <img src="/{{ $v->pic }}" alt="" height="50px"> </td>
+                                        <td > <img src="/{{ $v->pic }}" alt="" height="20px"> </td>
                                         <td >
                                             
                                             <a href="/admin/guang/destroy/{{$v->id}}" class="btn btn-danger">删除</a>
                                             <a href="/admin/guang/edit/{{$v->id}}" class="btn btn-warning">修改</a>
+                                            <a href="/admin/guang/disable/{{ $v->id }}" class="btn btn-danger">禁用</a>
+                                            <a href="/admin/guang/enable/{{$v->id}} " class="btn btn-success btn-sm">启用</a>
                                         </td>
                                     </tr> 
                                 @endforeach

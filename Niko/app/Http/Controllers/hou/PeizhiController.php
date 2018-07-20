@@ -18,6 +18,7 @@ class PeizhiController extends Controller
     public function getIndex(Request $request)
     {
         //
+        // dd($peizhi);
          // 获取搜索关键字
         $search = $request -> input('search','');
         //接收数据
@@ -132,8 +133,10 @@ class PeizhiController extends Controller
     public function postUpdate(Request $request, $id)
     {
         //
-        //开启事物
         DB::beginTransaction();
+         $rea  = DB::table('sn_peizhis')->where('id','=',$id)->first();
+         //获取数据库的图片
+         $img = $rea->logo;
         //接收提交的数据
         $data = $request -> except('_token');
         //dump($data);
@@ -147,16 +150,22 @@ class PeizhiController extends Controller
             $temp_name = str_random(10);
             $name =  $temp_name.'.'.$ext;
             $dirname = date('Y-m-d',time());
-            $res = $profile -> move('./uploads/'.$dirname,$name);
+            $res = $profile -> move('./uploads/peizhi/'.$dirname,$name);
             $data['logo'] = $res;
             //dump($res);
-        }else{
-            return back();
-        }
 
-        //dd(date('Y-m-d H:s:i',time()));
-        //获取表单提交到sn_peizhis表里的信息，并返回id
-       $uid = DB::table('sn_peizhis')->where('id','=',$id)->update(['hand'=>$data['hand'],'title'=>$data['title'],'kami'=>$data['kami'],'open'=>$data['open'], 'logo'=>$data['logo']]);
+            $uid = DB::table('sn_peizhis')->where('id','=',$id)->update(['hand'=>$data['hand'],'title'=>$data['title'],'kami'=>$data['kami'],'open'=>$data['open'],'logo'=>$data['logo']]);
+        if($uid){
+            DB::commit();
+           return redirect('/admin/sn/peizhi/index')->with('success','修改成功');
+       }else{
+            DB::rollBack();
+            return back()->with('error','修改失败');
+       }
+
+
+ }else{
+           $uid = DB::table('sn_peizhis')->where('id','=',$id)->update(['hand'=>$data['hand'],'title'=>$data['title'],'kami'=>$data['kami'],'open'=>$data['open'],'logo'=>$img]);
        
        
         if($uid){
@@ -166,9 +175,31 @@ class PeizhiController extends Controller
             DB::rollBack();
             return back()->with('error','修改失败');
        }
+      }
 
     }
 
+    public function getEnable($id)
+    {
+        // echo 'sadaw';
+        $res = Peizhi::all();
+        // dd($res);
+        foreach ($res as $k => $v){
+            $v->yong = 0;
+            $v->save();
+        }
+        // echo $id;
+        $z = Peizhi::find($id);
+        $z->yong = 1;
+        $c = $z->save();
+        // dd($z);
+        if($c){
+            return redirect('/admin/sn/peizhi/index')->with('success','启用成功');
+        }else{
+            return back()->with('error','启用失败');
+        }
+
+    }
     /**
      * Remove the specified resource from storage.
      *

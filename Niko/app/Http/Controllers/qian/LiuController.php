@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\Liuyan;
-
 class LiuController extends Controller
 {
     /**
@@ -19,6 +18,7 @@ class LiuController extends Controller
     {
         //
         // echo 'liuyan';
+         
         $data = Liuyan::all();
         return view ('qian.liuyan.index',['data'=>$data]);
     }

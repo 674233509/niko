@@ -39,11 +39,16 @@ Route::controller('/admin/sn/ping','hou\PingController');
 Route::controller('/admin/sn/hui','hou\HuiController');
 //音乐
 Route::controller('/admin/sn/yin','hou\YinController');
+//关于我
+Route::controller('/admin/sn/about','hou\AboutController');
 
 //前台评论
 Route::controller('/qian/sn/ping','qian\PingController');
+
 //前台音乐
 Route::controller('/qian/sn/yin','qian\YinController');
+//前台关于
+Route::controller('/qian/sn/about','qian\AboutController');
 
 
 

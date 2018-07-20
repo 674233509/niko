@@ -308,6 +308,18 @@
                                 <li><a href="/admin/sn/xiang/create"><i class="fa fa-edit "></i> 添加相册</a></li>
                                 <li><a href="/admin/sn/xiang/jiazhao"><i class="fa fa-angle-double-right"></i> 添加相片</a></li>
                             </ul>
+                                      <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-male"></i>
+                                <span>关于我</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="/admin/sn/about/index"><i class="fa fa-eye"></i> 查看信息</a></li>
+                                <li><a href="/admin/sn/about/create"><i class="fa fa-edit "></i> 添加信息</a></li>
+                                
+                            </ul>
+                        </li>
                         </li></li>
                                 <li><a href="pages/charts/inline.html"><i class="fa  fa-calendar-o"></i> 我的日记</a></li>
                                 <li><a href="pages/charts/inline.html"><i class="fa fa-user-md"></i> 我的作品</a></li>

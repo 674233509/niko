@@ -17,4 +17,9 @@ class Ping extends Model
 	{
 	    return $this->belongsTo('App\Models\User','uid');
     }
+
+    public function qwe()
+	{
+	    return $this->belongsTo('App\Models\Wen','wid');
+    }
 }
