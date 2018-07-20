@@ -187,10 +187,15 @@
                             <button class="btn btn-success btn-xs" data-widget="remove"><i class="fa fa-times"></i></button>
                         </div>
                     </div>
-                    <div class="box-body" >
+                    <style type="text/css">
+                        #yin img{
+                            display: none;
+                        }
+                    </style>
+                    <div id="yin"class="box-body"  style="height:110px;overflow: hidden;">
                        
-                        <p style="height:80px;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 4;overflow: hidden;">
-                            {{ $v->content }}
+                        <p style="display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 4;overflow: hidden;">
+                            {!! $v->content !!}
                         </p>
                     </div><!-- /.box-body -->
                     <div class="box-footer" >
@@ -226,7 +231,7 @@
              @foreach($v->ping as $kk=>$vv)
             <div class="col-md-4">
                 <!-- Primary box -->
-                <div class="box box-solid box-info">
+                <div class="box box-solid box-info" style="position:absolute">
                     <div class="box-header">
                         <h3 class="box-title">经典评论</h3>
                         <div class="box-tools pull-right">

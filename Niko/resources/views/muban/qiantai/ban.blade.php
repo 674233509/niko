@@ -11,7 +11,6 @@
 <!--搜索按钮css-->
 
 <!-- 个人名片样式 -->
-<link href="/yangshi/css/styles.css" rel="stylesheet">
 <!-- 个人名片样式结束 -->
 <meta name="Keywords" content="" >
 <meta name="Description" content="" >
@@ -102,7 +101,9 @@ Qfast(false, 'widgets', function () {
 <!-- 轮播图样式结束 -->
 </head>
 <body>
+{{-- 背景流线 --}}
 <script type="text/javascript" color='50, 205, 50' zIndex='-1' opacity='1' count='99' src="/yangshi/beijing/1.js"></script>
+{{-- 背景流线 --}}
 
 <div class="note-bottom">
 <header>
@@ -111,11 +112,11 @@ Qfast(false, 'widgets', function () {
 </header>
 <div id="nav">
      <ul>
-       <li><a href="/admin">网站首页</a></li>
+       <li><a href="/">网站首页</a></li>
        <li><a href="javascript:;">关于我</a></li>
-       <li><a href="moodlist.html">碎言碎语</a></li>
+       <li><a href="/sn/show/yulu">经典语录</a></li>
        <li><a href="/sn/wen">技术探讨</a></li>
-       <li><a href="newlist.html">慢生活</a></li>
+       <li><a href="/sn/show/xin">欣赏</a></li>
        <li><a href="/sn/pic">我的相册</a></li>
        <li><a href="/sn/liu">留言版</a></li>
        <li><a href="/qian/sn/ping/index">最新评论</a></li>
@@ -137,8 +138,9 @@ Qfast(false, 'widgets', function () {
                 <li><a class="cd-search-trigger" href="#cd-search"> <span></span></a></li>
               </ul> <!-- cd-header-buttons -->
               <div id="cd-search" class="cd-search">
-                <form action="#" method="post">
-                  <input name="Search" type="search" placeholder="Search...">
+                <form action="/sn/sou/sou" method="post">
+                {{ csrf_field() }}
+                  <input name="Search" type="search" placeholder="请输入想要查找的文章关键字。。。">
                 </form>
               </div>  
 <!-- 搜索按钮结束 -->

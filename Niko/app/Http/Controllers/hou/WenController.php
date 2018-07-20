@@ -60,7 +60,11 @@ class WenController extends Controller
         
         $data = $request->except(['_token']);
         // dump($data);
+        if(!isset( $data['biao'])){
+            return back()->with('error','需要选择标签才能保存');
+        }
         $biao = implode(',',$data['biao']);
+
         // dump(implode(' ',$data['biao']));
          
         // echo $data['biao'];
@@ -102,9 +106,9 @@ class WenController extends Controller
 
         // dd($iddd);
         if ($res) {
-            return redirect('/admin/sn/wen/index')->with('success','修改成功');
+            return redirect('/admin/sn/wen/index')->with('success','添加成功');
         } else {
-            return back()->with('success','修改失败');
+            return back()->with('success','添加失败');
         }
 
     }
@@ -126,7 +130,7 @@ class WenController extends Controller
     public function getEdit($id)
     {
         //
-        echo $id;
+        // echo $id;
         $data = Wen::find($id);
         // dump($data);
         $biao = Biao::all();
@@ -146,6 +150,9 @@ class WenController extends Controller
         //
          $data = $request->except(['_token']);
         // dump($data);
+         if(!isset( $data['biao'])){
+            return back()->with('error','需要选择标签才能保存');
+        }
         $biao = implode(',',$data['biao']);
         // dump(implode(' ',$data['biao']));
         // dump($data['biao']);

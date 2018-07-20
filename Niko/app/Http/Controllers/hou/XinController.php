@@ -97,9 +97,9 @@ class XinController extends Controller
 
         // dd($iddd);
         if ($res) {
-            return redirect('/admin/sn/xin/index')->with('success','修改成功');
+            return redirect('/admin/sn/xin/index')->with('success','添加成功');
         } else {
-            return back()->with('success','修改失败');
+            return back()->with('success','添加失败');
         }
     }
 

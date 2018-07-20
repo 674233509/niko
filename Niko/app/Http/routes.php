@@ -152,7 +152,12 @@ Route::group(['middleware'=>"denglu"],function(){
 	Route::controller('/sn/pic','qian\PicController');
 	// 文章显示界面
 	Route::controller('/sn/wen','qian\WenController');
+	// 前台搜索
+	Route::controller('/sn/sou','qian\WenController');
 	// 留言板
 	Route::controller('/sn/liu','qian\liuController');
 });	
+Route::controller('/admin/sn/liu','qian\liuController');
+// 前台展示
+Route::controller('/sn/show','qian\ShowController');
 // Dzuo的路由结束

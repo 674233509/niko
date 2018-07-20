@@ -35,16 +35,15 @@ body{width:100%;
         </ul>
         <p><a href="/sn/wen/xiang/{{ $v->id }}">{{ $v->title }}</a></p>
         <figcaption>作者栏
-          <br>
-          @foreach ($v->wenbiao as $vv => $kk)
-          <a style="color:#509" href="/sn/sou/sou/{{ $kk->id }}"><i class="glyphicon glyphicon-tag"></i>{{$kk->name}}</a><br>
-          @endforeach
+        <br>
+        @foreach ($v->wenbiao as $vv => $kk)
+        <a style="color:#509" href="/sn/sou/sou/{{ $kk->id }}"><i class="glyphicon glyphicon-tag"></i>{{$kk->name}}</a><br>
+        @endforeach
         </figcaption>
       </figure>
       @endforeach
     </div>
     <div style="margin-left:30%">
-      {!! $data->render() !!}
     </div>
    <ul class="cbp_tmtimeline">
           <li>

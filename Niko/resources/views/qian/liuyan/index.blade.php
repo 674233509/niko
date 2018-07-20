@@ -5,7 +5,7 @@ body,div,h2,h3,ul,li,p{margin:0;padding:0;}
 a{text-decoration:none;}
 a:hover{text-decoration:underline;}
 ul{list-style-type:none;}
-body{color:#333;background:#a7ab8c url(/emmm/liuyan.jpg) ;background-attachment:fixed ;background-size:cover;font:12px/1.5 \5b8b\4f53;}
+body{color:#333;background:#a7ab8c url(/emmm/liuyan.jpg) ;background-size:cover;*/font:12px/1.5 \5b8b\4f53;}
 #msgBox{width:500px;background:rgba(255,255,255,0.8);border-radius:5px;margin:10px auto;padding-top:10px;}
 #msgBox form h2{font-weight:400;font:400 18px/1.5 \5fae\8f6f\96c5\9ed1;}
 #msgBox form{background:url(img/boxBG.jpg) repeat-x 0 bottom;padding:0 20px 15px;}
@@ -35,6 +35,24 @@ body{color:#333;background:#a7ab8c url(/emmm/liuyan.jpg) ;background-attachment:
 #msgBox .list .times{color:#889db6;font:12px/18px arial;margin-top:5px;overflow:hidden;zoom:1;}
 #msgBox .list .times span{float:left;}
 #msgBox .list .times a{float:right;color:#889db6;display:none;}
+body{
+  /*background:url(/emmm/liuyan.jpg) ;*/
+  /*position:fixed ;*/
+    /*background-repeat: no-repeat;
+  background-size: 100% ;
+  background-attachment:fixed ;
+  transform: translate3d(0,0,0);*/
+  /*background-size:cover;*/
+  /*background-size: civer ;*/
+  /*height: 100px;*/
+  /*position: fixed;*/
+    background-attachment:fixed ;/* 设置背景图片不动 */
+    background-size:cover; 
+  /*-webkit-transform:translateZ(0px);*/
+
+  /*background-position: fixed;*/
+}
+
 .tr{overflow:hidden;zoom:1;}
 .tr p{float:right;line-height:30px;}
 .tr *{float:left;}
@@ -330,8 +348,8 @@ EventUtil.addLoadHandler(function ()
 });
 </script>
 </head>
-<body>
-
+<body class="beijing">
+<!-- <img src="/emmm/liuyan.jpg" class="beijing" alt=""> -->
 <div id="msgBox">
     <form action="/sn/liu/save" method="post">
         {{ csrf_field() }}
@@ -349,13 +367,14 @@ EventUtil.addLoadHandler(function ()
     <div class="list">
         <h3><span>大家在说</span></h3>
         <ul>
+       
             @foreach ($data as $k => $v)        
             <li>
-                <div class="userPic"><img src="img/face.gif" /></div>
+                <div style="overflow: hidden;" class="userPic"><img height="50px"  src="/{{ $v->liuren->pic }}" /></div>
                 <div class="content">
                     <div class="userName"><a href="javascript:;">{{ $v->liuren->username }}</a>:</div>
                     <div class="msgInfo">{{ $v->content }}</div>
-                    <div class="times"><span>{{ $v->created_at }}</span><a class="del" href="javascript:;">删除</a></div>
+                    <div class="times"><span>{{ $v->created_at }}</span><a class="del" href="javascript:;"></a></div>
                 </div>
             </li>
             @endforeach

@@ -108,7 +108,7 @@ class YuluController extends Controller
         $yulu -> content = $data['content'];
         $res = $yulu -> save();
         if ($res) {
-            return redirect('/admin/sn/yulu/index')->with('success','添加成功');
+            return redirect('/admin/sn/yulu/index')->with('success','修改成功');
         } else {
             return back()->with('success','修改失败');
         }
@@ -128,9 +128,9 @@ class YuluController extends Controller
         // echo $id;
         $res = Yulu::destroy($id);
         if ($res) {
-            return redirect('/admin/sn/yulu/index')->with('success','添加成功');
+            return redirect('/admin/sn/yulu/index')->with('success','删除成功');
         } else {
-            return back()->with('success','修改失败');
+            return back()->with('success','删除失败');
         }
 
     }

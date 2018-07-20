@@ -1,5 +1,12 @@
 @extends('muban.houtai.ban')
  @section('hou.index')
+ @if(session('error'))
+        <div class="alert alert-danger alert-dismissible fade in" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">×</span></button>
+        {{ session('error') }}
+        </div>
+@endif
  <!-- 配置文件 -->
     <script type="text/javascript" src="/chajian\baidubianji\utf8-php/ueditor.config.js"></script>
     <!-- 编辑器源码文件 -->

@@ -47,6 +47,46 @@ class LiuController extends Controller
         }
     }
 
+    /*
+    后台管理留言
+    */
+    public function getShow () 
+    {
+        // echo '后台留言';
+        $data = Liuyan::paginate(10);
+        return view('hou.liuyan.index',['data'=>$data]);
+    }
+    /*
+    后台修改留言
+    */
+    public function getEdit($id)
+    {
+        // echo $id;
+        $data = Liuyan::find($id);
+        return view('hou.liuyan.edit',['data'=>$data]);
+    }
+
+
+    /*
+    后台上传修改的留言
+    */
+
+    public function postUpdate(Request $request ,$id)
+    {
+        // echo $id;
+        $data = $request->except(['_token']);
+        // dump($data);
+        $liu = Liuyan::find($id);
+        $liu -> content = $data['content'];
+        $res = $liu -> save();
+         if ($res) {
+            return redirect('/admin/sn/liu/show')->with('success','修改成功');
+        } else {
+            return back()->with('success','修改失败');
+        }
+    }
+
+
     /**
      * Show the form for creating a new resource.
      *

@@ -1,5 +1,19 @@
 @extends('muban.houtai.ban')
  @section('hou.index')
+  @if(session('success'))
+        <div class="alert alert-success alert-dismissible fade in" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">×</span></button>
+            {{ session('success') }}
+        </div>
+@endif
+@if(session('error'))
+        <div class="alert alert-danger alert-dismissible fade in" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">×</span></button>
+        {{ session('error') }}
+        </div>
+@endif
 <!-- 配置文件 -->
     <script type="text/javascript" src="/chajian\baidubianji\utf8-php/ueditor.config.js"></script>
     <!-- 编辑器源码文件 -->
@@ -14,7 +28,7 @@
 <div class="form-group">
             <label for="lunpic">上传图片</label>
             <input type="file" id="lunpic" name="pic">
-            <p class="help-block">请选择需要上传文章的图片</p>
+            <p class="help-block">请选择需要上传文章的封面</p>
         </div>
     <div class="box-body">
         <div class="form-group">

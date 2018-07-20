@@ -45,8 +45,8 @@
         @foreach ($data as $k => $v)
             <tr>
                 <td> {{ $v->id }} </td>
-                <td> {{ $v->name }} </td>
                 <td> {{ $v->content }} </td>
+                <td> {{ $v->name }} </td>
                 <td> {{ $v->created_at }} </td>
                 <td>
                     <a href="/admin/sn/yulu/edit/{{ $v->id }} " class="btn btn-success btn-sm">修改</a>

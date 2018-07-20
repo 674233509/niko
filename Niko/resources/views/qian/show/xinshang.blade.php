@@ -31,15 +31,10 @@ body{width:100%;
       @endif
       <figure>
         <ul>
-          <a href="/sn/wen/xiang/{{ $v->id }}"><img src="{{ $v->pic }}"><span>{!! $v->content !!}</span></a>
+          <a href="/sn/show/xinxiang/{{ $v->id }}"><img src="{{ $v->pic }}"><span>{!! $v->content !!}</span></a>
         </ul>
-        <p><a href="/sn/wen/xiang/{{ $v->id }}">{{ $v->title }}</a></p>
-        <figcaption>作者栏
-          <br>
-          @foreach ($v->wenbiao as $vv => $kk)
-          <a style="color:#509" href="/sn/sou/sou/{{ $kk->id }}"><i class="glyphicon glyphicon-tag"></i>{{$kk->name}}</a><br>
-          @endforeach
-        </figcaption>
+        <p><a href="/sn/show/xinxiang/{{ $v->id }}">{{ $v->title }}</a></p>
+        <figcaption>作者栏</figcaption>
       </figure>
       @endforeach
     </div>

@@ -24,6 +24,7 @@ class WenController extends Controller
         //
         // echo 'qian wen ';
         $data = Wen::paginate(15);
+        // dd('$data');
         return view('qian.wen.index',['data'=>$data]);
     }
 
@@ -50,6 +51,35 @@ class WenController extends Controller
         return view('qian.wen.xiang',['data'=>$data]);
 
     }
+    /*
+    前台搜索
+    */
+
+    public function postSou (Request $request)
+    {
+        // echo '搜索';
+        $sou = $request->except(['_token']);
+        // dump($data['Search']);
+        $data = Wen::where('title','like','%'.$sou['Search'].'%')->paginate(15);
+        return view('qian.wen.index',['data'=>$data]);
+
+    }
+
+    /*
+    根据标签搜索
+    */
+
+    public function getSou (Request $request , $id)
+    {
+        // echo $id ;
+        // $data = Biao::find($id)->paginate(15);
+        $biao = Biao::find($id);
+        $data = $biao -> biaowen  ;
+        // dump($data);
+        return view('qian.wen.biaowen',['data'=>$data]);
+
+    }
+
 
 
 }
