@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\Ping;
+use App\Models\Peizhi;
+use App\Models\Wen;
 class PingController extends Controller
 {
     /**
@@ -17,6 +19,8 @@ class PingController extends Controller
     public function getIndex()
     {
         $data = Ping::all();
+       
+
         //dump($data);
         return view('qian.ping.index',['data'=>$data]);
     }
@@ -26,10 +30,10 @@ class PingController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function getCreate()
+    public function create()
     {
         //
-        return view('qian.ping.create');
+
         
         
     }

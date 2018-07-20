@@ -81,7 +81,7 @@
                                         <td >{{ $v->content }}</td>
                                         <td >{{ $v->qweqwe['username'] }}</td>
                                         <td ><img src="/{{$v->qweqwe['pic']}}" height="50px"></td>
-                                        <td >{{ $v->ptime }}</td>
+                                        <td >{{ $v->created_at }}</td>
                                         <td >{{ $v->pip }}</td>
                                         
                                         <td>

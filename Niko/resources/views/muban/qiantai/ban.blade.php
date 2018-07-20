@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="gb2312">
-<title>上帝用左手Sn</title>
+<title>{{$gg_hand->hand}}</title>
 
 <!--搜索按钮css-->
 <link href="/yangshi/css/bootstrap2.css" rel="stylesheet" type="text/css" media="all"/>
@@ -102,6 +102,8 @@ Qfast(false, 'widgets', function () {
 <!-- 轮播图样式结束 -->
 </head>
 <body>
+
+
 <script type="text/javascript" color='50, 205, 50' zIndex='-1' opacity='1' count='99' src="/yangshi/beijing/1.js"></script>
 
 <div class="note-bottom">
@@ -112,7 +114,7 @@ Qfast(false, 'widgets', function () {
 <div id="nav">
      <ul>
        <li><a href="/admin">网站首页</a></li>
-       <li><a href="javascript:;">关于我</a></li>
+       <li><a href="/qian/sn/about/index">关于我</a></li>
        <li><a href="moodlist.html">碎言碎语</a></li>
        <li><a href="/sn/wen">技术探讨</a></li>
        <li><a href="newlist.html">慢生活</a></li>
@@ -120,7 +122,7 @@ Qfast(false, 'widgets', function () {
        <li><a href="/sn/liu">留言版</a></li>
        <li><a href="/qian/sn/ping/index">最新评论</a></li>
 
-       <li><a href="/qian/sn/yin/create">音乐房</a></li>
+       <li><a href="/qian/sn/yin/create" target=_blank>音乐房</a></li>
 
      </ul>
      <script src="/yangshi/js/silder.js"></script><!--获取当前页导航 高亮显示标题-->
@@ -180,7 +182,7 @@ Qfast(false, 'widgets', function () {
 
 
   </div>
-          <div class="large-2 columns show-for-large" style="padding-top: 10rem;">
+          <div class="large-2 columns show-for-large" style="padding-top: 10rem; ">
          
           </div>
         </div>
@@ -204,15 +206,43 @@ Qfast(false, 'widgets', function () {
       </section>
 
     </main>
-        <footer class="text-center">
+        <footer class="text-center" style="background:rgba(210,230,230,0.1)">
+        <style type="text/css">
+            ul li{
+              list-style: none;
+              float:left;
+              margin:5px;
+
+            }
+            
+          </style>
+            <h1>友情链接</h1>
+          
+          @foreach ($gg_fris as $k => $v)
+          <ul>
+            <a href="{{ $v->url }}">
+            <li>{{ $v->title }}</li>
+            </a>
+            <li><img src="/{{ $v->pic }}" height="50px"></li>
+          </ul>
+          @endforeach
+
+          <br><br>
+          <h1>广告</h1>
+
+            @foreach ($gg_guangs as $k => $v)
+            <ul style=" margin:10px">
+              <a target="_blank" href="{{ $v->url }}" class="tb-footer-mod">
+               <li><img src="/{{ $v->pic }}" height="30px";width="30px"></li>
+            </ul>      
+    
+           @endforeach
           <div class="htmleaf-header">
-      <h1>js固定元素插件 <span>Library for sticky elements written in vanilla javascript</span></h1>
-     
-    </div>
-      <p>页脚</p>
-      <p>页脚</p>
-      <p>页脚</p>
-    </footer>
+          
+
+          </div>
+          
+      </footer>
   
    <script src="/yangshi/guding/dist/sticky.compile.js"></script>
    <script type="text/javascript">
@@ -221,5 +251,8 @@ Qfast(false, 'widgets', function () {
 {{-- 固定 --}}
 
 </div>
+
+
+
 </body>
 </html>

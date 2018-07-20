@@ -18,6 +18,7 @@ class PicController extends Controller
     {
         //
         $data = Xiangce::all();
+    
         // dd($data);
         return view('qian.xiangce.index',['data'=>$data]);
     }

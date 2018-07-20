@@ -23,6 +23,7 @@ class WenController extends Controller
     {
         //
         // echo 'qian wen ';
+ 
         $data = Wen::paginate(15);
         return view('qian.wen.index',['data'=>$data]);
     }
@@ -30,6 +31,7 @@ class WenController extends Controller
     public function getXiang($id)
     {
         // echo '详情'.$id;
+       
         $data = Wen::find($id);
         $data->dianji ++;
         $data ->save();

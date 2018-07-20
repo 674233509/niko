@@ -78,6 +78,9 @@
                                             
                                             <a href="/admin/fri/destroy/{{$v->id}}" class="btn btn-danger">删除</a>
                                             <a href="/admin/fri/edit/{{$v->id}}" class="btn btn-warning">修改</a>
+                                            <a href="/admin/fri/disable/{{ $v->id }}" class="btn btn-danger">禁用</a>
+                                            <a href="/admin/fri/enable/{{$v->id}} " class="btn btn-success btn-sm">启用</a>
+
                                         </td>
                                     </tr> 
                                 @endforeach

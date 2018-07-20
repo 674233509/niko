@@ -10,6 +10,7 @@ use App\Models\Lun;
 use App\Models\Fris;
 use App\Models\Guangs;
 use App\Models\User;
+use App\Models\Peizhi;
 
 class ShouController extends Controller
 {
@@ -21,14 +22,21 @@ class ShouController extends Controller
     public function index()
     {
         //
+
         $data = Lun::all();
-        $res = Fris::all();
-        $res2 = Guangs::all();
+        $res3 = Peizhi::all();
+        // dd($res3);
+         // view()->share('hand', $res3);
+
+        if($res3['0']['open'] == 2){
+            return view('/qian/peizhi/index');
+        }
+       
         // if(session('denglu')){
         //     $user =
         // }
         // dump($res2);
-        return view('/qian/index',['data'=>$data,'res'=>$res,'res2'=>$res2]);
+        return view('/qian/index',['data'=>$data]);
     }
 
     /**

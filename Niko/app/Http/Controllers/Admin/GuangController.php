@@ -67,7 +67,7 @@ class GuangController extends Controller
             $temp_name = str_random(10);
             $name =  $temp_name.'.'.$ext;
             $dirname = date('Y-m-d',time());
-            $res = $profile -> move('./uploads/guanggao/'.$dirname,$name);
+            $res = $profile -> move('/uploads/guanggao/'.$dirname,$name);
             $data['pic'] = $res;
             //dump($res);
         }else{
@@ -144,7 +144,7 @@ class GuangController extends Controller
             $temp_name = str_random(10);
             $name =  $temp_name.'.'.$ext;
             $dirname = date('Y-m-d',time());
-            $res = $profile -> move('./uploads/'.$dirname,$name);
+            $res = $profile -> move('/uploads/'.$dirname,$name);
             $data['pic'] = $res;
             //dump($res);
         }else{
@@ -165,6 +165,35 @@ class GuangController extends Controller
 
     }
 
+
+    //禁用
+    public function getDisable($id)
+    {   
+        // echo 'sdaS';
+         $z = Guangs::find($id);
+        $z->jin = 1;
+        $c = $z->save();
+        // dd($c);
+        if ($c) {
+                return redirect('/admin/guang/index')->with('success','禁用成功');
+        }else{
+            return back()->with('error','禁用失败');
+        }
+    }
+
+    //启用
+    public function getEnable($id)
+    {
+         $z = Guangs::find($id);
+        $z->jin = 0;
+        $c = $z->save();
+        // dd($c);
+        if($c){
+             return redirect('/admin/guang/index')->with('success','启用成功');
+        }else{
+            return back()->with('error','启用失败');
+        }
+    }
     /**
      * Remove the specified resource from storage.
      *

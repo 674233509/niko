@@ -55,16 +55,15 @@
                                 <!-- THE MESSAGES -->
                                 
                                  {{ csrf_field() }}
-                                <table class="table table-bordered table-striped  table-hover">
+                    <table class="table table-bordered table-striped  table-hover">
                                 <tr class="unread text-center">
-                                
 
                                     <td>ID</td>
-                                    <td>网站头部</td>
-                                    <td>网站标题</td>
+                                    <td>网站名称</td>
+                                    <td>网站关键字</td>
                                     <td>网站版权</td>
-                                    <td>网站状态</td>
                                     <td>网站logo</td>
+                                    <td>网站开关</td>
                                     <td>操作</td>
                                 </tr>
                                 @foreach($data as $k=>$v)
@@ -74,27 +73,24 @@
                                         <td >{{ $v->hand }}</td>
                                         <td >{{ $v->title }}</td>
                                         <td >{{ $v->kami }}</td>
+                                        <td > <img src="/{{ $v->logo }}" alt="" height="50px"> </td>
                                         <td >
-                                        @if (($v->open) === '1')
+                                             @if (($v->open) === '1')
                                              {{'打开'}}
                                         @elseif (($v->open) === '2')
                                                 {{'关闭'}}
                                         @endif
-                                     
-                                           
-
-                                         
                                         </td>
-                                        <td > <img src="/{{ $v->logo }}" alt="" height="50px"> </td>
+                                        
                                         <td >
                                             
-                                            <a href="/admin/sn/peizhi/destroy/{{$v->id}}" class="btn btn-danger">删除</a>
+                                            <a href="/admin/sn/peizhi/destroy/{{ $v->id }}" class="btn btn-danger">删除</a>
                                             <a href="/admin/sn/peizhi/edit/{{$v->id}}" class="btn btn-warning">修改</a>
+                                            <a href="/admin/sn/peizhi/enable/{{$v->id}} " class="btn btn-success btn-sm">启用</a>
                                         </td>
                                     </tr> 
                                 @endforeach
                                 </table>
-
                             </form>
                                 
                             </div><!-- /.table-responsive -->
