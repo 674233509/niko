@@ -15,6 +15,8 @@
         <link href="/yangshi/css/fullcalendar/fullcalendar.print.css" rel="stylesheet" type="text/css" media='print' />
         <!-- Theme style -->
         <link href="/yangshi/css/AdminLTE.css" rel="stylesheet" type="text/css" />
+        <link href="/yangshi/layui/css/layui.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="/yangshi/layui/layui.all.js"></script>
         <script type="text/javascript" src="/yangshi/js/jquery-1.8.3.min.js"></script>
         <script type="text/javascript" src="/yangshi/ajax/ajax3.0-min.js"></script>
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -296,7 +298,7 @@
                             </a>
                             <ul class="treeview-menu">
 
-                                <li><a href="/admin/houtai/jianjie/index"><i class="fa fa-angle-double-right"></i> 个人信息</a></li>
+                                <li><a href="/admin/houtai/gerenjianli/index"><i class="fa fa-angle-double-right"></i> 个人信息</a></li>
                                 <li><li class="treeview">
                             <a href="#">
                                 <i class="fa fa-camera"></i>

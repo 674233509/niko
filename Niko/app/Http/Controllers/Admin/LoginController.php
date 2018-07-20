@@ -15,9 +15,9 @@ class LoginController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function getIndex()
-    {
-        //
+    public function getIndex(Request $request)
+    {   
+        //登录页面
         return view('admin.houtai.login.login',['title'=>'管理员登录']);
     }
 
@@ -46,7 +46,7 @@ class LoginController extends Controller
         $data3 = DB::table('sn_users as u')
         ->where('username','=',$username)
         ->join('sn_userxiangs as ux','u.id','=','ux.uid')
-        ->select('u.id','u.username','u.qx','ux.tel','ux.mail','ux.sex')
+        ->select('u.id','u.username','u.qx','ux.tel','ux.mail','ux.sex','ux.qq','ux.dizhi')
         ->first();
         
         //$res = $data1['username'];
@@ -54,13 +54,19 @@ class LoginController extends Controller
         if($data1 == null){
            DB::rollBack();
             return back()->with('error','用户不存在')->withInput();
-        }else if(($data1 -> qx) !=1 ){
+        }
+
+         if(($data1 -> qx) !=1 ){
             DB::rollBack();
             return back()->with('error','请登录管理员用户');
-        }else if($data1->forbidden =='y'){
+        }
+
+         if($data1->forbidden =='y'){
             DB::rollBack();
             return back()->with('error','用户已被禁用');
-        }else if($data1 && $data2){
+        }
+
+         if($data1 && $data2){
             DB::commit();
             //登录存值
             $request->session()->put('user',$username);
@@ -69,9 +75,22 @@ class LoginController extends Controller
             $request->session()->put('tel',$data3->tel);
             $request->session()->put('mail',$data3->mail);
             $request->session()->put('qx',$data3->qx);
-            $request->session()->put('id',$data3->id);
-            //dd($data1->pic);
-            return redirect('/admin/houtai/shouye/index');
+            $request->session()->put('idd',$data3->id);
+            $request->session()->put('qq',$data3->qq);
+            $request->session()->put('dizhi',$data3->dizhi);
+            //接收输入的验证码
+            //$ds = $request->input('captcha');
+            //获取验证码
+           
+            $this->validate($request, [
+                'captcha' => 'required|captcha'
+            ]);
+           
+                return redirect('/admin/houtai/shouye/index');
+           
+                //return back()->with('error','验证码错误')->withInput();
+       
+            
             
         }else{
             DB::rollBack();
@@ -169,7 +188,9 @@ class LoginController extends Controller
             $request->session()->pull('tel',session('tel'));
             $request->session()->pull('mail',session('mail'));
             $request->session()->pull('qx',session('qx'));
-            $request->session()->pull('id',session('id'));
+            $request->session()->pull('idd',session('id'));
+            $request->session()->pull('qq',session('qq'));
+            $request->session()->pull('dizhi',session('dizhi'));
             
         }
         return redirect('/admin/houtai/login/index');

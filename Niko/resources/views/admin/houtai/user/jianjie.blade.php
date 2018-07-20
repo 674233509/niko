@@ -1,7 +1,16 @@
 @extends('muban.houtai.ban')
  @section('hou.index')
+ <script>
+;!function(){
+  //无需再执行layui.use()方法加载模块，直接使用即可
+  var form = layui.form
+  ,layer = layui.layer;
+  //layer.msg('Hello World');
+  //…
+}();
+</script> 
   <!-- left column -->
-<div class="" style="width:400px;margin:110px auto">
+<div class="text-info" style="width:400px;margin:110px auto;">
     <!-- general form elements -->
     <div class="box box-primary">
         <div class="box-header">
@@ -13,15 +22,49 @@
         
             <div class="box-body">
                 <div class="form-group">
-                     <p for="pic"><img src="\{{ session('pic') }}" width="80" height="80" style="margin:-40px 150px;" class="img-circle"></p>
+                     <label for="picc">
+                     <img id="profile" src="\{{ session('pic') }}" width="80" height="80" style="margin:-40px 150px;" for="picc" class="img-circle">
+                     </label>
                    
                 </div>
-                
+                {{ csrf_field() }}
+                <button type="button"  class="layui-btn" id="picc" style="display:none">
+                <i class="layui-icon">&#xe67c;</i>上传图片
+                </button>
+                 
+                <script src="/static/build/layui.js"></script>
+                <script>
+                layui.use('upload', function(){
+                  var upload = layui.upload;
+                   
+                  //执行实例
+                  var uploadInst = upload.render({
+                    elem: '#picc' //绑定元素
+                    ,url: '/admin/houtai/jianjie/uploads' //上传接口
+                    ,data:{'_token':$('input[type=hidden]').val()}
+                    ,field:'picc'
+                    ,done: function(res){
+                      //上传完毕回调
+                      if(res.code == 0){
+                         //layer.msg(res.msg, {icon: 6});
+                         $('#profile').attr('src',res.data.src);
+                      }else{
+                         layer.msg(res.msg, {icon: 5});
+                      }
+                    }
+                    ,error: function(){
+                      //请求异常回调
+                    }
+                  });
+                });
+
+              
+                </script>
                     
                    
                 
                 <br><br>
-                <a style="float:right" href="/admin/houtai/user/edit/{{session('id')}}" class="btn btn-success">编辑资料</a>
+                <a style="float:right" href="/admin/houtai/user/edit/{{session('idd')}}" class="btn btn-success">编辑资料</a>
                 <br><br><br>
                 <div class="form-group">
                     <label for="username">账　号　：{{ session('user') }}</label>

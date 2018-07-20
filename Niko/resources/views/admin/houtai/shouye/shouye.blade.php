@@ -122,7 +122,7 @@
                     <div class="icon">
                         <i class="fa fa-user"></i>
                     </div>
-                    <a href="/admin/houtai/jianjie/index" class="small-box-footer">
+                    <a href="/admin/houtai/gerenjianli/index" class="small-box-footer">
                         更多信息 <i class="fa fa-arrow-circle-right"></i>
                     </a>
                 </div>
@@ -173,30 +173,32 @@
             <small><font color="orange" style="font-family:华文行楷" size="4">人言苏城好风光 文人墨客常到访 春来百花相争艳 夏至游人满苏塘 秋时听雨小楼上 冬寒不染绿如常 不及君之好文
             章。好棒！！！</font></small>
         </h4>
+
         @foreach($data1 as $k=>$v)
-        <div class="row" >
+        <div class="row">
          
             <div class="col-md-4" >
+                <style type="text/css">
+                        #yin img{
+                            display: none;
+                        }
+                </style>
                 <!-- Default box -->
-                <div class="box box-solid box-success">
+                <div class="box box-solid box-success" id="yin" >
                     <div class="box-header">
-                
-                        <h3 class="box-title">标题:{{ $v->title }}</h3>
+                <!-- style="overflow: hidden;text-overflow:ellipsis;white-space: nowrap; -->
+                        <h3 style="width:280px;overflow: hidden;text-overflow:ellipsis;white-space: nowrap;" class="box-title">文章标题：{{ $v->title }}</h3>
                         <div class="box-tools pull-right">
                             <button class="btn btn-success btn-xs" data-widget="collapse"><i class="fa fa-minus"></i></button>
                             <button class="btn btn-success btn-xs" data-widget="remove"><i class="fa fa-times"></i></button>
                         </div>
                     </div>
-                    <style type="text/css">
-                        #yin img{
-                            display: none;
-                        }
-                    </style>
-                    <div id="yin"class="box-body"  style="height:110px;overflow: hidden;">
+
+                    <div class="box-body" style="height:125px;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp:6;overflow: hidden;text-indent:2em;">
                        
-                        <p style="display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 4;overflow: hidden;">
+                       
                             {!! $v->content !!}
-                        </p>
+                    
                     </div><!-- /.box-body -->
                     <div class="box-footer" >
                         <code>{!! $v->created_at !!}</code>
@@ -204,23 +206,23 @@
                     </div><!-- /.box-footer-->
                 </div><!-- /.box -->
             </div><!-- /.col -->
-           
-            <div class="col-md-4">
+             <div class="col-md-3" style="position:absolute;margin-left:370px;width:385px;">
                 <!-- Primary box -->
-                <div class="box box-solid box-primary">
-                    <div class="box-header">
-                        <h3 class="box-title">文章插图</h3>
+                
+                <div class="box box-solid box-primary" >
+                    <div class="box-header" >
+                        <h3 class="box-title">标题图片</h3>
                         <div class="box-tools pull-right">
                             <button class="btn btn-primary btn-xs" data-widget="collapse"><i class="fa fa-minus"></i></button>
                             <button class="btn btn-primary btn-xs" data-widget="remove"><i class="fa fa-times"></i></button>
                         </div>
                     </div>
-                    <div class="box-body" style="height:110px;">
+                    <div class="box-body" >
                        @if( $v->pic )
-                       <img src="{{ $v->pic }}" title="{{ $v->title }}" style="height:90px">
+                       <img src="{{ $v->pic }}" title="{{ $v->title }}" style="height:105px">
                        @else
-                       <img src="/yangshi/img/timg.gif" title="{{ $v->title }}" style="width:90px" >
-                       <font class="text-warning">没有发现插图 !!! </font>  
+                       <img style="height:105px" src="/yangshi/img/timg.gif" title="{{ $v->title }}" >
+                       <font class="text-warning">没有发现图片 !!! </font>  
                        @endif
                     </div><!-- /.box-body -->
                     <div class="box-footer">
@@ -228,29 +230,32 @@
                     </div><!-- /.box-footer-->
                 </div><!-- /.box -->
             </div><!-- /.col -->
-             @foreach($v->ping as $kk=>$vv)
-            <div class="col-md-4">
+            @foreach($v->ping as $kk=>$vv)
+            <div class="col-md-3" style="position:absolute;margin-left:745px;width:350px;" >
                 <!-- Primary box -->
-                <div class="box box-solid box-info" style="position:absolute">
+
+                <div class="box box-solid box-info" style="position:absolute;margin-left:5px;">
                     <div class="box-header">
-                        <h3 class="box-title">经典评论</h3>
+                        <h3 class="box-title">最新评论</h3>
                         <div class="box-tools pull-right">
                             <button class="btn btn-info btn-xs" data-widget="collapse"><i class="fa fa-minus"></i></button>
                             <button class="btn btn-info btn-xs" data-widget="remove"><i class="fa fa-times"></i></button>
                         </div>
                     </div>
-                    <div class="box-body">
+                    <div class="box-body"  style="height:125px;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 6;overflow: hidden;text-indent:2em">
                        
-                       <p style="height:80px;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 4;overflow: hidden;">
+                       
                             {{ $vv->content }}
-                        </p>
+                        
                     </div><!-- /.box-body -->
                     <div class="box-footer">
-                        <code>{{ $vv->ptime }}</code>
+                        <code>{{ $vv->created_at }}</code>
                     </div><!-- /.box-footer-->
                 </div><!-- /.box -->
             </div><!-- /.col -->
             @endforeach
+           
+            
         </div><!-- /.row -->
         @endforeach
         

@@ -34,9 +34,12 @@
                     <div class="form-group">
                         <input type="password" name="password" id="password" class="form-control" placeholder="密码"/>
                     </div>          
-                    <div class="form-group">
-                        <input type="checkbox" name="remember_me"/> 记住我
+                    <div class="form-group code">
+                        <label>验证码</label>
+                        <input width="10" class="tt-text"  name="captcha" >
+                        <a href="/admin/houtai/login/index" title="点击切换"  class="text-right" style="margin-top:-30px;">{!! captcha_img() !!}</a>
                     </div>
+                   
                      <p class="text-center text-warning">{{session('error')}}</p>
                 </div>
                 <div class="footer">                                                               
