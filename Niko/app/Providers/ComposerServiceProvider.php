@@ -20,7 +20,7 @@ class ComposerServiceProvider extends ServiceProvider
         // View::composer(['qian.index','App\Http\ViewComposers\ViewComposers']);
         $peizhi = Peizhi::where('yong','=','1')->first();
         // dd($peizhi);
-        view()->share('gg_hand',$peizhi);
+        view()->share('gg_peizhi',$peizhi);
 
         // $fris = Fris::all();
         $fris = Fris::where('jin','=','0')->get();

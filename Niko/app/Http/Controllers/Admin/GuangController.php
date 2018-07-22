@@ -67,8 +67,8 @@ class GuangController extends Controller
             $temp_name = str_random(10);
             $name =  $temp_name.'.'.$ext;
             $dirname = date('Y-m-d',time());
-            $res = $profile -> move('/uploads/guanggao/'.$dirname,$name);
-            $data['pic'] = $res;
+            $res = $profile -> move('./uploads/guanggao/'.$dirname,$name);
+            $data['pic'] ='uploads/guanggao/'.$dirname.'/'.$name;
             //dump($res);
         }else{
             return back();
@@ -144,9 +144,11 @@ class GuangController extends Controller
             $temp_name = str_random(10);
             $name =  $temp_name.'.'.$ext;
             $dirname = date('Y-m-d',time());
-            $res = $profile -> move('/uploads/'.$dirname,$name);
-            $data['pic'] = $res;
-            //dump($res);
+            // $res = $profile -> move('/uploads/'.$dirname,$name);
+            // $data['pic'] = $res;
+            // //dump($res);
+             $res = $profile -> move('./uploads/guanggao/'.$dirname,$name);
+            $data['pic'] ='uploads/guanggao/'.$dirname.'/'.$name;
         }else{
             return back();
         }

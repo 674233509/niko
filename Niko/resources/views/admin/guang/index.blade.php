@@ -71,7 +71,7 @@
                                         <td >{{ $v->name }}</td>
                                         <td >{{ $v->content }}</td>
                                         <td >{{ $v->url }}</td>
-                                        <td > <img src="/{{ $v->pic }}" alt="" height="20px"> </td>
+                                        <td > <img src="/{{ $v->pic }}" alt="" height="30px"> </td>
                                         <td >
                                             
                                             <a href="/admin/guang/destroy/{{$v->id}}" class="btn btn-danger">删除</a>

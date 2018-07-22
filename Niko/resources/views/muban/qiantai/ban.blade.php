@@ -2,7 +2,8 @@
 <html>
 <head>
 <meta charset="gb2312">
-<title>{{$gg_hand->hand}}</title>
+<link rel="shortcut icon" href="/uploads/ico/bitbug_favicon.ico" /> 
+<title>{{$gg_peizhi->hand}}</title>
 
 <!--搜索按钮css-->
 <link href="/yangshi/css/bootstrap2.css" rel="stylesheet" type="text/css" media="all"/>
@@ -46,6 +47,7 @@
       });
     });
  </script>
+
  <!--mycart-->
 <script type="text/javascript" src="/yangshi/js/bootstrap-3.1.1.min.js"></script>
  <!-- cart -->
@@ -107,7 +109,7 @@ Qfast(false, 'widgets', function () {
 
 <div class="note-bottom">
 <header>
-  <h1><a href="/">God Only Knows</a></h1>
+  <h1><a href="/"><img src="/{{ $gg_peizhi->logo }}" style="height:80px"></a></h1>
   <p>这夏天里流动的风情，是停不住的舞步和唱不完的情歌，当玫瑰花瓣飘飞的那一刻，风会带走所有的想念.......</p>
 </header>
 <div id="nav">
@@ -116,13 +118,11 @@ Qfast(false, 'widgets', function () {
       
        <li><a href="/qian/sn/about/index">关于我</a></li>
        <li><a href="/sn/show/yulu">经典语录</a></li>
-       
        <li><a href="/sn/wen">技术探讨</a></li>
        <li><a href="/sn/show/xin">欣赏</a></li>
        <li><a href="/sn/pic">我的相册</a></li>
        <li><a href="/sn/liu">留言版</a></li>
-       <li><a href="/qian/sn/ping/index">最新评论</a></li>
-
+       <li><a href="/qian/sn/time/index" target=_blank>时间轴</a></li>
        <li><a href="/qian/sn/yin/create" target=_blank>音乐房</a></li>
 
      </ul>
@@ -240,10 +240,23 @@ Qfast(false, 'widgets', function () {
     
            @endforeach
           <div class="htmleaf-header">
-          
+                <div class="copy-center">
+<span>CopyRight © 2018-2025 全世界的屋顶  By Jerome</span>
+</div>
+    <div class="bottom-nav">
+      <span><a rel="nofollow" href="http://jq.qq.com/?_wv=1027&amp;k=2GWdkw2" target="_blank" title="中国博客优质友链交流群">优质友链交流群</a> - <a href="http://www.yg5.net/Article/?196.html" target="_blank" title="免责声明">免责声明</a> - 
+<a rel="nofollow" href="http://www.miibeian.gov.cn" target="_blank" title=""><img src="/uploads/peizhi/jing/ym.png">晋 {{$gg_peizhi->kami}} 备17106927号-1</a></span>
+<div class="mob-hidden"><p>免责声明：
+全世界的屋顶所发布的一切破解补丁、注册机和注册信息仅限用于学习和研究目的；不得用于商业或者非法用途，否则，一切后果请用户自负。本博信息均来自网络，版权争议与本博无关。请您务必在下载后的24个小时之内，从您的电脑中彻底删除上述内容。Mail To：1@YG5.NET
+
+</p>
+</div>
+    </div>
 
           </div>
-          
+          <div class="foot-nav">
+
+  </div>
       </footer>
   
    <script src="/yangshi/guding/dist/sticky.compile.js"></script>

@@ -38,6 +38,8 @@ Route::controller('/admin/sn/hui','hou\HuiController');
 Route::controller('/admin/sn/yin','hou\YinController');
 //关于我
 Route::controller('/admin/sn/about','hou\AboutController');
+//时间轴
+Route::controller('/admin/sn/time','hou\TimeController');
 
 //前台评论
 Route::controller('/qian/sn/ping','qian\PingController');
@@ -46,6 +48,8 @@ Route::controller('/qian/sn/ping','qian\PingController');
 Route::controller('/qian/sn/yin','qian\YinController');
 //前台关于
 Route::controller('/qian/sn/about','qian\AboutController');
+//前台时间轴
+Route::controller('/qian/sn/time','qian\TimeController');
 
 
 

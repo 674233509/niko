@@ -2,7 +2,9 @@
 @section('qian.index')
 
 	<div class="visitors">
+  <center>
       <h2>最新评论</h2>
+  </center>
       @foreach ($data as $k => $v)
       <dl>
         <dt><img src="/{{$v->qweqwe['pic']}}" height="50px">
@@ -16,4 +18,7 @@
       </dl>
       @endforeach
     </div>
+
+
+
 @endsection

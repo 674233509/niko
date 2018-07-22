@@ -155,8 +155,28 @@ alert('您的浏览器不支持,请按 Ctrl+D 手动收藏!');
 </ul>
 <h2><p>友情链接</p></h2>
 <ul class="news">
-  <li><a href="http://www.yangqq.com">杨青个人博客</a></li>
+  @foreach ($gg_fris as $k => $v)
+          <ul>
+            <a href="{{ $v->url }}" target=_blank>
+            <li>{{ $v->title }}</li>
+            </a>
+            <li><img src="/{{ $v->pic }}" height="30px"></li>
+          </ul>
+          @endforeach
 </ul>
+
+<h2><p>广告区域</p></h2>
+<ul class="news">
+ 
+            @foreach ($gg_guangs as $k => $v)
+            <ul style=" margin:10px">
+              <a target="_blank" href="{{ $v->url }}" class="tb-footer-mod"  target=_blank>
+               <li><img src="{{ $v->pic }}" height="30px";width="30px"></li>
+            </ul>      
+    
+           @endforeach
+</ul>
+
 <div class="share">
     <h2></h2>
       <p><!-- Baidu Button BEGIN -->

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\Peizhi;
+use App\Models\About;
 use DB;
 class PeizhiController extends Controller
 {
@@ -99,9 +100,10 @@ class PeizhiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
         //
+       
     }
 
     /**

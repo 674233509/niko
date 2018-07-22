@@ -15,23 +15,16 @@
     <form action="#" class="text-right" >
 {{ csrf_field() }}
         
-        <div class="input-group">
-          <input type="text" name="search" class="form-control input-sm" placeholder="关于我">
-            <div class="input-group-btn">
-                <button type="submit" name="q" class="btn btn-sm btn-primary"><i class="fa fa-search"></i></button>
-
-                
-            </div>
-        </div>                      
+                    
     </form>
 </div>
 {{-- 搜索框 --}}
 <div class="box-header">
-    <h3 class="box-title">查看信息</h3>                                    
+    <h3 class="box-title">{{$title}}</h3>                                    
 </div>
 
  <div class="box-body tablponsive" style="display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden; texte-res-indent:2em;">
-<form action="/admin/sn/about/alldelete" method="post">
+<form action="/admin/sn/time/alldelete" method="post">
 <table id="example2" class="table table-bordered table-hover">
 {{ csrf_field() }}
 
@@ -55,8 +48,8 @@
                 <td> {{ $v->created_at }} </td>
                 <td> {{ $v->updated_at }} </td>
                 <td>
-                    <a href="/admin/sn/about/edit/{{ $v->id }} " class="btn btn-success btn-sm">修改</a>
-                    <a href="/admin/sn/about/destroy/{{ $v->id }} " class="btn btn-danger btn-sm">删除</a>
+                    <a href="/admin/sn/time/edit/{{ $v->id }} " class="btn btn-success btn-sm">修改</a>
+                    <a href="/admin/sn/time/destroy/{{ $v->id }} " class="btn btn-danger btn-sm">删除</a>
                 </td>
             </tr>
         @endforeach

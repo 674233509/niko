@@ -8,4 +8,6 @@ class Peizhi extends Model
 {
     //
     public $table = 'sn_peizhis';
+
+    
 }

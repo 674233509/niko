@@ -51,15 +51,15 @@
     </ul>
     <h2>About my blog</h2>
     <p>域  名：www.niko.com 创建于2018年07月19日 </p>
+    <p>关键字：{{$gg_peizhi->title}} </p>
     <p>服务器：阿里云服务器<a href="https://promotion.aliyun.com/ntms/act/ambassador/sharetouser.html?userCode=8smrzoqa&amp;productCode=vm" target="_blank" class="blog_link">购买空间</a><a href="/jstt/web/2014-01-18/644.html" target="_blank" class="blog_link">参考我的空间配置</a></p>
-    <p>程  序：PHP Sn_帝左</p>
+    <p>程  序：PHP {{$gg_peizhi->hand}}</p>
 
 
 </div>
 
 
 
-<footer> Design by DanceSmile <a href="/">晋ICP备11002373号-1</a> </footer>
 <script>
 	if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))){
 		(function(){

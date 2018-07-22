@@ -2,7 +2,9 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>AdminLTE | Dashboard</title>
+        <link rel="shortcut icon" href="/uploads/ico/bitbug_favicon.ico" /> 
+
+        <title>{{$gg_peizhi->hand}}</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <!-- bootstrap 3.0.2 -->
         <link href="/yangshi/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -322,6 +324,20 @@
                                 
                             </ul>
                         </li>
+
+                                   <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-male"></i>
+                                <span>时间轴</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="/admin/sn/time/index"><i class="fa fa-eye"></i> 查看时间轴</a></li>
+                                <li><a href="/admin/sn/time/create"><i class="fa fa-edit "></i> 添加时间轴</a></li>
+                                
+                            </ul>
+                        </li>
+
                         </li></li>
                                 <li><a href="pages/charts/inline.html"><i class="fa  fa-calendar-o"></i> 我的日记</a></li>
                                 <li><a href="pages/charts/inline.html"><i class="fa fa-user-md"></i> 我的作品</a></li>
