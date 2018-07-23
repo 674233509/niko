@@ -36,7 +36,7 @@
 
                 <div class="form-group">
                     <label for="pic">广告图片</label>
-                    <input type="file" id="pic"  name="pic"><img  src="/{{ $data->pic }}">
+                    <input type="file" id="pic"  name="pic"><img  src="/{{ $data->pic }}" height="100px">
                   
                 </div>
             </div><!-- /.box-body -->

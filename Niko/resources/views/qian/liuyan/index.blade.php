@@ -370,9 +370,9 @@ EventUtil.addLoadHandler(function ()
        
             @foreach ($data as $k => $v)        
             <li>
-                <div style="overflow: hidden;" class="userPic"><img height="50px"  src="/{{ $v->liuren->pic }}" /></div>
+                <div style="overflow: hidden;" class="userPic"><img height="50px"  src="/{{ $v->liuren['pic'] }}" /></div>
                 <div class="content">
-                    <div class="userName"><a href="javascript:;">{{ $v->liuren->username }}</a>:</div>
+                    <div class="userName"><a href="javascript:;">{{ $v->liuren['username'] }}</a>:</div>
                     <div class="msgInfo">{{ $v->content }}</div>
                     <div class="times"><span>{{ $v->created_at }}</span><a class="del" href="javascript:;"></a></div>
                 </div>

@@ -58,7 +58,7 @@
 <aside class="navsidebar">
    <nav>
       <ul>
-       <li class="ab"><a href="#" >关于我</a></li>
+       <li class="ab"><a href="/qian/sn/about/index" >关于我</a></li>
        <li class="sy"><a href="/sn/show/yulu">经典语录</a></li>
        <li class="js"><a href="/sn/wen">技术探讨</a></li>
        <li class="msh"><a href="/sn/show/xin">欣赏</a></li>
@@ -160,7 +160,7 @@ alert('您的浏览器不支持,请按 Ctrl+D 手动收藏!');
             <a href="{{ $v->url }}" target=_blank>
             <li>{{ $v->title }}</li>
             </a>
-            <li><img src="/{{ $v->pic }}" height="30px"></li>
+           
           </ul>
           @endforeach
 </ul>

@@ -133,7 +133,7 @@ class PingController extends Controller
         $data = $request -> except('_token');
         //dump($data);
         //从数据库中查询要修改的数据
-        $ping = Ping::find($id);
+        // $ping = Ping::find($id);
         //dump($ping);
         //数据库的值        被修改的值
         $ping -> content = $data['content'];
@@ -147,7 +147,23 @@ class PingController extends Controller
 
     }
 
+     /**
+    *多个删除
+    */
+    public function postAlldelete(Request $request)
+    {
+        // echo 'asd';
+         $data = $request->except(['_token']);
+         // dump($data);
+        $res = Ping::destroy($data['del']);
 
+        if ($res) {
+            return redirect('/admin/sn/ping/index')->with('success','删除成功');
+        } else {
+            return back()->with('success','删除失败');
+        }
+
+    }
     /**
      * Remove the specified resource from storage.
      *

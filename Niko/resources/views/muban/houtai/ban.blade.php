@@ -220,11 +220,7 @@
                                 <i class="fa fa-dashboard"></i> <span>主页</span>
                             </a>
                         </li>
-                        <li>
-                            <a href="pages/widgets.html">
-                                <i class="fa fa-th"></i> <span>Widgets</span> <small class="badge pull-right bg-green">new</small>
-                            </a>
-                        </li>
+                        
                         <li class="treeview">
                             <a href="#">
                                 <i class="glyphicon glyphicon-user"></i> <span>用户管理</span>
@@ -275,7 +271,7 @@
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="/admin/sn/ping/create"><i class="fa fa-edit "></i> 添加评论</a></li>
+                                
                                 <li><a href="/admin/sn/ping/index"><i class="fa fa-eye"></i> 查看评论</a></li>
                                 <li><a href="/admin/sn/liu/show"><i class="fa fa-eye"></i> 查看留言</a></li>
                             </ul>
@@ -327,7 +323,7 @@
 
                                    <li class="treeview">
                             <a href="#">
-                                <i class="fa fa-male"></i>
+                                <i class="fa  fa-calendar-o"></i>
                                 <span>时间轴</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
@@ -338,9 +334,7 @@
                             </ul>
                         </li>
 
-                        </li></li>
-                                <li><a href="pages/charts/inline.html"><i class="fa  fa-calendar-o"></i> 我的日记</a></li>
-                                <li><a href="pages/charts/inline.html"><i class="fa fa-user-md"></i> 我的作品</a></li>
+                        
                             </ul>
                         </li>
                         <li class="treeview">
@@ -471,43 +465,7 @@
                                
                             </ul>
                         </li>
-                        <li class="treeview">
-                            <a href="#">
-                                <i class="fa fa-table"></i> <span>Tables</span>
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li><a href="pages/tables/simple.html"><i class="fa fa-angle-double-right"></i> Simple tables</a></li>
-                                <li><a href="pages/tables/data.html"><i class="fa fa-angle-double-right"></i> Data tables</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="pages/calendar.html">
-                                <i class="fa fa-calendar"></i> <span>Calendar</span>
-                                <small class="badge pull-right bg-red">3</small>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="pages/mailbox.html">
-                                <i class="fa fa-envelope"></i> <span>Mailbox</span>
-                                <small class="badge pull-right bg-yellow">12</small>
-                            </a>
-                        </li>
-                        <li class="treeview">
-                            <a href="#">
-                                <i class="fa fa-folder"></i> <span>Examples</span>
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li><a href="pages/examples/invoice.html"><i class="fa fa-angle-double-right"></i> Invoice</a></li>
-                                <li><a href="pages/examples/login.html"><i class="fa fa-angle-double-right"></i> Login</a></li>
-                                <li><a href="pages/examples/register.html"><i class="fa fa-angle-double-right"></i> Register</a></li>
-                                <li><a href="pages/examples/lockscreen.html"><i class="fa fa-angle-double-right"></i> Lockscreen</a></li>
-                                <li><a href="pages/examples/404.html"><i class="fa fa-angle-double-right"></i> 404 Error</a></li>
-                                <li><a href="pages/examples/500.html"><i class="fa fa-angle-double-right"></i> 500 Error</a></li>
-                                <li><a href="pages/examples/blank.html"><i class="fa fa-angle-double-right"></i> Blank Page</a></li>
-                            </ul>
-                        </li>
+                        
                     </ul>
                 </section>
                 <!-- /.sidebar -->

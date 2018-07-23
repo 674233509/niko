@@ -20,6 +20,7 @@ class LiuController extends Controller
         // echo 'liuyan';
          
         $data = Liuyan::all();
+        // dd($data);
         return view ('qian.liuyan.index',['data'=>$data]);
     }
 
@@ -30,6 +31,7 @@ class LiuController extends Controller
     public function postSave(Request $request)
     {
         // echo 'asd';
+
         $data = $request->except(['_token']);
         $id = session('denglu')['id'];
         $liuyan = new Liuyan;
@@ -148,8 +150,14 @@ class LiuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function getDelete($id)
     {
         //
+           $res = Liuyan::destroy($id);
+        if ($res) {
+            return redirect('/admin/sn/liu/show')->with('success','删除成功');
+        } else {
+            return back()->with('success','删除失败');
+        }
     }
 }

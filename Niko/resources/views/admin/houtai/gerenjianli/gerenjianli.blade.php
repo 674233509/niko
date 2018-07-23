@@ -6,7 +6,10 @@
 <head>
 <!-- Basic Page Needs
 ================================================== -->
-<title>Home</title>
+<link rel="shortcut icon" href="/uploads/ico/bitbug_favicon.ico" /> 
+
+<title>{{$gg_peizhi->hand}}</title>
+
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="">

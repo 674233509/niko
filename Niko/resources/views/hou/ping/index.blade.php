@@ -60,10 +60,12 @@
                                     </form>
                                 </div>
                                  {{ csrf_field() }}
+                            <form action="/admin/sn/ping/alldelete" method="post">
+                                   {{ csrf_field() }}
                                 <table class="table table-bordered table-striped  table-hover">
                                 <tr class="unread text-center">
                                 
-
+                                    <td>全选</td>
                                     <td>ID</td>
                                     <td>文章ID</td>
                                     <td>评论内容</td>
@@ -75,7 +77,7 @@
                                 </tr>
                                 @foreach($data as $k=>$v)
                                     <tr class="text-center">
-                                        
+                                        <td><input type="checkbox" name="del[]"  value="{{ $v->id }}" /></td>
                                         <td >{{ $v->id }}</td>
                                         <td >{{ $v->wid }}</td>
                                         <td >{{ $v->content }}</td>
@@ -92,13 +94,12 @@
                                     </tr> 
                                 @endforeach
                                 </table>
-
+                                    <input type="submit" value="全部删除" class="btn btn-danger btn-sm">
+                                
                             </form>
                                 
                             </div><!-- /.table-responsive -->
-                        </div><!-- /.col (RIGHT) -->
-                    </div><!-- /.row -->
-                </div><!-- /.box-body -->
+                       
                 <div class="box-footer clearfix">
                     <div class="pages pull-right">
                        

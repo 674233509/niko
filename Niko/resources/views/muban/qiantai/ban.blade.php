@@ -190,22 +190,7 @@ Qfast(false, 'widgets', function () {
         </div>
       </section>
 
-      <section class="container">
-        <div class="row column medium-text-center">
-          <h3>Browser compatibility</h3>
-          <p>Library is using ECMAScript 5 features. Full support available on <a href="http://caniuse.com/#search=ECMAScript%205" title="Can i use ECMAScript 5?">caniuse</a>.</p>
-          <br>
-          <ul class="no-bullet">
-            <li>IE 9+</li>
-            <li>Chrome 23+</li>
-            <li>页脚</li>
-            <li>Firefox 21+</li>
-            <li>Safari 6+</li>
-            <li>Opera 15+</li>
-          </ul>
-          <p>If you need this library working with older browsers you should use ECMAScript 5 polyfill.</p>
-        </div>
-      </section>
+      
 
     </main>
         <footer class="text-center" style="background:rgba(210,230,230,0.1)">
@@ -218,7 +203,7 @@ Qfast(false, 'widgets', function () {
             }
             
           </style>
-            <h1>友情链接</h1>
+            <h4>友情链接</h4>
           
           @foreach ($gg_fris as $k => $v)
           <ul>
@@ -228,26 +213,15 @@ Qfast(false, 'widgets', function () {
             <li><img src="/{{ $v->pic }}" height="50px"></li>
           </ul>
           @endforeach
-
-          <br><br>
-          <h1>广告</h1>
-
-            @foreach ($gg_guangs as $k => $v)
-            <ul style=" margin:10px">
-              <a target="_blank" href="{{ $v->url }}" class="tb-footer-mod">
-               <li><img src="/{{ $v->pic }}" height="30px";width="30px"></li>
-            </ul>      
-    
-           @endforeach
+          <br><br><br>
           <div class="htmleaf-header">
-                <div class="copy-center">
-<span>CopyRight © 2018-2025 全世界的屋顶  By Jerome</span>
-</div>
+                
+              <span>CopyRight © 2018-2025 全世界的屋顶  By Jerome</span>
+                
     <div class="bottom-nav">
-      <span><a rel="nofollow" href="http://jq.qq.com/?_wv=1027&amp;k=2GWdkw2" target="_blank" title="中国博客优质友链交流群">优质友链交流群</a> - <a href="http://www.yg5.net/Article/?196.html" target="_blank" title="免责声明">免责声明</a> - 
-<a rel="nofollow" href="http://www.miibeian.gov.cn" target="_blank" title=""><img src="/uploads/peizhi/jing/ym.png">晋 {{$gg_peizhi->kami}} 备17106927号-1</a></span>
+<a rel="nofollow" href="http://www.miibeian.gov.cn" target="_blank" title=""><img src="/uploads/peizhi/jing/ym.png">晋 {{$gg_peizhi->kami}} 备17106927号-1</a>
 <div class="mob-hidden"><p>免责声明：
-全世界的屋顶所发布的一切破解补丁、注册机和注册信息仅限用于学习和研究目的；不得用于商业或者非法用途，否则，一切后果请用户自负。本博信息均来自网络，版权争议与本博无关。请您务必在下载后的24个小时之内，从您的电脑中彻底删除上述内容。Mail To：1@YG5.NET
+全世界的屋顶 所发布的一切破解补丁、注册机和注册信息仅限用于学习和研究目的；不得用于商业或者非法用途，否则，一切后果请用户自负。本博信息均来自网络，版权争议与本博无关。请您务必在下载后的24个小时之内，从您的电脑中彻底删除上述内容。Mail To：1@YG5.NET
 
 </p>
 </div>

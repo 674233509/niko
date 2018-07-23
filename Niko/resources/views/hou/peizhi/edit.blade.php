@@ -48,7 +48,7 @@
                 <div class="form-group">
                     <label for="logo">网站图片</label>
                     <input type="file" id="logo"  name="logo"><img  src="/{{ $data->logo }}" height="50px">
-                    <p class="help-block">一个美丽的心情从头像开始.</p>
+                
                 </div>
             </div><!-- /.box-body -->
 

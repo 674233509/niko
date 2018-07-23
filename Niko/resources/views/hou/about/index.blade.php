@@ -8,7 +8,7 @@
         </div>
 @endif
 
-<div class="col-xs-12">
+
 {{-- 搜索框 --}}
 <div class="col-sm-6 search-form" style="position: absolute;right:5px">
     <br>
@@ -29,8 +29,17 @@
 <div class="box-header">
     <h3 class="box-title">查看信息</h3>                                    
 </div>
+<br><br>
+<style type="text/css">
+    .box-body{
+        width:100%;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient:vertical;
+        -webkit-line-clamp:2;
+    }
+</style>
 
- <div class="box-body tablponsive" style="display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden; texte-res-indent:2em;">
 <form action="/admin/sn/about/alldelete" method="post">
 <table id="example2" class="table table-bordered table-hover">
 {{ csrf_field() }}
@@ -68,7 +77,6 @@
 {!! $data->appends(['search'=>$search])->render() !!}
     
 
-</div>
-</div>
+
 
  @endsection

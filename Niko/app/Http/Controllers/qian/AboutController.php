@@ -18,6 +18,7 @@ class AboutController extends Controller
     {
         //
         $data = About::first();
+       
         // dd($data);
         
         

@@ -3,7 +3,7 @@
 .rnav { margin: 30px auto; overflow: hidden; overflow: hidden; padding-left: 100px }
 .rnav li { width: 120px; text-align: center; display: inline-block; margin-bottom: 5px; margin-right: 5px; float: left; height: 40px; line-height: 38px; background: rgba(255,255,255,0.2) }
 .rnav li a { color: #fff; display: block; -webkit-transition: all 1s; -moz-transition: all 1s; -o-transition: all 1s; transition: all 1s; border: #fff 1px solid }
-.rnav ul li a:hover { background: #075498; }
+.rnav ul li a:hover { background: #5090; }
 .rnav li:nth-child(1) { background: #FE5187 }
 .rnav li:nth-child(2) { background: #339967 }
 .rnav li:nth-child(3) { background: #FF8151 }
@@ -24,8 +24,8 @@
 .cbp_tmtimeline > li .cbp_tmicon { width: 10px; height: 10px; font-family: 'ecoico'; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; font-size: 1.4em; line-height: 40px; -webkit-font-smoothing: antialiased; position: absolute; color: #fff; background: #46a4da; border-radius: 50%; box-shadow: 0 0 0 3px #afdcf8; text-align: center; left: 170px; top: 15px; margin: 0 0 0 -25px; }
 .blogpic { width: 200px; height: 120px; overflow: hidden; display: block; float: left; margin-right: 20px; }
 .blogpic img { width: 100%; height: auto; margin: auto; }
-a.readmore { background: #075498; color: #fff; padding: 5px 10px; float: right; margin: 20px 0 0 0; border-radius: 5px; }
+a.readmore { background: #5090; color: #fff; padding: 5px 10px; float: right; margin: 20px 0 0 0; border-radius: 5px; }
 .cbp_tmtimeline li .cbp_tmtime { -webkit-transition: all 1s; -moz-transition: all 1s; -o-transition: all 1s; }
 .cbp_tmtimeline li:hover .cbp_tmicon { box-shadow: 0 0 0 3px #ececec; }
 .cbp_tmtimeline li:hover .cbp_tmtime { background: #afdcf8; border-radius: 20px 0 0 20px; }
-.cbp_tmtimeline li:hover .cbp_tmtime span { color: #075498; }
+.cbp_tmtimeline li:hover .cbp_tmtime span { color: #5090; }

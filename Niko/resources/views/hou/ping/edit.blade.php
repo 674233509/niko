@@ -20,10 +20,7 @@
         <form role="form" action="/admin/sn/ping/update/{{ $ping->id}}" method="post" enctype="multipart/form-data" >
           {{ csrf_field() }}
             <div class="box-body">
-                <div class="form-group">
-                    <label for="wid">文章ID</label>
-                    <input type="text" class="form-control"  name="wid" id="wid" value="{{ $ping->wid }}" placeholder="wid">
-                </div>
+                
                 
 
                 <div class="form-group">

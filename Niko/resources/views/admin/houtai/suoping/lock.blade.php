@@ -2,7 +2,10 @@
 <html class="lockscreen">
     <head>
         <meta charset="UTF-8">
-        <title>AdminLTE | Lockscreen</title>
+        <link rel="shortcut icon" href="/uploads/ico/bitbug_favicon.ico" /> 
+
+        <title>{{$gg_peizhi->hand}}</title>
+        
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <!-- bootstrap 3.0.2 -->
         <link href="/yangshi/css/bootstrap.min.css" rel="stylesheet" type="text/css" />

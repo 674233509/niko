@@ -53,7 +53,7 @@
  
 @foreach ($data->ping as $k => $v)
 <dl>
-  <dt><img src="/{{$v->qweqwe['pic']}}" height="50px">
+  <dt><img src="/{{$v->qweqwe['pic']}}" height="45px">
   <dt>
  
   <dd>{{$v->qweqwe['username']}}

@@ -21,33 +21,26 @@
       <div class="time_axis"></div>
       <ul>
         <li class="n1"><a href="/">前端入行</a>
-          <div class="dateview">2009</div>
+          <div class="dateview">2018</div>
         </li>
         <li class="n2"><a href="/">创建个人博客</a>
-          <div class="dateview">2011-01-12</div>
+          <div class="dateview">2018-07-12</div>
         </li>
         <li class="n3"><a href="/">分享第一个博客模板</a>
-          <div class="dateview">2013-06-08</div>
+          <div class="dateview">2018-07-25</div>
         </li>
         <li class="n4"><a href="/">制作第一个html5模板</a>
-          <div class="dateview">2013-08-08</div>
+          <div class="dateview">2018-03-15</div>
         </li>
         <li class="n5"><a href="/">模板更换为时间轴</a>
-          <div class="dateview">2017-09-08</div>
+          <div class="dateview">2018-07-19</div>
         </li>
       </ul>
     </div>
     <div class="about left">
   <h2>关于我</h2>
     <ul> 
-     <p></p>
-<p>
-</p>
-<p>
-  
-  {!! $data->content !!}
-  
-</p>
+  {!! $data['content'] !!}
     </ul>
     <h2>About my blog</h2>
     <p>域  名：www.niko.com 创建于2018年07月19日 </p>
