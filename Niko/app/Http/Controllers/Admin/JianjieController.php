@@ -41,7 +41,7 @@ class JianjieController extends Controller
                 $profile = $request -> file('picc');
                 $ext = $profile->getClientOriginalExtension();
                 // 处理文件夹名称
-                $file_dir = 'uploads/'.date('Y-m-d',time());
+                $file_dir = 'uploads/user/'.date('Y-m-d',time());
                 //处理文件名称
                 $file_name = str_random(20).'.'.$ext;
                 //将文件移动到指定文件夹

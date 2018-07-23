@@ -85,8 +85,12 @@ Route::controller('/admin/houtai/richeng','admin\RichengController');
 Route::controller('/admin/houtai/suoping','admin\LockController');
 //后台个人简介
 Route::controller('/admin/houtai/jianjie','admin\JianjieController');
-//后台个人简历
+//后台个人简历教育信息
 Route::controller('/admin/houtai/gerenjianli','admin\GerenjianliController');
+//后台个人简历工作信息
+Route::controller('/admin/houtai/work','admin\WorkController');
+//发送邮件路由
+Route::get('mail/send','MailController@send');
 });
 
 

@@ -50,7 +50,7 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function postStore(UserRequest $request)
+    public function postStore(Request $request)
     {
         
         //开启事物
@@ -68,11 +68,34 @@ class UserController extends Controller
         if($users){
              return back()->with('error','用户名已存在')->withInput();
         }
-        
+
+        if($data['username']==""){
+             return back()->with('error','用户名不能为空')->withInput();
+        }
+
+        if($data['password']==""){
+             return back()->with('error','密码不能为空')->withInput();
+        }
+
         if($data['password'] != $data['repass']){
             return back()->with('error','密码不一致')->withInput();
         }
+
+        if($data['mail']==""){
+             return back()->with('error','邮箱不能为空')->withInput();
+        }
+
+        if($data['tel']==""){
+             return back()->with('error','手机号不能为空')->withInput();
+        }
+
+        if($data['qq']==""){
+             return back()->with('error','QQ不能为空')->withInput();
+        }
         
+        
+        
+
        //hash 加密  密码
         //$pass = Hash::make($password);
         //用户登录验证密码   使用  Hash::check('用户输入的密码',$pass);
@@ -91,7 +114,7 @@ class UserController extends Controller
             $temp_name = str_random(20);
             $name =  $temp_name.'.'.$ext;
             $dirname = date('Y-m-d',time());
-            $res = $profile -> move('uploads/'.$dirname,$name);
+            $res = $profile -> move('uploads/user/'.$dirname,$name);
             $data['pic'] = $res;
             //dump($res);
         }else{
@@ -165,7 +188,7 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function postUpdate(UserRequest $request, $id)
+    public function postUpdate(Request $request, $id)
     {
         //开启事物
         //DB::beginTransaction();
@@ -174,9 +197,29 @@ class UserController extends Controller
         //'name' => 'size:10'
         $data = $request -> except('_token');
 
+        if($data['username']==""){
+             return back()->with('error','用户名不能为空')->withInput();
+        }
+
+        if($data['password']==""){
+             return back()->with('error','密码不能为空')->withInput();
+        }
+
         if($data['password'] != $data['repass']){
             return back()->with('error','密码不一致')->withInput();
-        } 
+        }
+
+        if($data['mail']==""){
+             return back()->with('error','邮箱不能为空')->withInput();
+        }
+
+        if($data['tel']==""){
+             return back()->with('error','手机号不能为空')->withInput();
+        }
+
+        if($data['qq']==""){
+             return back()->with('error','QQ不能为空')->withInput();
+        }
 
         //获取数据库照片
         $photo = DB::table('sn_users')->where('id','=',$id)->first();
@@ -197,7 +240,7 @@ class UserController extends Controller
             $temp_name = str_random(20);
             $name =  $temp_name.'.'.$ext;
             $dirname = date('Y-m-d',time());
-            $res = $profile -> move('uploads/'.$dirname,$name);
+            $res = $profile -> move('uploads/user/'.$dirname,$name);
             $data['pic'] = $res;
             //dump($res);
             //修改数据

@@ -6,7 +6,7 @@
 <head>
 <!-- Basic Page Needs
 ================================================== -->
-<title>Home</title>
+<title>个人信息</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="">
@@ -18,6 +18,7 @@
 
 <!-- Favicons
 ================================================== -->
+<link rel="icon"  href="/yangshi/gerenjianli/images/logo.ico">
 <link rel="shortcut icon" href="/yangshi/gerenjianli/images/favicon.png">
 <link rel="apple-touch-icon" href="/yangshi/gerenjianli/images/apple-touch-icon.png">
 <link href="/yangshi/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -32,7 +33,8 @@
 <link rel="stylesheet" type="text/css" href="/yangshi/gerenjianli/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="/yangshi/gerenjianli/css/font-awesome.min.css">  
 <link rel="stylesheet" type="text/css" href="/yangshi/gerenjianli/css/style.css">
-<link rel="stylesheet" type="text/css" href="/yangshi/gerenjianli/css/simpletextrotator.css"> 
+<link rel="stylesheet" type="text/css" href="/yangshi/gerenjianli/css/simpletextrotator.css">
+ <!-- layui -->
 
 <!--[if lt IE 9]>
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -102,7 +104,7 @@
 				<!--SOCIAL NAV MENU-->
 				<div class="social-menu-container">
 					<ul class="social-menu no-padding">                     
-						<li><a href=""><i class="fa fa-facebook"></i></a></li>
+						<li><a href="/admin/houtai/shouye/index"><i class="fa fa-facebook"></i></a></li>
 						<li><a href=""><i class="fa fa-google-plus"></i></a></li>
 						<li><a href=""><i class="fa fa-youtube"></i></a></li>
 						<li><a href=""><i class="fa fa-pinterest-p"></i></a></li>
@@ -217,39 +219,43 @@
 							<!--RESUME SECOND TAB/EDUCATION TAB DETAILS-->
 							<div id='tab-2'>
 								<h3 class="title">教育经历</h3>
-								<ul class="education-class">
+
+								<ul class="education-class folio-container" >
+								
 									<li>
+									
 										<!--EDUCATION LIST ITEM-->
-										<h4 class="title">计算机科学理学硕士<i class="fa fa-sort-desc pull-right"></i></h4>
+										<h4 class="title">{{$data['edut1']}}<i class="fa fa-sort-desc pull-right"></i></h4>
+										
 										<div class="list-content">
-											<h5 class="title">Consectetur adipiscing <span class="list-year">(2014 - 2005)</span></h5>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing Vivamus sit Vivamus sit. Vivamus sit.. consectetur adipiscing Vivamus sit. Vivamus sit</p><!--EDUCATION LIST DETAILS-->
+											<h5 class="title">Consectetur adipiscing <span class="list-year">({{$data['edutime1']}})</span></h5>
+											<p>{{$data['edu1']}}</p><!--EDUCATION LIST DETAILS-->
 										</div>
 									</li>
+
 									<li>
+									
 										<!--EDUCATION LIST ITEM-->
-										<h4 class="title">计算机工程研究生<i class="fa fa-sort-desc pull-right"></i></h4>
-										<div class="list-content current">
-											<h5 class="title">Consectetur adipiscing <span class="list-year">(2014 - 2005)</span></h5>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing Vivamus sit Vivamus sit. Vivamus sit.. consectetur adipiscing Vivamus sit. Vivamus sit</p><!--EDUCATION LIST DETAILS-->
-										</div>
-									</li>
-									<li>
-										<!--EDUCATION LIST ITEM-->
-										<h4 class="title">大学<i class="fa fa-sort-desc pull-right"></i></h4>
+										<h4 class="title">{{$data['edut2']}}<i class="fa fa-sort-desc pull-right"></i></h4>
+										
 										<div class="list-content">
-											<h5 class="title">Consectetur adipiscing <span class="list-year">(2014 - 2005)</span></h5>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing Vivamus sit Vivamus sit. Vivamus sit.. consectetur adipiscing Vivamus sit. Vivamus sit</p><!--EDUCATION LIST DETAILS-->
+											<h5 class="title">Consectetur adipiscing <span class="list-year">({{$data['edutime2']}})</span></h5>
+											<p>{{$data['edu2']}}</p><!--EDUCATION LIST DETAILS-->
 										</div>
 									</li>
+									
 									<li>
+									
 										<!--EDUCATION LIST ITEM-->
-										<h4 class="title">学校<i class="fa fa-sort-desc pull-right"></i></h4>
+										<h4 class="title">{{$data['edut3']}}<i class="fa fa-sort-desc pull-right"></i></h4>
+										
 										<div class="list-content">
-											<h5 class="title">Consectetur adipiscing <span class="list-year">(2014 - 2005)</span></h5>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing Vivamus sit Vivamus sit. Vivamus sit.. consectetur adipiscing Vivamus sit. Vivamus sit</p><!--EDUCATION LIST DETAILS-->
+											<h5 class="title">Consectetur adipiscing <span class="list-year">({{$data['edutime3']}})</span></h5>
+											<p>{{$data['edu3']}}</p><!--EDUCATION LIST DETAILS-->
 										</div>
 									</li>
+									
+									
 								</ul>
 							</div><!--RESUME SECOND TAB/EDUCATION TAB DETAILS ENDS-->
 							<!--RESUME THIRD TAB/EMPLYMENT TAB DETAILS ENDS-->
@@ -258,21 +264,21 @@
 								<ul class="employment-class tab-cont">
 									<li>
 										<!--EMPLOYMENT INDIVIDUAL LIST-->
-										<h4>经理 <span class="year">2014 - 2005</span></h4>
+										<h4>{{$w['workzhiwei1']}}<span class="year">{{$w['worktime1']}}</span></h4>
 										<h5>Consectetur adipiscing</h5>
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing Vivamus sit Vivamus sit. Vivamus sit.. consectetur adipiscing Vivamus sit.</p><!--EMPLOYMENT LIST DETAILS-->
+										<p>{{$w['workcontent1']}}</p><!--EMPLOYMENT LIST DETAILS-->
 									</li>
 									<li>
 										<!--EMPLOYMENT INDIVIDUAL LIST-->
-										<h4>经理 <span class="year">2014 - 2005</span></h4>
+										<h4>{{$w['workzhiwei2']}}<span class="year">{{$w['worktime2']}}</span></h4>
 										<h5>Consectetur adipiscing</h5>
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing Vivamus sit Vivamus sit. Vivamus sit.. consectetur adipiscing Vivamus sit.</p><!--EMPLOYMENT LIST DETAILS-->
+										<p>{{$w['workcontent2']}}</p><!--EMPLOYMENT LIST DETAILS-->
 									</li>
 									<li>
 										<!--EMPLOYMENT INDIVIDUAL LIST-->
-										<h4>经理 <span class="year">2014 - 2005</span></h4>
+										<h4>{{$w['workzhiwei3']}}<span class="year">{{$w['worktime3']}}</span></h4>
 										<h5>Consectetur adipiscing</h5>
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing Vivamus sit Vivamus sit. Vivamus sit.. consectetur adipiscing Vivamus sit.</p><!--EMPLOYMENT LIST DETAILS-->
+										<p>{{$w['workcontent3']}}</p><!--EMPLOYMENT LIST DETAILS-->
 									</li>
 								</ul>
 							</div><!--RESUME THIRD TAB/EMPLYMENT TAB DETAILS ENDS-->

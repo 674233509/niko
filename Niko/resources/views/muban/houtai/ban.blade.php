@@ -236,6 +236,23 @@
                         </li>
                         <li class="treeview">
                             <a href="#">
+                                <i class="glyphicon glyphicon-user"></i> <span>个人信息管理</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="/admin/houtai/gerenjianli/index"><i class="fa fa-eye"></i> 查看信息</a></li>
+                                <li><a href="/admin/houtai/gerenjianli/create"><i class="fa fa-edit "></i>添加教育信息</a></li>
+                                <li><a href="/admin/houtai/gerenjianli/edit/{{session('idd')}}"><i class="fa fa-edit "></i>修改教育信息</a></li>
+
+
+                                
+                                <li><a href="/admin/houtai/work/create"><i class="fa fa-edit "></i>添加工作信息</a></li>
+                                <li><a href="/admin/houtai/work/edit/{{session('idd')}}"><i class="fa fa-edit "></i>修改工作信息</a></li>
+                                
+                            </ul>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
                                 <i class="fa fa-book"></i> <span>文章管理</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>

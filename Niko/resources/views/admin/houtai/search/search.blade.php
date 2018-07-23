@@ -78,7 +78,7 @@
                                        
                                         <td >
                                             
-                                            <a style="display: inline;" href="/sn/wen/index">欣赏美文</a>
+                                            <a style="display: inline;" href="/sn/wen/index">欣赏</a>
                                            
                                         </td>
                                     </tr> 

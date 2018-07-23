@@ -23,7 +23,7 @@ class ForbiddenController extends Controller
         $data = DB::table('sn_users as u')
         ->where('username','like','%'.$search.'%')
         ->join('sn_userxiangs as ux','u.id','=','ux.uid')
-        ->select('u.id','u.username','u.qx','ux.mail','ux.zip','ux.rtime','ux.tel','ux.sex')
+        ->select('u.id','u.username','u.qx','u.forbidden','ux.mail','ux.zip','ux.rtime','ux.tel','ux.sex')
         ->paginate(3);
  
         //用户管理页面显示

@@ -73,6 +73,7 @@
                                     <td>权限</td>
                                     <td>注册时间</td>
                                     <td>注册IP</td>
+                                    <td>状态</td>
                                     <td>操作</td>
                                 </tr>
                                 @foreach($data as $k=>$v)
@@ -101,6 +102,14 @@
                                         </td>
                                         <td >{{ $v->rtime }}</td>
                                         <td >{{ $v->zip }}</td>
+                                         <td >
+                                          @if ($v->forbidden =='y')
+                                           <font color="red">已禁用</font>
+                                           
+                                           @else
+                                           <font color="green">已启用</font>
+                                           @endif
+                                        </td>
                                         <td >
                                             
                                             <a style="display: inline;" href="/admin/houtai/forbidden/store/{{ $v->id }}" class="btn btn-danger">禁用</a>
